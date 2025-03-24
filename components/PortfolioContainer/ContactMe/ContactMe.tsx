@@ -10,7 +10,7 @@ import {
   faWeixin,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import Typical from "react-typical";
+import { ReactTyped } from "react-typed";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -84,9 +84,11 @@ export default function ContactMe(props: { id: string; screenName?: string }) {
       <div className={classes["central-form"]}>
         <div className={classes["row"]}>
           <h2 className={classes["title"]}>
-            <Typical
-              loop={Infinity}
-              steps={["Contact Info", 1000, "Get In Touch 📧", 1000]}
+            <ReactTyped
+              strings={["Contact Info", "Get In Touch 📧"]}
+              typeSpeed={40}
+              backSpeed={50}
+              loop
             />
           </h2>
           <a

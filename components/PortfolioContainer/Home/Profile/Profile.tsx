@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Typical from "react-typical";
+import { ReactTyped } from "react-typed";
 
 import ScrollService from "@/lib/ScrollService";
 
@@ -63,20 +63,17 @@ export default function Profile() {
           <div className={classes["profile-details-role"]}>
             <span className={classes["primary-text"]}>
               <h1>
-                <Typical
-                  loop={Infinity}
-                  steps={[
+                <ReactTyped
+                  strings={[
                     "Enthusiastic Dev 😎",
-                    1000,
                     "Full stack Developer 💻",
-                    1000,
                     "MERN stack Dev 📱",
-                    1000,
                     "Cross Platform Dev 🔴",
-                    1000,
                     "React/React Native 🌐",
-                    1000,
                   ]}
+                  typeSpeed={40}
+                  backSpeed={50}
+                  loop
                 />
               </h1>
             </span>
