@@ -1,0 +1,56 @@
+.footer-container {
+  height: 17.8%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -1px;
+}
+
+.footer-parent {
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+}
+
+.footer-parent img {
+  max-width: 100%;
+  height: 126px;
+}
+
+/* For 4k resolution */
+@media only screen and (min-width: 1920.98px) {
+  .footer-parent {
+    max-width: none;
+  }
+
+  .footer-parent img {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+/*IPAD PRO RESPONSIVENESS*/
+
+@media only screen and (max-width: 1110px) {
+  .footer-parent {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+@media only screen and (max-width: 991.98px) {
+  .footer-parent img {
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .footer-parent {
+    height: 30px;
+  }
+
+  .footer-parent img {
+    display: none;
+  }
+}

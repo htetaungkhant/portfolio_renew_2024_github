@@ -1,0 +1,263 @@
+.pt-30 {
+  padding-top: 30px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.resume-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: fit-content;
+  margin: 70px 0;
+}
+
+.resume-card {
+  display: flex;
+  height: 500px;
+  width: 1000px;
+}
+
+.resume-bullets {
+  box-shadow: 15px 0 9px -15px #1f2235;
+  height: 100%;
+  width: 320px;
+}
+
+.resume-bullet-details {
+  flex-grow: 1;
+  width: 600px;
+  overflow: hidden;
+  padding: 0 0 0 50px;
+}
+
+.experience-description {
+  text-align: left;
+}
+
+.resume-description-text,
+.course-highlight-text,
+.ability-description-text {
+  font-size: 12px;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+}
+
+.resume-details-carousal {
+  transition: transform 1s ease-out;
+}
+
+.bullet-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.bullets {
+  width: 86%;
+  position: relative;
+  z-index: 2;
+}
+
+.bullet-row-container {
+  cursor: pointer;
+}
+
+.bullet {
+  display: flex;
+  align-items: center;
+  background-color: #1f2235;
+  height: 45px;
+  margin: 20px 0;
+  padding: 0 12px;
+  border-radius: 25px;
+  width: 40px;
+  transition: width 0.6s ease;
+}
+
+.bullet-label {
+  font-size: 14px;
+  white-space: nowrap;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+}
+
+.bullet-logo {
+  height: 22px;
+  width: 22px;
+  margin: 0 30px 0 0;
+}
+
+.bullet-icons {
+  width: 45px;
+  height: 100%;
+  z-index: 1;
+  background-color: #1f2235;
+  position: absolute;
+}
+
+.selected-bullet {
+  color: var(--white);
+  width: 100%;
+}
+
+.resume-screen-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 500px;
+  width: 100%;
+  padding-left: 30px;
+  overflow-y: auto;
+}
+
+.heading-bullet {
+  position: absolute;
+  left: -30px;
+  height: 15px;
+  width: 15px;
+  top: 5px;
+  border-radius: 50%;
+  background-color: #ff5823;
+}
+
+.skill-parent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 43%;
+}
+
+.programming-skills-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.skill-percentage {
+  position: relative;
+  height: 15px;
+  width: 100%;
+  background-color: #ff5823;
+}
+
+.skill-percentage .active-percentage-bar {
+  height: 15px;
+  transition: 0.8s ease;
+  position: absolute;
+  background-color: #1f2235;
+}
+
+.skill-parent span {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 16px;
+  color: #ff5823;
+}
+
+.course-highlight-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-highlight-title {
+  margin-top: 30px;
+  font-size: 14px;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+}
+
+.course-highlights {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course-highlight {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.course-highlight-text,
+.ability-description-text {
+  margin-left: 10px;
+}
+
+.ability-description-text {
+  font-family: var(--font-poppins);
+  font-weight: 500;
+}
+
+.ability-description {
+  display: flex;
+  align-items: baseline;
+}
+
+/* IPAD PRO RESPONSIVENESS */
+
+@media only screen and (max-width: 1110px) {
+  .resume-container {
+    margin: 70px 0px;
+  }
+  .resume-content {
+    width: 88%;
+  }
+  .resume-card {
+    width: 100%;
+  }
+}
+
+/* IPAD RESPONSIVENESS */
+
+@media only screen and (max-width: 1023px) {
+  .resume-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bullets {
+    width: 90%;
+  }
+  .resume-card {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .resume-bullet-details {
+    height: 500px;
+    padding: 0;
+    width: fit-content;
+  }
+  .resume-bullets {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .selected-bullet {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heading-bullet {
+    left: -20px;
+  }
+  .skill-parent span {
+    font-size: 14px;
+  }
+  .programming-skills-container {
+    padding-left: 20px;
+  }
+}

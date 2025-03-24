@@ -1,0 +1,123 @@
+.project-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 40px 30px;
+    margin: 20px;
+    min-width: 280px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.project-heading {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-heading span {
+    width: 100%;
+    color: var(--dark-orange);
+    font-size: 16px;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.heading-date {
+    min-width: 100px;
+    background-color: #ff5823;
+    padding: 4px 12px;
+    font-size: 14px;
+    border-radius: 14px;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.project-technologies-title {
+    width: 100%;
+    font-size: 16px;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.project-technologies-text, .project-description {
+    font-size: 14px;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+}
+
+.project-technologies-text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.project-technologies {
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    background-color: #ff5823;
+    color: var(--white);
+    transition: 0.5s ease-in-out;
+}
+
+.technologies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-card:hover .project-technologies {
+    opacity: 1;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1110px) {
+    .project-card {
+        max-width: 400px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .project-card {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .project-card {
+        max-width: 500px;
+    }
+
+    .heading-date {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .project-technologies-title, .project-heading span {
+        font-size: 14px;
+    }
+
+    .project-technologies-text, .project-description {
+        font-size: 12px;
+    }
+}
