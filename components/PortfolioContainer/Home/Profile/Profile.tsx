@@ -43,7 +43,7 @@ export default function Profile() {
                 <i className="fa fa-youtube-square" />
               </a>
               <a
-                href="https://twitter.com/htetkhant2021"
+                href="https://x.com/masterhacker97"
                 target="_blank"
                 rel="noreferrer"
               >
