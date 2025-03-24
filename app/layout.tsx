@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PrimeReactProvider } from "primereact/api";
 
 import { poppins } from "./fonts";
+import ScrollToTop from "@/components/Common/ScrollToTop/ScrollToTop";
 
 import "./globals.css";
 import "primereact/resources/themes/viva-light/theme.css";
@@ -45,11 +46,6 @@ export default function RootLayout({
           type="text/css"
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         />
-        {/* <link
-          href="https://db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember"
-          rel="stylesheet"
-          type="text/css"
-        /> */}
       </head>
       <body
         suppressHydrationWarning={true}
@@ -59,6 +55,7 @@ export default function RootLayout({
         )}
       >
         <PrimeReactProvider value={{ ripple: true }}>
+          <ScrollToTop />
           {children}
         </PrimeReactProvider>
       </body>
