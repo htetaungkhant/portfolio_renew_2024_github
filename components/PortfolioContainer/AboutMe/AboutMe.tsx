@@ -19,17 +19,18 @@ export default function AboutMe(props: { id: string; screenName?: string }) {
 
   const SCREEN_CONSTSANTS = {
     description:
-      "Full stack web and mobile developer with background knowledge of MERN stacks with redux, along with a knack of building applications with utmost efficiency. I have too many experiences at IT industry and I can handle various applications. Besides, I can also find and work with most efficient and effective ways to support the projects. A graduate from UTYCC intends to be a part of an organization where I can constantly learn and develop my technical and management skills. I look forward to establishing myself by adapting new technologies as well.",
+      "A Frontend-Focused Full-Stack Developer with solid experience in React.js, Next.js, React Native, and TypeScript. Passionate about building scalable and user-friendly applications while continuously improving performance and maintainability. I aim to contribute my skills to impactful projects, collaborate with teams effectively, and stay updated with modern web technologies to deliver high-quality solutions.",
     highlights: {
       heading: "Here are a Few Highlights:",
       bullets: [
         "Full Stack responsive web and mobile development",
-        "Interactive Front End as per the design",
-        "React and React Native",
-        "Redux for State Management",
-        "Building REST API",
-        "Managing database",
-        "DevOps",
+        "Strong understanding of both Functional and OOP",
+        "React.js, Next.js and React Native",
+        "Redux, Redux Toolkit, Zustand for State Management",
+        "Proficient in Git, GitHub, and GitLab.",
+        "Skilled in cloud computing services (AWS, Azure, GCP)",
+        "Knowledge of DevOps, CI/CD, Docker, and Kubernetes.",
+        "Project management tools like Jira, Confluence, etc.",
       ],
     },
   };
