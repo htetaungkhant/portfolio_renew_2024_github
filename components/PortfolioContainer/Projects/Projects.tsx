@@ -22,6 +22,20 @@ const Projects = (props: { id: string; screenName?: string }) => {
 
   const projectsDetails = [
     {
+      title: "ADDAS LINE Enhance",
+      duration: { fromDate: "", toDate: "" },
+      description:
+        "It’s like a chat bot at LINE to support everything while you sightsee in Japan.",
+      technologies: ["React", "LINE’s messaging API"],
+    },
+    {
+      title: "Applicant Tracking System",
+      duration: { fromDate: "", toDate: "" },
+      description:
+        "It’s a web app to track the applications (resumes) of the applicants by using AI. It includes two systems. One is for the consumers to submit their resumes and another one is the administration dashboard to manage the users and send the emails.",
+      technologies: ["Next.js", "Shadcn UI"],
+    },
+    {
       title: "AI Testing",
       duration: { fromDate: "", toDate: "" },
       description:
@@ -43,13 +57,6 @@ const Projects = (props: { id: string; screenName?: string }) => {
       technologies: ["React JS(TypeScript)", "Bootstrap", "Storybook", "Redux"],
     },
     {
-      title: "Personal Portfolio Website",
-      duration: { fromDate: "", toDate: "" },
-      description:
-        "It is a Personal Portfolio website to showcase all my details and projects at one place.",
-      technologies: ["React JS", "Bootstrap"],
-    },
-    {
       title: "ColorsRainbow",
       duration: { fromDate: "", toDate: "" },
       description:
@@ -61,7 +68,7 @@ const Projects = (props: { id: string; screenName?: string }) => {
       duration: { fromDate: "", toDate: "" },
       description:
         "It is internet self-care web app and it aims to top up internet bill and check internet usage and remaining balance.",
-      technologies: ["Angular JS"],
+      technologies: ["Angular.js"],
     },
     {
       title: "Myanma Insurance",
@@ -78,32 +85,32 @@ const Projects = (props: { id: string; screenName?: string }) => {
       technologies: ["React Native", "Redux"],
     },
     {
-      title: "My Secretary",
+      title: "Personal Portfolio Websites",
       duration: { fromDate: "", toDate: "" },
       description:
-        "It aims to save money transactions between personal cases. And to display daily, monthly and annual expense records by graph and digits.",
-      technologies: ["React", "Express Js", "MongoDB"],
+        "I have personal portfolio websites with two versions. One is developed in 2020 and another one is developed in 2023. And currently, I’m developing another customizable version for 2025. So, I temporarily deployed old portfolio website at Vercel.",
+      technologies: ["React", "Next.js", "Strapi CMS", "Sanity CMS"],
     },
     {
-      title: "Runnable Project Hub",
-      duration: { fromDate: "", toDate: "" },
-      description:
-        "It supports to maintain students’ academic projects. Can see all projects of university students together.Easy to use and can search and run instantly in one place.",
-      technologies: ["Docker as container technology", "React", "Go", "MySQL"],
-    },
-    {
-      title: "YCC Trading Center",
+      title: "YCC Trading Center (Internship Project)",
       duration: { fromDate: "", toDate: "" },
       description:
         "It is an e-commerce web app. It aims to trade things( new goods and secondhand products ) between University students.",
-      technologies: ["React", "Express Js", "MySQL"],
+      technologies: ["React", "Express.js", "MySQL"],
     },
     {
-      title: "Vending Machine with QR code",
+      title: "Vending Machine with QR code (Academic Project)",
       duration: { fromDate: "2018", toDate: "2019" },
       description:
-        "It’s an automated machine that provides items such as snacks, beverages, cigarettes and lottery tickets to consumers after paying money with QR code from mobile app.",
-      technologies: ["IoT (Python)", "Android (Java)", "Express Js", "MongoDB"],
+        "It’s an automated machine that provides items such as snacks, beverages, cigarettes, and lottery tickets to consumers after paying money with QR code from mobile app.",
+      technologies: ["IoT (Python)", "Android (Java)", "Express.js", "MongoDB"],
+    },
+    {
+      title: "Runnable Project Hub using container technology (Academic Thesis)",
+      duration: { fromDate: "", toDate: "" },
+      description:
+        "It supports to maintain and display all academic projects of students in one place.",
+      technologies: ["Docker as container technology", "React", "Go", "MySQL"],
     },
   ];
 
