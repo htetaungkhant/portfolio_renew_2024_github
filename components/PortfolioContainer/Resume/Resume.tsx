@@ -53,20 +53,14 @@ const Resume = (props: { id: string; screenName?: string }) => {
 
   //here we have
   const programmingSkillsDetails = [
-    { skill: "JavaScript", ratingPercentage: 90 },
-    { skill: "React JS", ratingPercentage: 90 },
-    { skill: "HTML", ratingPercentage: 85 },
-    { skill: "CSS", ratingPercentage: 85 },
-    { skill: "Bootstrap", ratingPercentage: 80 },
-    { skill: "React Native", ratingPercentage: 80 },
-    { skill: "TypeScript", ratingPercentage: 75 },
-    { skill: "Express JS", ratingPercentage: 75 },
-    { skill: "Core Java", ratingPercentage: 65 },
-    { skill: "MySQL", ratingPercentage: 65 },
-    { skill: "Angular JS", ratingPercentage: 60 },
-    { skill: "Mongo Db", ratingPercentage: 60 },
-    { skill: "Android(Java)", ratingPercentage: 40 },
-    { skill: "Core Python", ratingPercentage: 40 },
+    { skill: "JavaScript", ratingPercentage: 90 }, { skill: "HTML, CSS", ratingPercentage: 85 },
+    { skill: "React.js", ratingPercentage: 90 }, { skill: "Core Java", ratingPercentage: 55 },
+    { skill: "Next.js", ratingPercentage: 85 }, { skill: "MySQL", ratingPercentage: 55 },
+    { skill: "Redux, Redux Toolkit", ratingPercentage: 85 }, { skill: "Angular.js", ratingPercentage: 50 },
+    { skill: "Tailwind CSS, Shadcn", ratingPercentage: 80 }, { skill: "Vue.js", ratingPercentage: 50 },
+    { skill: "React Native", ratingPercentage: 80 }, { skill: "MongoDB", ratingPercentage: 50 },
+    { skill: "Express.js", ratingPercentage: 75 }, { skill: "Android(Java)", ratingPercentage: 30 },
+    { skill: "TypeScript", ratingPercentage: 75 }, { skill: "Core Python", ratingPercentage: 30 },
   ];
 
   const resumeDetails = [
@@ -149,6 +143,24 @@ const Resume = (props: { id: string; screenName?: string }) => {
     <div className={classes["resume-screen-container"]} key="work-experience">
       <div className={classes["experience-container"]}>
         <ResumeHeading
+          heading={"Partners Home Co., Ltd"}
+          subHeading={"Frontend Team Leader"}
+          fromDate={"2022"}
+          toDate={"2024"}
+        />
+        <div className={classes["experience-description"]}>
+          <span className={classes["resume-description-text"]}>
+            - Developed the full-stack web applications
+          </span>
+          <br />
+          <span className={classes["resume-description-text"]}>
+            - Used most of JavaScript frameworks such as React.js, Next.js, Vue.js, Express.js, etc.
+          </span>
+          <br />
+        </div>
+      </div>
+      <div className={classes["experience-container"]}>
+        <ResumeHeading
           heading={"Aceplus Co., Ltd"}
           subHeading={"JavaScript Full-stack Developer"}
           fromDate={"2020"}
@@ -156,11 +168,12 @@ const Resume = (props: { id: string; screenName?: string }) => {
         />
         <div className={classes["experience-description"]}>
           <span className={classes["resume-description-text"]}>
-            - Developed Mobile Applications using React Native
+            - Developed Mobile Applications using React Native and front-end web applications using React.js
           </span>
           <br />
           <span className={classes["resume-description-text"]}>
-            - Developed front-end web applications using Angular and React
+            - Maintained front-end web applications using Angular.js and mobile applications
+            using React Native.
           </span>
           <br />
         </div>
@@ -168,7 +181,7 @@ const Resume = (props: { id: string; screenName?: string }) => {
       <div className={classes["experience-container"]}>
         <ResumeHeading
           heading={"Marter Solution Co., Ltd"}
-          subHeading={"MERN Stack Developer"}
+          subHeading={"DEVELOPER INTERN"}
           fromDate={"2018"}
           toDate={"2019"}
         />
@@ -230,7 +243,7 @@ const Resume = (props: { id: string; screenName?: string }) => {
       <div className={classes["ability-description"]}>
         <span className="black-bullet"></span>
         <span className={classes["ability-description-text"]}>
-          Collaboration, self-motivation and self-study.
+          Self-motivation, self-study, and collaboration.
         </span>
       </div>
       <div className={classes["ability-description"]}>
@@ -243,14 +256,44 @@ const Resume = (props: { id: string; screenName?: string }) => {
       <div className={classes["ability-description"]}>
         <span className="black-bullet"></span>
         <span className={classes["ability-description-text"]}>
-          Experience and knowledge on various Operating Systems( Linux, Windows,
-          IOS and Android).
+          Knowledge on both Functional Programming and Object-Oriented Programming.
         </span>
       </div>
       <div className={classes["ability-description"]}>
         <span className="black-bullet"></span>
         <span className={classes["ability-description-text"]}>
-          Experience and knowledge on using Git, Github and Gitlab.
+          Experience on project management tools such as <strong>Jira, Confluence and Teamspirit</strong>.
+        </span>
+      </div>
+      <div className={classes["ability-description"]}>
+        <span className="black-bullet"></span>
+        <span className={classes["ability-description-text"]}>
+          Experience on various JavaScript runtime environments (Node.js, Bun, etc).
+        </span>
+      </div>
+      <div className={classes["ability-description"]}>
+        <span className="black-bullet"></span>
+        <span className={classes["ability-description-text"]}>
+          Experience on modern technologies related React.js <strong>(Vite, NextAuth, Clerk, Stripe, Storybook, zod,
+            react-hook-form, Zustand, Tanstack, React Router, Supabase</strong> and <strong>Prisma)</strong>.
+        </span>
+      </div>
+      <div className={classes["ability-description"]}>
+        <span className="black-bullet"></span>
+        <span className={classes["ability-description-text"]}>
+          Experience and knowledge on implementing android applications.
+        </span>
+      </div>
+      <div className={classes["ability-description"]}>
+        <span className="black-bullet"></span>
+        <span className={classes["ability-description-text"]}>
+          Experience and knowledge on various Operating Systems (Linux, Windows, IOS and Android).
+        </span>
+      </div>
+      <div className={classes["ability-description"]}>
+        <span className="black-bullet"></span>
+        <span className={classes["ability-description-text"]}>
+          Experience and knowledge on using Git, GitHub and GitLab.
         </span>
       </div>
       <div className={classes["ability-description"]}>
@@ -262,22 +305,23 @@ const Resume = (props: { id: string; screenName?: string }) => {
       <div className={classes["ability-description"]}>
         <span className="black-bullet"></span>
         <span className={classes["ability-description-text"]}>
-          Experience and knowledge on DevOps field( Bash Scripting,
-          Configuration Management (Ansible), CI/CD, Container Technology
-          (Docker), Kubernetes, Infrastructure Automation with terraform).
+          Experience and knowledge on DevOps field (Bash Scripting, Configuration Management (Ansible),
+            CI/CI, Container Technology (Docker), Kubernetes, Infrastructure Automation with Terraform) for
+            various environments (DEV, STG, UAT, PROD, etc).
         </span>
       </div>
       <div className={classes["ability-description"]}>
         <span className="black-bullet"></span>
         <span className={classes["ability-description-text"]}>
-          Experience and knowledge on Cloud Computing Services( mostly AWS ).
+          Experience and knowledge on Cloud Computing Services (AWS, Azure, GCP, DigitalOcean, Vercel, etc.
+            But mostly AWS).
         </span>
       </div>
       <div className={classes["ability-description"]}>
         <span className="black-bullet"></span>
         <span className={classes["ability-description-text"]}>
-          A little experience and knowledge on Machine Learning (saving,
-          restoring and exporting models) using Python and Tensorflow framework.
+          A little experience and knowledge on Machine Learning (saving, restoring and exporting models) using
+            Python and TensorFlow framework.
         </span>
       </div>
     </div>,
@@ -300,7 +344,7 @@ const Resume = (props: { id: string; screenName?: string }) => {
   ];
 
   const handleCarousal = (index: number) => {
-    let offsetHeight = 500;
+    let offsetHeight = 560;
 
     let newCarousalOffset = {
       style: { transform: `translateY(${index * offsetHeight * -1}px)` },
