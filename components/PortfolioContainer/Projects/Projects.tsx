@@ -23,77 +23,77 @@ const Projects = (props: { id: string; screenName?: string }) => {
   const projectsDetails = [
     {
       title: "AI Testing",
-      duration: { fromDate: "2021", toDate: "2022" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "It is a web app to create, delete, edit and run scripts for AI Testing tools. Besides, it aims to display the result reports from AI Testing tools.",
       technologies: ["React JS", "Material UI", "Redux"],
     },
     {
       title: "Agent Associate Matching",
-      duration: { fromDate: "2021", toDate: "2022" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "It is a agent associate matching web app to find agents as insurance consultant.",
       technologies: ["React JS", "Material UI", "Redux"],
     },
     {
       title: "Enterprise Insurance Application System for Bank",
-      duration: { fromDate: "2021", toDate: "2021" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "It is an insurance web app to purchase insurances through payments.",
       technologies: ["React JS(TypeScript)", "Bootstrap", "Storybook", "Redux"],
     },
     {
       title: "Personal Portfolio Website",
-      duration: { fromDate: "2021", toDate: "2021" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "It is a Personal Portfolio website to showcase all my details and projects at one place.",
       technologies: ["React JS", "Bootstrap"],
     },
     {
       title: "ColorsRainbow",
-      duration: { fromDate: "2021", toDate: "2021" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "It is knowledge sharing and reading app. It aims to purchase and read books, magazines and news. It supports to search easily by articles and categories.",
       technologies: ["React Native", "Redux"],
     },
     {
       title: "Ananda",
-      duration: { fromDate: "2020", toDate: "2021" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "It is internet self-care web app and it aims to top up internet bill and check internet usage and remaining balance.",
       technologies: ["Angular JS"],
     },
     {
       title: "Myanma Insurance",
-      duration: { fromDate: "2020", toDate: "2021" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "It is an insurance app. It aims to purchase insurances of Myanmar’s Insurance and to read about Myanmar’s Insurances and to calculate the price of Insurances.",
       technologies: ["React Native", "Redux"],
     },
     {
       title: "Sai Sai Pay and Uab Pay",
-      duration: { fromDate: "2020", toDate: "2020" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "They are e-wallet apps. It aims to save as digital money and to transfer easily between people and to checkout everything as digital currency.",
       technologies: ["React Native", "Redux"],
     },
     {
       title: "My Secretary",
-      duration: { fromDate: "2020", toDate: "2020" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "It aims to save money transactions between personal cases. And to display daily, monthly and annual expense records by graph and digits.",
       technologies: ["React", "Express Js", "MongoDB"],
     },
     {
       title: "Runnable Project Hub",
-      duration: { fromDate: "2019", toDate: "2020" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "It supports to maintain students’ academic projects. Can see all projects of university students together.Easy to use and can search and run instantly in one place.",
       technologies: ["Docker as container technology", "React", "Go", "MySQL"],
     },
     {
       title: "YCC Trading Center",
-      duration: { fromDate: "2018", toDate: "2019" },
+      duration: { fromDate: "", toDate: "" },
       description:
         "It is an e-commerce web app. It aims to trade things( new goods and secondhand products ) between University students.",
       technologies: ["React", "Express Js", "MySQL"],
