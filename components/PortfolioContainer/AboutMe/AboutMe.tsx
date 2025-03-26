@@ -80,7 +80,7 @@ export default function AboutMe(props: { id: string; screenName?: string }) {
               >
                 Hire Me
               </button>
-              <a href="htetaungkhant_25_03_2025.pdf" download="Htet Aung Khant CV.pdf">
+              <a href="htetaungkhant_27_03_2025.pdf" download="Htet Aung Khant CV.pdf">
                 <button
                   className={`btn highlighted-btn ${classes["highlighted-btn"]}`}
                 >
