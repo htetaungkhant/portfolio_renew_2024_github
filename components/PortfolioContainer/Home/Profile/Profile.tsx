@@ -14,40 +14,23 @@ export default function Profile() {
         <div className={classes["profile-details"]}>
           <div className={classes["colz"]}>
             <div className={classes["colz-icon"]}>
-              <a
-                href="https://www.facebook.com/htetaungkhant1997/"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://www.facebook.com/htetaungkhant1997/" target="_blank" rel="noreferrer">
                 <i className="fa fa-facebook-square" />
               </a>
-              <a
-                href="https://www.linkedin.com/in/htet-khant-9003b6164/"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://www.linkedin.com/in/htet-khant-9003b6164/" target="_blank" rel="noreferrer">
                 <i className="fa fa-linkedin-square" />
               </a>
-              <a
-                href="https://www.instagram.com/nga_khant_18/"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://www.instagram.com/nga_khant_18/" target="_blank" rel="noreferrer">
                 <i className="fa fa-instagram" />
               </a>
-              <a
-                href="https://www.youtube.com/channel/UCMilPRhUqbaiOj7ZBKs9Byw"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://www.youtube.com/channel/UCMilPRhUqbaiOj7ZBKs9Byw" target="_blank" rel="noreferrer">
                 <i className="fa fa-youtube-square" />
               </a>
-              <a
-                href="https://x.com/masterhacker97"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://x.com/masterhacker97" target="_blank" rel="noreferrer">
                 <i className="fa fa-twitter" />
+              </a>
+              <a href="https://github.com/htetaungkhant" target="_blank" rel="noreferrer">
+                <i className="fa fa-github" />
               </a>
             </div>
           </div>

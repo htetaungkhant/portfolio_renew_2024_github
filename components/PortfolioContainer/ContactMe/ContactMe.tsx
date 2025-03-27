@@ -114,6 +114,9 @@ export default function ContactMe(props: { id: string; screenName?: string }) {
             <a href="https://x.com/masterhacker97" target="_blank" rel="noreferrer">
               <i className="fa fa-twitter" />
             </a>
+            <a href="https://github.com/htetaungkhant" target="_blank" rel="noreferrer">
+              <i className="fa fa-github" />
+            </a>
           </div>
         </div>
 
