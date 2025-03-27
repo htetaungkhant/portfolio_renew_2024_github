@@ -69,7 +69,7 @@ export default function Profile() {
                     "Full stack Developer",
                     "MERN stack Dev",
                     "Cross Platform Dev",
-                    "React/Next.js/React Native",
+                    "React / Next.js / React Native",
                   ]}
                   typeSpeed={40}
                   backSpeed={50}
