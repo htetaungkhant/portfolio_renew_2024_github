@@ -53,14 +53,16 @@ const Resume = (props: { id: string; screenName?: string }) => {
 
   //here we have
   const programmingSkillsDetails = [
-    { skill: "JavaScript", ratingPercentage: 90 }, { skill: "HTML, CSS", ratingPercentage: 85 },
-    { skill: "React.js", ratingPercentage: 90 }, { skill: "Core Java", ratingPercentage: 55 },
-    { skill: "Next.js", ratingPercentage: 85 }, { skill: "MySQL", ratingPercentage: 55 },
-    { skill: "Redux, Redux Toolkit", ratingPercentage: 85 }, { skill: "Angular.js", ratingPercentage: 50 },
-    { skill: "Tailwind CSS, Shadcn", ratingPercentage: 80 }, { skill: "Vue.js", ratingPercentage: 50 },
-    { skill: "React Native", ratingPercentage: 80 }, { skill: "MongoDB", ratingPercentage: 50 },
-    { skill: "Express.js", ratingPercentage: 75 }, { skill: "Android(Java)", ratingPercentage: 30 },
-    { skill: "TypeScript", ratingPercentage: 75 }, { skill: "Core Python", ratingPercentage: 30 },
+    { skill: "HTML, CSS", ratingPercentage: 85 }, { skill: "Core Java", ratingPercentage: 55 },
+    { skill: "JavaScript", ratingPercentage: 85 }, { skill: "MySQL", ratingPercentage: 55 },
+    { skill: "React.js", ratingPercentage: 85 }, { skill: "Angular.js", ratingPercentage: 50 },
+    { skill: "Next.js", ratingPercentage: 80 }, { skill: "Vue.js", ratingPercentage: 50 },
+    { skill: "Redux, Redux Toolkit", ratingPercentage: 80 }, { skill: "MongoDB", ratingPercentage: 50 },
+    { skill: "Tailwind CSS, Shadcn", ratingPercentage: 75 }, { skill: "Android(Java)", ratingPercentage: 30 },
+    { skill: "React Native", ratingPercentage: 75 }, { skill: "Core Python", ratingPercentage: 30 },
+    { skill: "TypeScript", ratingPercentage: 70 }, { skill: "Figma", ratingPercentage: 30 }, 
+    { skill: "Express.js", ratingPercentage: 65 }, { skill: "Adobe XD", ratingPercentage: 30 }, 
+    
   ];
 
   const resumeDetails = [
@@ -262,20 +264,26 @@ const Resume = (props: { id: string; screenName?: string }) => {
       <div className={classes["ability-description"]}>
         <span className="black-bullet"></span>
         <span className={classes["ability-description-text"]}>
-          Experience on project management tools such as <strong>Jira, Confluence and Teamspirit</strong>.
+          Experience on project management tools such as <strong>Jira, Confluence</strong> and <strong>Teamspirit</strong>.
         </span>
       </div>
       <div className={classes["ability-description"]}>
         <span className="black-bullet"></span>
         <span className={classes["ability-description-text"]}>
-          Experience on various JavaScript runtime environments (Node.js, Bun, etc).
+          Experience on modern technologies related to React.js such as <strong>Vite, NextAuth, Clerk, Stripe, Storybook, zod,
+            react-hook-form, Zustand, Tanstack, React Router, Supabase</strong> and <strong>Prisma</strong>.
         </span>
       </div>
       <div className={classes["ability-description"]}>
         <span className="black-bullet"></span>
         <span className={classes["ability-description-text"]}>
-          Experience on modern technologies related React.js <strong>(Vite, NextAuth, Clerk, Stripe, Storybook, zod,
-            react-hook-form, Zustand, Tanstack, React Router, Supabase</strong> and <strong>Prisma)</strong>.
+          Familiarity with build tools such as Webpack, Babel, and Vite.
+        </span>
+      </div>
+      <div className={classes["ability-description"]}>
+        <span className="black-bullet"></span>
+        <span className={classes["ability-description-text"]}>
+          Familiarity with various JavaScript runtime environments such as Node.js, Bun, etc.
         </span>
       </div>
       <div className={classes["ability-description"]}>
