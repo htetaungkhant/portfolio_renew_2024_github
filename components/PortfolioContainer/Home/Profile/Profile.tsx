@@ -65,11 +65,11 @@ export default function Profile() {
               <h1>
                 <ReactTyped
                   strings={[
-                    "Enthusiastic Dev 😎",
-                    "Full stack Developer 💻",
-                    "MERN stack Dev 📱",
-                    "Cross Platform Dev 🔴",
-                    "React/React Native 🌐",
+                    "Enthusiastic Dev",
+                    "Full stack Developer",
+                    "MERN stack Dev",
+                    "Cross Platform Dev",
+                    "React/Next.js/React Native",
                   ]}
                   typeSpeed={40}
                   backSpeed={50}

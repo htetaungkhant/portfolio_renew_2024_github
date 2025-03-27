@@ -92,7 +92,7 @@ export default function ContactMe(props: { id: string; screenName?: string }) {
         <div className={classes["row"]}>
           <h2 className={classes["title"]}>
             <ReactTyped
-              strings={["Contact Info", "Get In Touch 📧"]}
+              strings={["Contact Info", "Get In Touch"]}
               typeSpeed={40}
               backSpeed={50}
               loop
