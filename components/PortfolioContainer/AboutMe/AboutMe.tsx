@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Image from "next/image";
 
 import ScrollService from "@/lib/ScrollService";
 import Animations from "@/lib/Animations";
-
 import ScreenHeading from "../../Common/ScreenHeading/ScreenHeading";
+import meImage from "@/assets/AboutMe/me.jpg";
 
 import classes from "./AboutMe.module.css";
 
@@ -55,38 +56,52 @@ export default function AboutMe(props: { id: string; screenName?: string }) {
   }, [props.id]);
 
   return (
-    <div
-      id={props.id || ""}
-      className={`${classes["about-me-container"]} fade-in`}
-    >
+    <div id={props.id || ""} className={`${classes["about-me-container"]} fade-in`}>
       <div className={classes["about-me-parent"]}>
         <ScreenHeading title={"About Me"} subHeading={"Why Choose Me?"} />
+        
         <div className={classes["about-me-card"]}>
-          <div className={classes["about-me-profile"]}></div>
-          <div className={classes["about-me-details"]}>
-            <span className={classes["about-me-description"]}>
-              {SCREEN_CONSTSANTS.description}
-            </span>
-            <div className={classes["about-me-highlights"]}>
-              <div className={classes["highlight-heading"]}>
-                <span>{SCREEN_CONSTSANTS.highlights.heading}</span>
+          <div className={classes["about-me-content"]}>
+            <div className={classes["about-me-profile-section"]}>
+              <div className={classes["profile-picture-container"]}>
+                <Image
+                  src={meImage}
+                  alt="Htet Aung Khant"
+                  fill
+                  className={classes["profile-picture"]}
+                  priority
+                />
               </div>
-              {renderHighlight()}
-            </div>
-            <div className={classes["about-me-options"]}>
-              <button
-                className="btn primary-btn"
-                onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
-              >
-                Hire Me
-              </button>
-              <a href="htetaungkhant_28_03_2025.pdf" download="Htet Aung Khant CV.pdf">
+              <div className={classes["about-me-options"]}>
                 <button
+                  className={`btn primary-btn ${classes["primary-btn"]}`}
+                  onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+                >
+                  Hire Me
+                </button>
+                <button
+                  onClick={() => window.open("htetaungkhant_28_03_2025.pdf", "_blank")}
                   className={`btn highlighted-btn ${classes["highlighted-btn"]}`}
                 >
-                  Get Resume
+                  {/* <a href="htetaungkhant_28_03_2025.pdf" download="Htet Aung Khant CV.pdf"> */}
+                      Get Resume
+                  {/* </a> */}
                 </button>
-              </a>
+              </div>
+            </div>
+
+            <div className={classes["about-me-info"]}>
+              <div className={classes["about-me-description"]}>
+                <h3>Who I Am</h3>
+                <p>{SCREEN_CONSTSANTS.description}</p>
+              </div>
+              
+              <div className={classes["about-me-highlights"]}>
+                <h3>{SCREEN_CONSTSANTS.highlights.heading}</h3>
+                <div className={classes["highlights-container"]}>
+                  {renderHighlight()}
+                </div>
+              </div>
             </div>
           </div>
         </div>

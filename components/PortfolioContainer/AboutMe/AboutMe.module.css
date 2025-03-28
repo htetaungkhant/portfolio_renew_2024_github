@@ -3,94 +3,183 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px 0 0 0;
+  padding: 80px 0;
+  /* background-color: #f8f9fa; */
 }
 
 .about-me-parent {
-  max-width: 1000px;
-  width: 70%;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .about-me-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-top: 40px;
+}
+
+.about-me-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+}
+
+.about-me-profile-section {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.profile-picture-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-picture {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-picture:hover {
+  transform: scale(1.05);
+}
+
+.about-me-options {
+  display: flex;
+  gap: 12px;
   width: 100%;
-  box-shadow: 0 0px 20px -2px #1f2235;
+  justify-content: center;
 }
 
-.about-me-profile {
-  width: 50%;
-  background-image: url("../../../assets/AboutMe/me.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.about-me-details {
-  width: 48%;
-  text-align: justify;
-  padding: 30px;
-}
-
-.about-me-description {
+.about-me-options button {
+  /* flex: 1; */
+  padding: 10px 0;
+  width: 120px;
   font-size: 12px;
+  border-radius: 50px;
+  transition: 0.2s;
 }
 
-.about-me-highlights {
-  margin: 80px 0;
+.about-me-options button:active {
+  transform: translateY(2px);
 }
 
-.highlight-heading {
-  font-family: var(--font-poppins);
+.about-me-options .primary-btn {
+  color: var(--white);
+  border: 2px solid #1f2235;
+  background-color: #1f2235;
+}
+
+.about-me-options .primary-btn:hover {
+  color: aliceblue;
+  border: 2px solid #ff5823;
+  background-color: #1f2235;
+}
+
+.about-me-options .highlighted-btn {
+  color: var(--white);
+  background-color: #ff5823;
+  border: 2px solid #ff5823;
+}
+
+.about-me-options .highlighted-btn:hover {
+  background-color: cornsilk;
+  color: #111;
+}
+
+.about-me-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.about-me-description h3,
+.about-me-highlights h3 {
+  color: #1f2235;
+  font-size: 24px;
   font-weight: 700;
-  font-size: 14px;
-  margin: 0 0 5px 0;
+  margin-bottom: 16px;
+}
+
+.about-me-description p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.highlights-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
 }
 
 .highlight {
   display: flex;
   align-items: center;
-  margin: 5px 0;
-  font-size: 12px;
+  gap: 12px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.highlight:hover {
+  transform: translateX(5px);
+  background-color: #f0f1f2;
 }
 
 .highlight-blob {
-  height: 12px;
-  width: 12px;
-  margin: 0 10px 0 0;
+  min-width: 8px;
+  height: 8px;
   background-color: #ff5823;
   border-radius: 50%;
 }
 
-.about-me-options .highlighted-btn {
-  margin: 0 0 0 30px;
+.highlight span {
+  color: #444;
+  font-size: 15px;
 }
 
-/*IPAD PRO RESPONSIVENESS*/
+/* Responsive Design */
+@media only screen and (max-width: 1024px) {
+  .about-me-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-me-profile-section {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about-me-card {
+    padding: 24px;
+  }
+
+  .highlights-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .about-me-description h3,
+  .about-me-highlights h3 {
+    font-size: 20px;
+  }
+}
 
 @media only screen and (max-width: 1110px) {
-  .about-me-parent {
-    width: 88%;
-  }
-}
-
-@media only screen and (max-width: 898px) {
-  .about-me-profile {
-    display: none;
-  }
-  .about-me-details {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 466px) {
-  .about-me-options {
-    display: flex;
-    flex-direction: column;
-  }
-  .about-me-options .highlighted-btn {
-    margin: 24px 0 0 0 !important;
-  }
   .about-me-options button {
-    width: 100%;
+    padding: 11px 0;
+    z-index: 700;
   }
 }
