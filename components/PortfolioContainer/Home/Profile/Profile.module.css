@@ -5,7 +5,6 @@
   justify-content: center;
   height: 10%;
   min-height: fit-content;
-  /* background-image: url("../../../assets/Home/bg.jpg"); */
 }
 
 .profile-parent {
@@ -198,8 +197,4 @@
     width: 275px;
     margin-top: -90px;
   }
-
-  /* .profile-details {
-    width: 95%;
-  } */
 }

@@ -145,7 +145,7 @@
   letter-spacing: 0.1rem;
   font-family: var(--font-poppins);
   font-weight: 500;
-  color: #2ecc71;  /* Change to a suitable green color */
+  color: #2ecc71;
 }
 
 .main-container form label {
