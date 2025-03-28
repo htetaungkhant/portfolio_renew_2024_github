@@ -52,18 +52,30 @@ const Resume = (props: { id: string; screenName?: string }) => {
   ];
 
   //here we have
-  const programmingSkillsDetails = [
-    { skill: "HTML, CSS", ratingPercentage: 85 }, { skill: "Core Java", ratingPercentage: 55 },
-    { skill: "JavaScript", ratingPercentage: 85 }, { skill: "MySQL", ratingPercentage: 55 },
-    { skill: "React.js", ratingPercentage: 85 }, { skill: "Angular.js", ratingPercentage: 50 },
-    { skill: "Next.js", ratingPercentage: 80 }, { skill: "Vue.js", ratingPercentage: 50 },
-    { skill: "Redux, Redux Toolkit", ratingPercentage: 80 }, { skill: "MongoDB", ratingPercentage: 50 },
-    { skill: "Tailwind CSS, Shadcn", ratingPercentage: 75 }, { skill: "Android(Java)", ratingPercentage: 30 },
-    { skill: "React Native", ratingPercentage: 75 }, { skill: "Core Python", ratingPercentage: 30 },
-    { skill: "TypeScript", ratingPercentage: 70 }, { skill: "Figma", ratingPercentage: 30 }, 
-    { skill: "Express.js", ratingPercentage: 65 }, { skill: "Adobe XD", ratingPercentage: 30 }, 
-    
-  ];
+  const programmingSkillsDetails = {
+    proficientSkills: [
+      { skill: "HTML, CSS", ratingPercentage: 90 },
+      { skill: "JavaScript", ratingPercentage: 90 },
+      { skill: "React.js", ratingPercentage: 90 },
+      { skill: "Next.js", ratingPercentage: 85 },
+      { skill: "Redux, Redux Toolkit", ratingPercentage: 85 },
+      { skill: "Tailwind CSS, Shadcn", ratingPercentage: 80 },
+      { skill: "React Native", ratingPercentage: 80 },
+      { skill: "TypeScript", ratingPercentage: 80 },
+      { skill: "Express.js", ratingPercentage: 70 },
+    ],
+    familiarSkills: [
+      { skill: "Core Java", ratingPercentage: 55 },
+      { skill: "MySQL", ratingPercentage: 55 },
+      { skill: "Angular.js", ratingPercentage: 50 },
+      { skill: "Vue.js", ratingPercentage: 50 },
+      { skill: "MongoDB", ratingPercentage: 50 },
+      { skill: "Android(Java)", ratingPercentage: 30 },
+      { skill: "Core Python", ratingPercentage: 30 },
+      { skill: "Figma", ratingPercentage: 30 }, 
+      { skill: "Adobe XD", ratingPercentage: 30 }, 
+    ],
+  };
 
   const resumeDetails = [
     /* EDUCATION */
@@ -223,20 +235,46 @@ const Resume = (props: { id: string; screenName?: string }) => {
       className={`${classes["resume-screen-container"]} ${classes["programming-skills-container"]}`}
       key="programming-skills"
     >
-      {/* <div className={classes["programming-skills-container"]}> */}
-      {programmingSkillsDetails.map((skill, index) => (
-        <div className={classes["skill-parent"]} key={index}>
-          <div className={classes["heading-bullet"]}></div>
-          <span>{skill.skill}</span>
-          <div className={classes["skill-percentage"]}>
-            <div
-              style={{ width: skill.ratingPercentage + "%" }}
-              className={classes["active-percentage-bar"]}
-            ></div>
-          </div>
+      <div className={classes["proficient-skills"]}>
+        <span className={classes["skills-title"]}>Proficient in</span>
+        <div className={classes["proficient-skills-box"]}>
+          {programmingSkillsDetails.proficientSkills.map((skill, index) => (
+            <div className={classes["skill-parent"]} key={index}>
+              {/* <div className={classes["heading-bullet"]}></div> */}
+              <div className={classes["skill-name"]}>
+                <span>{skill.skill}</span>
+                <span>{skill.ratingPercentage}%</span>
+              </div>
+              <div className={classes["skill-percentage"]}>
+                <div
+                  style={{ width: skill.ratingPercentage + "%" }}
+                  className={classes["active-percentage-bar"]}
+                ></div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-      {/* </div> */}
+      </div>
+      <div className={classes["familiar-skills"]}>
+        <span className={classes["skills-title"]}>Familiar with</span>
+        <div className={classes["familiar-skills-box"]}>
+          {programmingSkillsDetails.familiarSkills.map((skill, index) => (
+            <div className={classes["skill-parent"]} key={index}>
+              {/* <div className={classes["heading-bullet"]}></div> */}
+              <div className={classes["skill-name"]}>
+                <span>{skill.skill}</span>
+                <span>{skill.ratingPercentage}%</span>
+              </div>
+              <div className={classes["skill-percentage"]}>
+                <div
+                  style={{ width: skill.ratingPercentage + "%" }}
+                  className={classes["active-percentage-bar"]}
+                ></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>,
 
     /* ABILITIES */

@@ -45,7 +45,7 @@
   flex-grow: 1;
   width: 600px;
   overflow: hidden;
-  padding: 0 50px;
+  padding: 0 28px;
   background: rgba(255, 255, 255, 0.95);
   position: relative;
 }
@@ -209,36 +209,68 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 43%;
+  width: 100%;
 }
 
 .programming-skills-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 28px;
+  padding: 0;
+}
+
+.proficient-skills,
+.familiar-skills {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.skills-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff5823;
+}
+
+.proficient-skills-box,
+.familiar-skills-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding: 8px;
+  border: 2px solid #ff5823;
+  border-radius: 4px;
+}
+
+.skill-name {
+  display: flex;
+  justify-content: space-between;
 }
 
 .skill-percentage {
   position: relative;
-  height: 15px;
+  padding: 2px;
   width: 100%;
-  background-color: #ff5823;
+  border: 2px solid #ff5823;
+  border-radius: 4px;
 }
 
 .skill-percentage .active-percentage-bar {
-  height: 15px;
+  height: 10px;
+  border-radius: 2px;
   transition: 0.8s ease;
-  position: absolute;
-  background-color: #1f2235;
+  background-color: #ff5823;
 }
 
 .skill-parent span {
   font-family: var(--font-poppins);
-  font-weight: 700;
-  font-size: 16px;
-  color: #ff5823;
+  font-weight: 600;
+  font-size: 14px;
+  color: #2d314f;
 }
 
 .course-highlight-container {
