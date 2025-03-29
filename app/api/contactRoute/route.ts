@@ -13,18 +13,11 @@ export async function POST(req: Request) {
 
   try {
     await sendMail({
-      fromEmail: data.email,
-      toEmail: process.env.NODEMAILER_EMAIL || "job.htetaungkhant@gmail.com",
-      subject: `Message from ${data.name}`,
-      htmlContent: `
-        <h3>Informations<h3/>
-        <p>Name: <strong>${data.name}</strong></p>
-        <p>Email: <strong>${data.email}</strong></p>
-        <br />
-        <h3>Message</h3>
-        <p>${data.message}<p/>
-        `,
+      name: data.name,
+      email: data.email,
+      message: data.message,
     });
+
     return Response.json({ msg: "Thank You For Contacting Me." });
   } catch (error) {
     const errorResponse = error as Error;
