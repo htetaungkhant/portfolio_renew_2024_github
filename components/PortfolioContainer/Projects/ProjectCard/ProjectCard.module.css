@@ -2,10 +2,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-card-overlay);
+    border: 1px solid var(--border-white-transparent);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 34, 53, 0.15);
+    box-shadow: 0 8px 32px 0 var(--shadow-dark);
     border-radius: 20px;
     padding: 0;
     margin: 15px;
@@ -26,7 +26,7 @@
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.2),
+        var(--overlay-white-20),
         transparent
     );
     transition: 0.5s;
@@ -34,7 +34,7 @@
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 50px 0 rgba(31, 34, 53, 0.3);
+    box-shadow: 0 20px 50px 0 var(--shadow-orange-dark);
 }
 
 .project-card:hover::before {
@@ -68,8 +68,8 @@
     height: 100%;
     background: linear-gradient(
         to bottom,
-        rgba(31, 34, 53, 0.2),
-        rgba(31, 34, 53, 0.95)
+        var(--overlay-dark-20),
+        var(--overlay-dark-95)
     );
     display: flex;
     align-items: flex-end;
@@ -87,8 +87,8 @@
     padding: 25px;
     background: linear-gradient(
         to bottom,
-        rgb(31, 34, 53, 0.7),
-        rgb(31, 34, 53, 0.5)
+        var(--overlay-dark-70),
+        var(--overlay-dark-70)
     );
 }
 
@@ -102,15 +102,15 @@
 }
 
 .project-heading span {
+    color: var(--text-white);
     width: 100%;
-    color: #ffffff;
     font-size: 20px;
     font-family: var(--font-poppins);
     font-weight: 600;
     margin-bottom: 10px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 4px var(--shadow-black);
     letter-spacing: 0.5px;
-    background: linear-gradient(45deg, #ffffff, #ff5823);
+    background: var(--gradient-text-light);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -118,7 +118,7 @@
 }
 
 .project-card:hover .project-heading span {
-    background: linear-gradient(45deg, #ff5823, #ffffff);
+    background: var(--gradient-text-dark);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -126,24 +126,25 @@
 
 .heading-date {
     min-width: 100px;
-    background: rgba(255, 88, 35, 0.85);
+    background: var(--overlay-white-10);
     backdrop-filter: blur(4px);
     padding: 6px 14px;
     font-size: 13px;
     border-radius: 20px;
-    color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 2px 8px rgba(255, 88, 35, 0.2);
+    color: var(--text-white);
+    border: 1px solid var(--border-white-light);
+    box-shadow: 0 2px 8px var(--shadow-orange);
     transition: all 0.3s ease;
 }
 
 .project-card:hover .heading-date {
-    background: rgba(255, 88, 35, 0.95);
-    box-shadow: 0 4px 12px rgba(255, 88, 35, 0.3);
+    background: var(--bg-highlighted);
+    box-shadow: 0 4px 12px var(--shadow-orange-dark);
 }
 
 .project-description {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-white);
+    opacity: 0.85;
     margin-bottom: 15px;
     font-size: 14px;
     font-family: var(--font-poppins);
@@ -163,12 +164,12 @@
     font-size: 12px;
     font-family: var(--font-poppins);
     font-weight: 500;
-    color: #ffffff;
-    background: rgba(255, 88, 35, 0.85);
+    color: var(--text-white);
+    background: var(--overlay-white-10);
     padding: 6px 14px;
     border-radius: 20px;
     backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border-white-light);
     transition: all 0.3s ease;
     transform: translateY(20px);
     opacity: 0;
@@ -180,7 +181,7 @@
 }
 
 .project-technologies-text:hover {
-    background: rgba(255, 88, 35, 1);
+    background: var(--btn-highlighted);
     transform: translateY(-2px) scale(1.05) !important;
 }
 

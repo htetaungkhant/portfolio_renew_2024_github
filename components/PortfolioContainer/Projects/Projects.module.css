@@ -28,9 +28,9 @@
     height: 100%;
     z-index: -1;
     backdrop-filter: blur(10px);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--gradient-white);
+    border-top: 1px solid var(--border-white-light);
+    border-bottom: 1px solid var(--border-white-light);
 }
 
 @media screen and (max-width: 1024px) {

@@ -12,7 +12,7 @@
 }
 
 .resume-main-heading span {
-    color: var(--dark-orange);
+    color: var(--text-highlighted);
     font-size: 16px;
     font-family: var(--font-poppins);
     font-weight: 600;
@@ -26,16 +26,16 @@
     width: 15px;
     top: 5px;
     border-radius: 50%;
-    background-color: #ff5823;
+    background-color: var(--btn-highlighted);
 }
 
 .heading-date {
     min-width: 100px;
-    background-color: #ff5823;
+    background-color: var(--btn-highlighted);
     padding: 4px 12px;
     font-size: 14px;
     border-radius: 14px;
-    color: var(--white);
+    color: var(--text-white);
     margin-bottom: 5px;
 }
 
@@ -43,7 +43,7 @@
     font-size: 14px;
     font-family: var(--font-poppins);
     font-weight: 600;
-    color: var(--black);
+    color: var(--text-black);
 }
 
 .resume-heading-description {

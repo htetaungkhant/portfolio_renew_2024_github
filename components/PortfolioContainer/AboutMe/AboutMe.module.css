@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: center;
   padding: 80px 0;
-  /* background-color: #f8f9fa; */
 }
 
 .about-me-parent {
@@ -14,9 +13,9 @@
 }
 
 .about-me-card {
-  background: white;
+  background: var(--bg-white);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px var(--shadow-black);
   padding: 40px;
   margin-top: 40px;
 }
@@ -40,7 +39,7 @@
   height: 250px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px var(--shadow-black-dark);
 }
 
 .profile-picture {
@@ -73,26 +72,26 @@
 }
 
 .about-me-options .primary-btn {
-  color: var(--white);
-  border: 2px solid #1f2235;
-  background-color: #1f2235;
+  color: var(--text-white);
+  border: 2px solid var(--border-primary);
+  background-color: var(--bg-dark);
 }
 
 .about-me-options .primary-btn:hover {
-  color: aliceblue;
-  border: 2px solid #ff5823;
-  background-color: #1f2235;
+  color: var(--text-white);
+  border: 2px solid var(--border-highlighted);
+  background-color: var(--bg-dark);
 }
 
 .about-me-options .highlighted-btn {
-  color: var(--white);
-  background-color: #ff5823;
-  border: 2px solid #ff5823;
+  color: var(--text-white);
+  background-color: var(--btn-highlighted);
+  border: 2px solid var(--border-highlighted);
 }
 
 .about-me-options .highlighted-btn:hover {
   background-color: cornsilk;
-  color: #111;
+  color: var(--text-black);
 }
 
 .about-me-info {
@@ -103,14 +102,14 @@
 
 .about-me-description h3,
 .about-me-highlights h3 {
-  color: #1f2235;
+  color: var(--text-dark);
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 16px;
 }
 
 .about-me-description p {
-  color: #555;
+  color: var(--text-gray);
   font-size: 16px;
   line-height: 1.7;
   margin-bottom: 20px;
@@ -127,25 +126,25 @@
   align-items: center;
   gap: 12px;
   padding: 12px;
-  background-color: #f8f9fa;
+  background-color: var(--bg-gray);
   border-radius: 8px;
   transition: transform 0.2s ease;
 }
 
 .highlight:hover {
   transform: translateX(5px);
-  background-color: #f0f1f2;
+  background-color: var(--bg-gray-dark);
 }
 
 .highlight-blob {
   min-width: 8px;
   height: 8px;
-  background-color: #ff5823;
+  background-color: var(--btn-highlighted);
   border-radius: 50%;
 }
 
 .highlight span {
-  color: #444;
+  color: var(--text-gray-dark);
   font-size: 15px;
 }
 

@@ -27,20 +27,20 @@
 .resume-card {
   display: flex;
   height: 560px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-card-overlay);
   backdrop-filter: blur(10px);
+  border: 1px solid var(--border-white-transparent);
+  box-shadow: 0 10px 30px var(--shadow-black);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
 .resume-bullets {
-  box-shadow: 15px 0 9px -15px #1f2235;
+  box-shadow: 15px 0 9px -15px var(--shadow-dark);
   height: 100%;
   width: 320px;
   position: relative;
-  background: linear-gradient(45deg, #1f2235 0%, #2d314f 100%);
+  background: var(--gradient-dark);
   border-radius: 20px 0 0 20px;
   padding: 20px 10px 20px 0;
 }
@@ -50,7 +50,7 @@
   width: 600px;
   overflow: hidden;
   padding: 0 28px;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--overlay-white-95);
   position: relative;
 }
 
@@ -61,7 +61,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #ff5823, transparent);
+  background: var(--gradient-highlighted);
 }
 
 .experience-description {
@@ -105,7 +105,7 @@
 .bullet {
   display: flex;
   align-items: center;
-  background-color: rgba(31, 34, 53, 0.8);
+  background-color: var(--overlay-dark-80);
   height: 45px;
   margin: 20px 15px;
   padding: 0 15px;
@@ -113,19 +113,19 @@
   width: 45px;
   transition: all 0.6s ease;
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-white-transparent);
 }
 
 .bullet-row-container:hover .bullet:not(.selected-bullet) {
-  background-color: rgba(255, 88, 35, 0.1);
-  border-color: #ff5823;
+  background-color: var(--overlay-white-10);
+  border-color: var(--border-highlighted);
   transform: translateX(5px);
 }
 
 .bullet.selected-bullet {
-  background-color: #ff5823;
+  background-color: var(--btn-highlighted);
   width: 100%;
-  box-shadow: 0 4px 15px rgba(255, 88, 35, 0.3);
+  box-shadow: 0 4px 15px var(--shadow-orange);
 }
 
 .bullet-label {
@@ -133,23 +133,23 @@
   white-space: nowrap;
   font-family: var(--font-poppins);
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
-  opacity: 1;
+  color: var(--text-white);
+  opacity: 0.7;
   transition: all 0.3s ease;
 }
 
 .selected-bullet .bullet-label {
+  color: var(--text-white);
   opacity: 1;
-  color: var(--white);
 }
 
 .bullet-row-container:hover .bullet-label {
+  color: var(--text-highlighted);
   opacity: 1;
-  color: #ff5823;
 }
 
 .selected-bullet:hover .bullet-label {
-  color: var(--white);
+  color: var(--text-white);
 }
 
 .bullet-logo {
@@ -169,12 +169,12 @@
   width: 45px;
   height: 100%;
   z-index: 1;
-  background-color: #1f2235;
+  background-color: var(--bg-dark);
   position: absolute;
 }
 
 .selected-bullet {
-  color: var(--white);
+  color: var(--text-white);
   width: 100%;
 }
 
@@ -196,7 +196,8 @@
 
 .resume-screen-container::-webkit-scrollbar-thumb {
   border-radius: 20px;
-  background-color: rgba(255, 88, 35, 0.6);
+  background-color: var(--btn-highlighted);
+  opacity: 0.6;
 }
 
 .heading-bullet {
@@ -206,7 +207,7 @@
   width: 15px;
   top: 5px;
   border-radius: 50%;
-  background-color: #ff5823;
+  background-color: var(--btn-highlighted);
 }
 
 .skill-parent {
@@ -237,7 +238,7 @@
 .skills-title {
   font-size: 16px;
   font-weight: 600;
-  color: #ff5823;
+  color: var(--text-highlighted);
 }
 
 .proficient-skills-box,
@@ -246,7 +247,7 @@
   flex-direction: column;
   row-gap: 12px;
   padding: 8px;
-  border: 2px solid #ff5823;
+  border: 2px solid var(--border-highlighted);
   border-radius: 4px;
 }
 
@@ -259,7 +260,7 @@
   position: relative;
   padding: 2px;
   width: 100%;
-  border: 2px solid #ff5823;
+  border: 2px solid var(--border-highlighted);
   border-radius: 4px;
 }
 
@@ -267,14 +268,14 @@
   height: 10px;
   border-radius: 2px;
   transition: 0.8s ease;
-  background-color: #ff5823;
+  background-color: var(--btn-highlighted);
 }
 
 .skill-parent span {
   font-family: var(--font-poppins);
   font-weight: 600;
   font-size: 14px;
-  color: #2d314f;
+  color: var(--text-dark);
 }
 
 .course-highlight-container {
