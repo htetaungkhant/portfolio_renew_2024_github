@@ -34,7 +34,7 @@ export const ContactFormEmail = ({
         
         <Section style={content}>
           <Heading as="h2" style={title}>
-            You've received a new message
+            You have received a new message
           </Heading>
           
           <Section style={infoBox}>
