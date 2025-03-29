@@ -11,11 +11,12 @@
   width: 100%;
   height: 100%;
   max-width: 1920px;
+  position: relative;
 }
 
-.footer-parent img {
-  max-width: 100%;
-  height: 126px;
+.footer-shape {
+  width: 100%;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 /* For 4k resolution */
@@ -23,34 +24,12 @@
   .footer-parent {
     max-width: none;
   }
-
-  .footer-parent img {
-    max-width: none;
-    width: 100%;
-  }
 }
 
 /*IPAD PRO RESPONSIVENESS*/
-
 @media only screen and (max-width: 1110px) {
   .footer-parent {
     display: flex;
     align-items: flex-end;
-  }
-}
-
-@media only screen and (max-width: 991.98px) {
-  .footer-parent img {
-    height: 70px;
-  }
-}
-
-@media only screen and (max-width: 767.98px) {
-  .footer-parent {
-    height: 30px;
-  }
-
-  .footer-parent img {
-    display: none;
   }
 }
