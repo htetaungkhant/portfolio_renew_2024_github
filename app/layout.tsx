@@ -24,12 +24,10 @@ export const metadata: Metadata = {
     "portfolio",
   ],
   authors: [
-    { name: "htetaungkhant", url: "https://htetaungkhant.com" },
-    { name: "HtetAungKhant", url: "https://htetaungkhant.com" },
-    { name: "HTETAUNGKHANT", url: "https://htetaungkhant.com" },
-    { name: "htet aung khant", url: "https://htetaungkhant.com" },
-    { name: "Htet Aung Khant", url: "https://www.htetaungkhant.com" },
-    { name: "HTET AUNG KHANT", url: "https://www.htetaungkhant.com" },
+    { name: "htetaungkhant", url: "https://htetaungkhant-portfolio.vercel.app/" },
+    { name: "HtetAungKhant", url: "https://htetaungkhant-portfolio.vercel.app/" },
+    { name: "HTETAUNGKHANT", url: "https://htetaungkhant-portfolio.vercel.app/" },
+    { name: "htet aung khant", url: "https://htetaungkhant-portfolio.vercel.app/" },
   ],
 };
 
