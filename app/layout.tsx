@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { PrimeReactProvider } from "primereact/api";
 
 import { poppins } from "./fonts";
 import ScrollToTop from "@/components/Common/ScrollToTop/ScrollToTop";
 
 import "./globals.css";
-import "primereact/resources/themes/viva-light/theme.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import { cn } from "@/lib/utils";
@@ -52,10 +50,8 @@ export default function RootLayout({
           poppins.className
         )}
       >
-        <PrimeReactProvider value={{ ripple: true }}>
-          <ScrollToTop />
-          {children}
-        </PrimeReactProvider>
+        <ScrollToTop />
+        {children}
       </body>
     </html>
   );
