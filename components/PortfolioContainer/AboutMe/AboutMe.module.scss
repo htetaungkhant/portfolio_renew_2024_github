@@ -40,15 +40,15 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 20px var(--shadow-black-dark);
-}
 
-.profile-picture {
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+  .profile-picture {
+    object-fit: cover;
+    transition: transform 0.3s ease;
 
-.profile-picture:hover {
-  transform: scale(1.05);
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }
 
 .about-me-options {
@@ -56,42 +56,41 @@
   gap: 12px;
   width: 100%;
   justify-content: center;
-}
 
-.about-me-options button {
-  /* flex: 1; */
-  padding: 10px 0;
-  width: 120px;
-  font-size: 12px;
-  border-radius: 50px;
-  transition: 0.2s;
-}
+  button {
+    padding: 10px 0;
+    width: 120px;
+    font-size: 12px;
+    border-radius: 50px;
+    transition: 0.2s;
 
-.about-me-options button:active {
-  transform: translateY(2px);
-}
+    &:active {
+      transform: translateY(2px);
+    }
+  }
 
-.about-me-options .primary-btn {
-  color: var(--text-white);
-  border: 2px solid var(--border-primary);
-  background-color: var(--bg-dark);
-}
+  .primary-btn {
+    color: var(--text-white);
+    border: 2px solid var(--border-primary);
+    background-color: var(--bg-dark);
 
-.about-me-options .primary-btn:hover {
-  color: var(--text-white);
-  border: 2px solid var(--border-highlighted);
-  background-color: var(--bg-dark);
-}
+    &:hover {
+      color: var(--text-white);
+      border: 2px solid var(--border-highlighted);
+      background-color: var(--bg-dark);
+    }
+  }
 
-.about-me-options .highlighted-btn {
-  color: var(--text-white);
-  background-color: var(--btn-highlighted);
-  border: 2px solid var(--border-highlighted);
-}
+  .highlighted-btn {
+    color: var(--text-white);
+    background-color: var(--btn-highlighted);
+    border: 2px solid var(--border-highlighted);
 
-.about-me-options .highlighted-btn:hover {
-  background-color: cornsilk;
-  color: var(--text-black);
+    &:hover {
+      background-color: cornsilk;
+      color: var(--text-black);
+    }
+  }
 }
 
 .about-me-info {
@@ -100,19 +99,22 @@
   gap: 32px;
 }
 
-.about-me-description h3,
-.about-me-highlights h3 {
-  color: var(--text-dark);
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 16px;
+.about-me-description, .about-me-highlights {
+  h3 {
+    color: var(--text-dark);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
 }
 
-.about-me-description p {
-  color: var(--text-gray);
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 20px;
+.about-me-description {
+  p {
+    color: var(--text-gray);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
 }
 
 .highlights-container {
@@ -129,23 +131,23 @@
   background-color: var(--bg-gray);
   border-radius: 8px;
   transition: transform 0.2s ease;
-}
 
-.highlight:hover {
-  transform: translateX(5px);
-  background-color: var(--bg-gray-dark);
-}
+  &:hover {
+    transform: translateX(5px);
+    background-color: var(--bg-gray-dark);
+  }
 
-.highlight-blob {
-  min-width: 8px;
-  height: 8px;
-  background-color: var(--btn-highlighted);
-  border-radius: 50%;
-}
+  .highlight-blob {
+    min-width: 8px;
+    height: 8px;
+    background-color: var(--btn-highlighted);
+    border-radius: 50%;
+  }
 
-.highlight span {
-  color: var(--text-gray-dark);
-  font-size: 15px;
+  span {
+    color: var(--text-gray-dark);
+    font-size: 15px;
+  }
 }
 
 /* Responsive Design */
@@ -170,9 +172,10 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .about-me-description h3,
-  .about-me-highlights h3 {
-    font-size: 20px;
+  .about-me-description, .about-me-highlights {
+    h3 {
+      font-size: 20px;
+    }
   }
 }
 

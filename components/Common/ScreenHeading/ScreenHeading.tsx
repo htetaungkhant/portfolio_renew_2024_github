@@ -1,4 +1,4 @@
-import classes from "./ScreenHeading.module.css";
+import classes from "./ScreenHeading.module.scss";
 
 export default function ScreenHeading(props: {
   title: string;

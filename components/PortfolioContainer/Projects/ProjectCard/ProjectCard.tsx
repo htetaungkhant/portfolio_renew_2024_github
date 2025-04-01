@@ -1,5 +1,5 @@
 import Image from "next/image";
-import classes from "./ProjectCard.module.css";
+import classes from "./ProjectCard.module.scss";
 
 const ProjectCard = (props: {
   className?: string;

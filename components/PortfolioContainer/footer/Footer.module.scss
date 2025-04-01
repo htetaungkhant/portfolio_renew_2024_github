@@ -7,7 +7,6 @@
   flex-direction: column;
   margin-top: -45px;
   z-index: 100;
-  cursor: pointer;
   border-radius: 10px;
 }
 
@@ -20,16 +19,12 @@
   border-radius: 10px;
   border: none;
   outline: none;
-}
+  cursor: pointer;
 
-.btn-scroll i:hover {
-  transform: rotate(360deg);
-  color: var(--text-white);
-}
-
-.btn-scroll i {
-  -webkit-animation: mover 0.5s infinite alternate;
-  animation: mover 0.5s infinite alternate;
+  i {
+    -webkit-animation: mover 0.5s infinite alternate;
+    animation: mover 0.5s infinite alternate;
+  }
 }
 
 @media only screen and (min-width: 475px) {
@@ -39,11 +34,10 @@
 }
 
 @keyframes mover {
-  100% {
-    transform: translateY(-5px);
-  }
-
   0% {
     transform: translateX(0px);
+  }
+  100% {
+    transform: translateY(-5px);
   }
 }

@@ -5,7 +5,7 @@ import { ReactTyped } from "react-typed";
 
 import ScrollService from "@/lib/ScrollService";
 
-import classes from "./Profile.module.css";
+import classes from "./Profile.module.scss";
 
 export default function Profile() {
   return (

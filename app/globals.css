@@ -6,7 +6,7 @@
   border-color: var(--color-gray-200, currentColor);
 }
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   /* Background Colors */

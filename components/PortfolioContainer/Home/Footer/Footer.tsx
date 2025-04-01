@@ -1,6 +1,6 @@
-import Image from "next/image";
-import classes from "./Footer.module.css";
+import classes from "./Footer.module.scss";
 import ShapeBg from "@/assets/Home/shape-bg.svg";
+import Image from "next/image";
 
 export default function Footer() {
   return (

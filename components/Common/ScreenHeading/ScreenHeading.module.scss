@@ -26,24 +26,24 @@
   position: relative;
   width: 180px;
   margin: 10px 0 0 0;
-}
 
-.seperator-line {
-  width: 100%;
-  height: 2px;
-  background-color: var(--bg-dark);
-}
+  .seperator-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--bg-dark);
+  }
 
-.seperator-blob {
-  height: 10px;
-  width: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-}
+  .seperator-blob {
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
 
-.seperator-blob div {
-  width: 35px;
-  border-radius: 10px;
-  background-color: var(--btn-highlighted);
+    div {
+      width: 35px;
+      border-radius: 10px;
+      background-color: var(--btn-highlighted);
+    }
+  }
 }

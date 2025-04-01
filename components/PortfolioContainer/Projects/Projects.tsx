@@ -22,7 +22,7 @@ import Runnable_Project_Hub_using_container_technology from "@/assets/Projects/R
 import ScreenHeading from "../../Common/ScreenHeading/ScreenHeading";
 import ProjectCard from "./ProjectCard/ProjectCard";
 
-import classes from "./Projects.module.css";
+import classes from "./Projects.module.scss";
 
 const Projects = (props: { id: string; screenName?: string }) => {
   let fadeInScreenHandler = (screen: any) => {

@@ -8,7 +8,7 @@ import Animations from "@/lib/Animations";
 import ScreenHeading from "../../Common/ScreenHeading/ScreenHeading";
 import meImage from "@/assets/AboutMe/me.jpg";
 
-import classes from "./AboutMe.module.css";
+import classes from "./AboutMe.module.scss";
 
 export default function AboutMe(props: { id: string; screenName?: string }) {
   let fadeInScreenHandler = (screen: any) => {

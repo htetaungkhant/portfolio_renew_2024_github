@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TOTAL_SCREENS, GET_SCREEN_INDEX } from "@/lib/commonUtils";
 import ScrollService from "@/lib/ScrollService";
 
-import classes from "./Header.module.css";
+import classes from "./Header.module.scss";
 
 export default function Header() {
   const [selectedScreen, setSelectedScreen] = useState(0);

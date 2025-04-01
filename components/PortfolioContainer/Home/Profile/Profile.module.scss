@@ -14,41 +14,39 @@
 }
 
 .primary-text {
-    color: var(--text-white);
+  color: var(--text-white);
 }
 
 .highlighted-text {
-    color: var(--text-dark);
+  color: var(--text-dark);
 }
 
-.profile-details-name {
-  font-size: 24px;
-  font-family: var(--font-poppins);
-  font-weight: 600;
-}
+.profile-details {
+  &-name {
+    font-size: 24px;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+  }
 
-.profile-details-role {
-  display: flex;
-  flex-direction: column;
-  margin: 14px 0 24px 0;
-}
+  &-role {
+    display: flex;
+    flex-direction: column;
+    margin: 14px 0 24px 0;
 
-.profile-details-role h1 {
-  font-size: 40px;
-  font-family: var(--font-poppins);
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-}
+    h1 {
+      font-size: 40px;
+      font-family: var(--font-poppins);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
 
-.profile-details-role h1 p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  margin-top: 0;
-  margin-bottom: 1rem;
+      p {
+        display: block;
+        margin: 1em 0;
+        margin-inline: 0;
+      }
+    }
+  }
 }
 
 .profile-role-tagline {
@@ -58,18 +56,22 @@
   font-weight: 400;
 }
 
-.profile-options .primary-btn:hover {
-  border: 2px solid white;
-}
+.profile-options {
+  .primary-btn {
+    &:hover {
+        border: 2px solid white;
+    }
+  }
 
-.profile-options .highlighted-btn {
-  margin: 0 0 0 28px;
-  border: 2px solid var(--text-white);
-}
+  .highlighted-btn {
+    margin: 0 0 0 28px;
+    border: 2px solid var(--text-white);
 
-.profile-options .highlighted-btn:hover {
-  background-color: cornsilk;
-  color: var(--text-black);
+    &:hover {
+      background-color: cornsilk;
+      color: var(--text-black);
+    }
+  }
 }
 
 .profile-picture {
@@ -84,11 +86,11 @@
   position: relative;
   border: 3px solid var(--border-white);
   transition: all 0.3s ease-in-out;
-}
 
-.profile-picture:hover {
-  box-shadow: 0 0 25px 8px var(--overlay-white-20);
-  transform: translateY(-5px);
+  &:hover {
+    box-shadow: 0 0 25px 8px var(--overlay-white-20);
+    transform: translateY(-5px);
+  }
 }
 
 .profile-picture-background {
@@ -100,22 +102,30 @@
   background-repeat: no-repeat;
   background-position: center;
   transition: transform 0.8s ease-out, filter 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.07) rotate(2deg);
+    filter: brightness(1.1) contrast(1.1);
+  }
 }
 
-.profile-picture-background:hover {
-  transform: scale(1.07) rotate(2deg);
-  filter: brightness(1.1) contrast(1.1);
-}
+.colz {
+  .colz-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
 
-.colz .colz-icon i {
-  color: var(--text-white);
-  padding: 8px;
-  padding-left: 0px;
-  font-size: 20px;
-}
-
-.colz .cols-icon i:hover {
-  transform: scale(1.5);
+    i {
+        color: var(--text-white);
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    
+        &:hover {
+          transform: scale(1.2);
+        }
+    }
+  }
 }
 
 /* For 4k resolution */
@@ -127,7 +137,6 @@
 }
 
 /*IPAD PRO RESPONSIVENESS*/
-
 @media only screen and (max-width: 1110px) {
   .profile-picture {
     margin: 0 0px 0 80px;
@@ -174,19 +183,19 @@
   .profile-details {
     width: 95%;
     margin: 25px 0 0;
-  }
 
-  .profile-details-role .primary-text > h1 {
-    height: 84px;
+    &-role .primary-text > h1 {
+      height: 84px;
+    }
+
+    &-name,
+    &-role {
+      text-align: center;
+    }
   }
 
   .profile-options .highlighted-btn {
     margin: 0 !important;
-  }
-
-  .profile-details-name,
-  .profile-details-role {
-    text-align: center;
   }
 }
 

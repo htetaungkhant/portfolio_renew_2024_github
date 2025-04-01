@@ -15,7 +15,7 @@ import Animations from "@/lib/Animations";
 import ScreenHeading from "../../Common/ScreenHeading/ScreenHeading";
 import ResumeHeading from "./ResumeHeading/ResumeHeading";
 
-import classes from "./Resume.module.css";
+import classes from "./Resume.module.scss";
 
 const svgList: any = {
   "education.svg": education,

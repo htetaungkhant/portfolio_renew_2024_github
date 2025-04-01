@@ -22,7 +22,7 @@ import weChatQR from "@/assets/ContactMe/WeChatID.png";
 import ScreenHeading from "../../Common/ScreenHeading/ScreenHeading";
 import Footer from "../footer/Footer";
 
-import classes from "./ContactMe.module.css";
+import classes from "./ContactMe.module.scss";
 
 export default function ContactMe(props: { id: string; screenName?: string }) {
   let fadeInScreenHandler = (screen: any) => {

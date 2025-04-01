@@ -52,16 +52,16 @@
   padding: 0 28px;
   background: var(--overlay-white-95);
   position: relative;
-}
 
-.resume-bullet-details:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-highlighted);
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-highlighted);
+  }
 }
 
 .experience-description {
@@ -100,6 +100,19 @@
 
 .bullet-row-container {
   cursor: pointer;
+
+  &:hover {
+    .bullet:not(.selected-bullet) {
+      background-color: var(--overlay-white-10);
+      border-color: var(--border-highlighted);
+      transform: translateX(5px);
+    }
+
+    .bullet-label {
+      color: var(--text-highlighted);
+      opacity: 1;
+    }
+  }
 }
 
 .bullet {
@@ -114,18 +127,26 @@
   transition: all 0.6s ease;
   backdrop-filter: blur(5px);
   border: 1px solid var(--border-white-transparent);
-}
 
-.bullet-row-container:hover .bullet:not(.selected-bullet) {
-  background-color: var(--overlay-white-10);
-  border-color: var(--border-highlighted);
-  transform: translateX(5px);
-}
+  &.selected-bullet {
+    background-color: var(--btn-highlighted);
+    width: 100%;
+    box-shadow: 0 4px 15px var(--shadow-orange);
 
-.bullet.selected-bullet {
-  background-color: var(--btn-highlighted);
-  width: 100%;
-  box-shadow: 0 4px 15px var(--shadow-orange);
+    .bullet-label {
+      color: var(--text-white);
+      opacity: 1;
+    }
+
+    .bullet-logo {
+      filter: brightness(1);
+      transform: scale(1.1);
+    }
+
+    &:hover .bullet-label {
+      color: var(--text-white);
+    }
+  }
 }
 
 .bullet-label {
@@ -138,20 +159,6 @@
   transition: all 0.3s ease;
 }
 
-.selected-bullet .bullet-label {
-  color: var(--text-white);
-  opacity: 1;
-}
-
-.bullet-row-container:hover .bullet-label {
-  color: var(--text-highlighted);
-  opacity: 1;
-}
-
-.selected-bullet:hover .bullet-label {
-  color: var(--text-white);
-}
-
 .bullet-logo {
   height: 22px;
   width: 22px;
@@ -160,22 +167,12 @@
   transition: transform 0.3s ease;
 }
 
-.selected-bullet .bullet-logo {
-  filter: brightness(1);
-  transform: scale(1.1);
-}
-
 .bullet-icons {
   width: 45px;
   height: 100%;
   z-index: 1;
   background-color: var(--bg-dark);
   position: absolute;
-}
-
-.selected-bullet {
-  color: var(--text-white);
-  width: 100%;
 }
 
 .resume-screen-container {
@@ -187,17 +184,17 @@
   overflow-y: auto;
   margin-top: 30px;
   padding: 0 0 0 30px;
-}
 
-.resume-screen-container::-webkit-scrollbar {
-  width: 7px;
-  height: 0px;
-}
+  &::-webkit-scrollbar {
+    width: 7px;
+    height: 0px;
 
-.resume-screen-container::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  background-color: var(--btn-highlighted);
-  opacity: 0.6;
+    &-thumb {
+      border-radius: 20px;
+      background-color: var(--btn-highlighted);
+      opacity: 0.6;
+    }
+  }
 }
 
 .heading-bullet {
@@ -215,6 +212,13 @@
   flex-direction: column;
   position: relative;
   width: 100%;
+
+  span {
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-dark);
+  }
 }
 
 .programming-skills-container {
@@ -233,22 +237,21 @@
   display: flex;
   flex-direction: column;
   row-gap: 4px;
+
+  &-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    padding: 8px;
+    border: 2px solid var(--border-highlighted);
+    border-radius: 4px;
+  }
 }
 
 .skills-title {
   font-size: 16px;
   font-weight: 600;
   color: var(--text-highlighted);
-}
-
-.proficient-skills-box,
-.familiar-skills-box {
-  display: flex;
-  flex-direction: column;
-  row-gap: 12px;
-  padding: 8px;
-  border: 2px solid var(--border-highlighted);
-  border-radius: 4px;
 }
 
 .skill-name {
@@ -262,20 +265,13 @@
   width: 100%;
   border: 2px solid var(--border-highlighted);
   border-radius: 4px;
-}
 
-.skill-percentage .active-percentage-bar {
-  height: 10px;
-  border-radius: 2px;
-  transition: 0.8s ease;
-  background-color: var(--btn-highlighted);
-}
-
-.skill-parent span {
-  font-family: var(--font-poppins);
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--text-dark);
+  .active-percentage-bar {
+    height: 10px;
+    border-radius: 2px;
+    transition: 0.8s ease;
+    background-color: var(--btn-highlighted);
+  }
 }
 
 .course-highlight-container {
@@ -307,18 +303,17 @@
   margin-left: 10px;
 }
 
-.ability-description-text {
-  font-family: var(--font-poppins);
-  font-weight: 500;
-}
-
 .ability-description {
   display: flex;
   align-items: baseline;
+
+  &-text {
+    font-family: var(--font-poppins);
+    font-weight: 500;
+  }
 }
 
 /* IPAD PRO RESPONSIVENESS */
-
 @media only screen and (max-width: 1110px) {
   .resume-container {
     margin: 70px 0px;
@@ -329,7 +324,6 @@
 }
 
 /* IPAD RESPONSIVENESS */
-
 @media only screen and (max-width: 1023px) {
   .resume-content {
     display: flex;
@@ -387,16 +381,16 @@
     height: 40px;
     margin: 15px 10px;
     padding: 0 12px;
-  }
 
-  .bullet-logo {
-    height: 18px;
-    width: 18px;
-    margin: 0 15px 0 0;
-  }
+    &-logo {
+      height: 18px;
+      width: 18px;
+      margin: 0 15px 0 0;
+    }
 
-  .bullet-label {
-    font-size: 13px;
+    &-label {
+      font-size: 13px;
+    }
   }
 
   .resume-bullet-details {
