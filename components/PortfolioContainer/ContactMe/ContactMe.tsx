@@ -86,7 +86,7 @@ export default function ContactMe(props: { id: string; screenName?: string }) {
   };
 
   return (
-    <div className={`${classes["main-container"]} fade-in`} id={props.id || ""}>
+    <section className={`${classes["main-container"]} fade-in`} id={props.id || ""}>
       <ScreenHeading subHeading={"Let's Keep In Touch"} title={"Contact Me"} />
       <div className={classes["central-form"]}>
         <div className={classes["row"]}>
@@ -215,6 +215,6 @@ export default function ContactMe(props: { id: string; screenName?: string }) {
         </div>
       </div>
       <Footer />
-    </div>
+    </section>
   );
 }

@@ -56,7 +56,7 @@ export default function AboutMe(props: { id: string; screenName?: string }) {
   }, [props.id]);
 
   return (
-    <div id={props.id || ""} className={`${classes["about-me-container"]} fade-in`}>
+    <section id={props.id || ""} className={`${classes["about-me-container"]} fade-in`}>
       <div className={classes["about-me-parent"]}>
         <ScreenHeading title={"About Me"} subHeading={"Why Choose Me?"} />
         
@@ -106,6 +106,6 @@ export default function AboutMe(props: { id: string; screenName?: string }) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

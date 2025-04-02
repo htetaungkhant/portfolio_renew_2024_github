@@ -148,7 +148,7 @@ const Projects = (props: { id: string; screenName?: string }) => {
   }, [fadeInSubscription]);
 
   return (
-    <div
+    <section
       className={`${classes["projects-container"]} fade-in`}
       id={props.id || ""}
     >
@@ -169,7 +169,7 @@ const Projects = (props: { id: string; screenName?: string }) => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

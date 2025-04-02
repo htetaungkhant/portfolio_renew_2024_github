@@ -444,7 +444,7 @@ const Resume = (props: { id: string; screenName?: string }) => {
   }, [fadeInSubscription]);
 
   return (
-    <div
+    <section
       className={`${classes["resume-container"]} ${classes["screen-container"]} fade-in`}
       id={props.id || ""}
     >
@@ -463,7 +463,7 @@ const Resume = (props: { id: string; screenName?: string }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
