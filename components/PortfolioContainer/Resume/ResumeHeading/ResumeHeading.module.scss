@@ -37,6 +37,7 @@
   border-radius: 14px;
   color: var(--text-white);
   margin-bottom: 5px;
+  font-family: var(--font-poppins);
 }
 
 .resume-sub-heading {
@@ -49,6 +50,7 @@
 .resume-heading-description {
   font-size: 12px;
   text-align: left;
+  font-family: var(--font-poppins);
 }
 
 @media screen and (max-width: 767.98px) {

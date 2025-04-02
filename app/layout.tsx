@@ -47,7 +47,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          poppins.className
+          poppins.variable
         )}
       >
         <ScrollToTop />

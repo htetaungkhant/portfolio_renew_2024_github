@@ -11,14 +11,17 @@
   display: flex;
   align-items: center;
   color: var(--text-white);
+  font-family: var(--font-poppins);
 }
 
 .primary-text {
   color: var(--text-white);
+  font-family: var(--font-poppins);
 }
 
 .highlighted-text {
   color: var(--text-dark);
+  font-family: var(--font-poppins);
 }
 
 .profile-details {
@@ -57,6 +60,10 @@
 }
 
 .profile-options {
+  button {
+    font-family: var(--font-poppins);
+  }
+
   .primary-btn {
     &:hover {
         border: 2px solid white;

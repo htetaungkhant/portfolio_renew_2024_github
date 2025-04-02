@@ -9,70 +9,56 @@
 @import "tailwindcss";
 
 :root {
-  /* Background Colors */
-  --bg-white: #ffffff;
-  --bg-light-blue: #04c3ff;
-  --bg-sea-green: #0abead;
-  --bg-sea-green-dark: #0cbfae;
-  --bg-sea-green-extra-dark: #09bead;
-  --bg-dark: #1f2235;
-  --bg-black: #333333;
-  --bg-gray: #f8f9fa;
-  --bg-gray-dark: #f0f1f2;
-  --bg-header-hamburger: rgba(11, 190, 173, 0.8);
-  --bg-card-overlay: rgba(255, 255, 255, 0.05);
-  --bg-glass: rgba(255, 255, 255, 0.1);
-  --bg-success: #2ecc71;
-  --bg-success-dark: #27ae60;
-  --bg-error: #e74c3c;
-  --bg-error-light: rgba(231, 76, 60, 0.05);
-  --bg-error-dark: #c0392b;
-  --bg-highlighted: #ff5823;
-  --bg-cornsilk: cornsilk;
-  --bg-scrollbar: rgba(0, 0, 0, 0.2);
-  --bg-scrollbar-light: hsla(0, 0%, 100%, 0.16);
-  --bg-scrollbar-track: hsla(0, 0%, 100%, 0.1);
+  /* Base Colors */
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(51, 51, 51, 1);
+  --dark: rgba(31, 34, 53, 1);
+  --gray-100: rgba(248, 249, 250, 1);
+  --gray-200: rgba(240, 241, 242, 1);
+  --gray-300: rgba(85, 85, 85, 1);
+  --gray-400: rgba(68, 68, 68, 1);
+  
+  /* Brand Colors */
+  --primary: var(--dark);
+  --highlighted: rgba(255, 88, 35, 1);
+  --light-blue: rgba(4, 195, 255, 1);
+  --sea-green: rgba(10, 190, 173, 1);
+  --sea-green-dark: rgba(12, 191, 174, 1);
+  
+  /* State Colors */
+  --success: rgba(46, 204, 113, 1);
+  --success-dark: rgba(39, 174, 96, 1);
+  --error: rgba(231, 76, 60, 1);
+  --error-dark: rgba(192, 57, 43, 1);
+  
+  /* Background Variants */
+  --bg-white: var(--white);
+  --bg-dark: var(--dark);
+  --bg-black: var(--black);
+  --bg-gray: var(--gray-100);
+  --bg-gray-dark: var(--gray-200);
+  --bg-highlighted: var(--highlighted);
+  --bg-light-blue: var(--light-blue);
+  --bg-sea-green: var(--sea-green);
+  --bg-sea-green-dark: var(--sea-green-dark);
+  --bg-success: var(--success);
+  --bg-success-dark: var(--success-dark);
+  --bg-error: var(--error);
+  --bg-error-dark: var(--error-dark);
+  --bg-cornsilk: rgba(255, 248, 220, 1);
   --bg-input: rgba(230, 230, 230, 0.4);
   
-  /* Text Colors */
-  --text-white: #ffffff;
-  --text-black: #333333;
-  --text-dark: #1f2235;
-  --text-gray: #555555;
-  --text-gray-dark: #444444;
-  --text-success: #2ecc71;
-  --text-error: #e44f4f;
-  --text-highlighted: #ff5823;
-  --text-aliceblue: aliceblue;
-  --text-code: #282c34;
-  
-  /* Border Colors */
-  --border-white: rgba(255, 255, 255, 0.8);
-  --border-white-transparent: rgba(255, 255, 255, 0.1);
-  --border-white-light: rgba(255, 255, 255, 0.2);
-  --border-gray: rgba(0, 0, 0, 0.1);
-  --border-error: #e44f4fd1;
-  --border-highlighted: #ff5823;
-  --border-primary: #1f2235;
-  
-  /* Button Colors */
-  --btn-primary: #1f2235;
-  --btn-highlighted: #ff5823;
-  --btn-highlighted-hover: #e64d1a;
-  --btn-highlighted-light: #ff8f69;
-  --btn-disabled: #09bead7a;
-  --btn-orange: #f57f17;
-  
-  /* Shadow Colors */
-  --shadow-light-blue: rgb(69 211 255 / 27%);
-  --shadow-sea-green: rgba(11, 190, 173, 0.4);
-  --shadow-orange: rgba(245, 127, 23, 0.2);
-  --shadow-orange-dark: rgba(255, 88, 35, 0.3);
-  --shadow-dark: rgba(31, 34, 53, 0.15);
-  --shadow-black: rgba(0, 0, 0, 0.1);
-  --shadow-black-dark: rgba(0, 0, 0, 0.15);
-  --shadow-toast: #9c9c9ce3;
-  --shadow-error: rgba(231, 76, 60, 0.2);
+  /* Text Variants */
+  --text-white: var(--white);
+  --text-black: var(--black);
+  --text-dark: var(--dark);
+  --text-gray: var(--gray-300);
+  --text-gray-dark: var(--gray-400);
+  --text-success: var(--success);
+  --text-error: rgba(228, 79, 79, 1);
+  --text-highlighted: var(--highlighted);
+  --text-aliceblue: rgba(240, 248, 255, 1);
+  --text-code: rgba(40, 44, 52, 1);
   
   /* Overlay Colors */
   --overlay-white-5: rgba(255, 255, 255, 0.05);
@@ -88,20 +74,57 @@
   --overlay-orange-85: rgba(255, 88, 35, 0.85);
   --overlay-orange-95: rgba(255, 88, 35, 0.95);
   
+  /* Component-specific Colors */
+  --bg-header-hamburger: rgba(11, 190, 173, 0.8);
+  --bg-card-overlay: var(--overlay-white-5);
+  --bg-glass: var(--overlay-white-10);
+  --bg-error-light: rgba(231, 76, 60, 0.05);
+  --bg-scrollbar: rgba(0, 0, 0, 0.2);
+  --bg-scrollbar-light: rgba(255, 255, 255, 0.16);
+  --bg-scrollbar-track: rgba(255, 255, 255, 0.1);
+  
+  /* Border Colors */
+  --border-white: rgba(255, 255, 255, 0.8);
+  --border-white-transparent: var(--overlay-white-10);
+  --border-white-light: var(--overlay-white-20);
+  --border-gray: rgba(0, 0, 0, 0.1);
+  --border-error: rgba(228, 79, 79, 0.82);
+  --border-highlighted: var(--highlighted);
+  --border-primary: var(--primary);
+  
+  /* Button Colors */
+  --btn-primary: var(--primary);
+  --btn-highlighted: var(--highlighted);
+  --btn-highlighted-hover: rgba(230, 77, 26, 1);
+  --btn-highlighted-light: rgba(255, 143, 105, 1);
+  --btn-disabled: rgba(9, 190, 173, 0.48);
+  --btn-orange: rgba(245, 127, 23, 1);
+  
+  /* Shadow Colors */
+  --shadow-light-blue: rgba(69, 211, 255, 0.27);
+  --shadow-sea-green: rgba(11, 190, 173, 0.4);
+  --shadow-orange: rgba(245, 127, 23, 0.2);
+  --shadow-orange-dark: rgba(255, 88, 35, 0.3);
+  --shadow-dark: rgba(31, 34, 53, 0.15);
+  --shadow-black: rgba(0, 0, 0, 0.1);
+  --shadow-black-dark: rgba(0, 0, 0, 0.15);
+  --shadow-toast: rgba(156, 156, 156, 0.89);
+  --shadow-error: rgba(231, 76, 60, 0.2);
+  
   /* Notification Colors */
-  --toast-error: #e44f4ffa;
-  --toast-success: #0cbfae;
+  --toast-error: rgba(228, 79, 79, 0.98);
+  --toast-success: var(--sea-green-dark);
   
   /* Gradient Colors */
-  --gradient-dark: linear-gradient(45deg, #1f2235 0%, #2d314f 100%);
+  --gradient-dark: linear-gradient(45deg, rgba(31, 34, 53, 1) 0%, rgba(45, 49, 79, 1) 100%);
   --gradient-white: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  --gradient-highlighted: linear-gradient(90deg, #ff5823, transparent);
-  --gradient-text-light: linear-gradient(45deg, #ffffff, #ff5823);
-  --gradient-text-dark: linear-gradient(45deg, #ff5823, #ffffff);
+  --gradient-highlighted: linear-gradient(90deg, rgba(255, 88, 35, 1), rgba(0, 0, 0, 0));
+  --gradient-text-light: linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(255, 88, 35, 1));
+  --gradient-text-dark: linear-gradient(45deg, rgba(255, 88, 35, 1), rgba(255, 255, 255, 1));
 }
 
 html {
-  font-family: var(--font-poppins);
+  font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -117,8 +140,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: var(--font-poppins), source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .black-bullet {
