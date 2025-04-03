@@ -1,23 +1,16 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 
-import ScrollService from "@/lib/ScrollService";
-import Animations from "@/lib/Animations";
+import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
+import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
 import SectionHeading from "../../Common/SectionHeading/SectionHeading";
 import meImage from "@/assets/AboutMe/me.jpg";
 
 import classes from "./AboutMe.module.scss";
 
 export default function AboutMe(props: { id: string; sectionName?: string }) {
-  let fadeInSectionHandler = (section: any) => {
-    if (section.fadeInSection !== props.id) return;
-    Animations.animations.fadeInSection(props.id);
-  };
-
-  ScrollService.currentSectionFadeIn.subscribe(fadeInSectionHandler);
-
   const CONSTANTS = {
     description:
       "A Frontend-Focused Full-Stack Developer with solid experience in React.js, Next.js, React Native, and TypeScript. Passionate about building scalable and user-friendly applications while continuously improving performance and maintainability. I aim to contribute my skills to impactful projects, collaborate with teams effectively, and stay updated with modern web technologies to deliver high-quality solutions.",
@@ -45,18 +38,8 @@ export default function AboutMe(props: { id: string; sectionName?: string }) {
     ));
   };
 
-  useEffect(() => {
-    let section = document.getElementById(props.id);
-    if (!props.id || !section) return;
-
-    if (ScrollService.scrollHandler.isElementInView(section, "partial")) {
-      section.style.opacity = "5";
-      section.style.transform = "translateY(1px)";
-    }
-  }, [props.id]);
-
   return (
-    <section id={props.id || ""} className={`${classes["about-me-container"]} fade-in`}>
+    <AnimatedSection id={props.id} className={`${classes["about-me-container"]}`}>
       <div className={classes["about-me-parent"]}>
         <SectionHeading title={"About Me"} subHeading={"Why Choose Me?"} />
         
@@ -75,7 +58,7 @@ export default function AboutMe(props: { id: string; sectionName?: string }) {
               <div className={classes["about-me-options"]}>
                 <button
                   className={`btn primary-btn ${classes["primary-btn"]}`}
-                  onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+                  onClick={() => scrollToSection("ContactMe")}
                 >
                   Hire Me
                 </button>
@@ -83,9 +66,7 @@ export default function AboutMe(props: { id: string; sectionName?: string }) {
                   onClick={() => window.open("htetaungkhant_28_03_2025.pdf", "_blank")}
                   className={`btn highlighted-btn ${classes["highlighted-btn"]}`}
                 >
-                  {/* <a href="htetaungkhant_28_03_2025.pdf" download="Htet Aung Khant CV.pdf"> */}
-                      Get Resume
-                  {/* </a> */}
+                  Get Resume
                 </button>
               </div>
             </div>
@@ -106,6 +87,6 @@ export default function AboutMe(props: { id: string; sectionName?: string }) {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

@@ -9,9 +9,7 @@ import programmingSkills from "@/assets/Resume/programming-skills.svg";
 import abilities from "@/assets/Resume/abilities.svg";
 import interests from "@/assets/Resume/interests.svg";
 
-import ScrollService from "@/lib/ScrollService";
-import Animations from "@/lib/Animations";
-
+import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
 import SectionHeading from "../../Common/SectionHeading/SectionHeading";
 import ResumeHeading from "./ResumeHeading/ResumeHeading";
 
@@ -31,15 +29,6 @@ const Resume = (props: { id: string; sectionName?: string }) => {
   const [carousalOffsetStyle, setCarousalOffsetStyle] = useState<{
     style?: React.CSSProperties;
   }>({});
-
-  let fadeInSectionHandler = (section: any) => {
-    if (section.fadeInSection !== props.id) return;
-
-    Animations.animations.fadeInSection(props.id);
-  };
-
-  const fadeInSubscription =
-    ScrollService.currentSectionFadeIn.subscribe(fadeInSectionHandler);
 
   /* STATIC RESUME DATA FOR THE LABELS*/
   const resumeBullets = [
@@ -436,16 +425,9 @@ const Resume = (props: { id: string; sectionName?: string }) => {
     );
   };
 
-  useEffect(() => {
-    return () => {
-      /* UNSUBSCRIBE THE SUBSCRIPTIONS */
-      fadeInSubscription.unsubscribe();
-    };
-  }, [fadeInSubscription]);
-
   return (
-    <section
-      className={`${classes["resume-container"]} ${classes["screen-container"]} fade-in`}
+    <AnimatedSection
+      className={`${classes["resume-container"]} ${classes["screen-container"]}`}
       id={props.id || ""}
     >
       <div className={classes["resume-content"]}>
@@ -463,7 +445,7 @@ const Resume = (props: { id: string; sectionName?: string }) => {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

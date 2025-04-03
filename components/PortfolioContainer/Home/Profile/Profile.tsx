@@ -2,8 +2,7 @@
 
 import React from "react";
 import { ReactTyped } from "react-typed";
-
-import ScrollService from "@/lib/ScrollService";
+import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
 import classes from "./Profile.module.scss";
 
@@ -68,7 +67,7 @@ export default function Profile() {
           <div className={classes["profile-options"]}>
             <button
               className={`btn primary-btn ${classes["primary-btn"]}`}
-              onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+              onClick={() => scrollToSection("ContactMe")}
             >
               Hire Me
             </button>

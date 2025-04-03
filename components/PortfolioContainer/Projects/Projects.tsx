@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 
-import ScrollService from "@/lib/ScrollService";
-import Animations from "@/lib/Animations";
-
+import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
 import ADDAS_LINE_Enhance from "@/assets/Projects/ADDAS_LINE_Enhance.webp";
 import Applicant_Tracking_System from "@/assets/Projects/Applicant_Tracking_System.webp";
 import AI_Testing from "@/assets/Projects/AI_Testing.webp";
@@ -25,15 +23,6 @@ import ProjectCard from "./ProjectCard/ProjectCard";
 import classes from "./Projects.module.scss";
 
 const Projects = (props: { id: string; sectionName?: string }) => {
-  let fadeInSectionHandler = (section: any) => {
-    if (section.fadeInSection !== props.id) return;
-
-    Animations.animations.fadeInSection(props.id);
-  };
-
-  const fadeInSubscription =
-    ScrollService.currentSectionFadeIn.subscribe(fadeInSectionHandler);
-
   const projectsDetails = [
     {
       title: "ADDAS LINE Enhance",
@@ -141,20 +130,14 @@ const Projects = (props: { id: string; sectionName?: string }) => {
     },
   ];
 
-  useEffect(() => {
-    return () => {
-      fadeInSubscription.unsubscribe();
-    };
-  }, [fadeInSubscription]);
-
   return (
-    <section
-      className={`${classes["projects-container"]} fade-in`}
+    <AnimatedSection
+      className={classes["projects-container"]}
       id={props.id || ""}
     >
       <SectionHeading
-        title={"Projects"}
-        subHeading={"Projects that I experienced"}
+        title={"Recent Projects"}
+        subHeading={"What I did?"}
       />
       <div className={classes["projects-cards-container"]}>
         {projectsDetails.map((projectsDetails, index) => (
@@ -169,7 +152,7 @@ const Projects = (props: { id: string; sectionName?: string }) => {
           />
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

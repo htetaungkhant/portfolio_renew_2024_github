@@ -1,7 +1,6 @@
 "use client";
 
-import ScrollService from "@/lib/ScrollService";
-
+import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 import classes from "./Footer.module.scss";
 
 export default function Footer() {
@@ -9,7 +8,7 @@ export default function Footer() {
     <div className={classes["scroll-container"]}>
       <button
         className={classes["btn-scroll"]}
-        onClick={() => ScrollService.scrollHandler.scrollToHome()}
+        onClick={() => scrollToSection("Home")}
       >
         <i className="fa fa-arrow-up"></i>
       </button>

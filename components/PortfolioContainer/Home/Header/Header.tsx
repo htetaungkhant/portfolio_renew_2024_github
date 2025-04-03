@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, type JSX } from "react";
+import React, { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { HEADER_MENU, GET_SECTION_INDEX } from "@/lib/commonUtils";
-import ScrollService from "@/lib/ScrollService";
+import { HEADER_MENU } from "@/lib/commonUtils";
+import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
 import classes from "./Header.module.scss";
 
@@ -13,15 +12,23 @@ export default function Header() {
   const [selectedSection, setSelectedSection] = useState(0);
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
 
-  const updateCurrentSection = (currentSection: any) => {
-    if (!currentSection || !currentSection.sectionInView) return;
+  const getHeaderOptionsClasses = (index: number) => {
+    let styles = `${classes["header-option"]} `;
+    if (index < HEADER_MENU.length - 1)
+      styles += `${classes["header-option-seperator"]} `;
 
-    let sectionIndex = GET_SECTION_INDEX(currentSection.sectionInView);
-    if (sectionIndex < 0) return;
+    if (selectedSection === index)
+      styles += `${classes["selected-header-option"]} `;
+
+    return styles;
   };
 
-  let currentSectionSubscription =
-    ScrollService.currentSectionBroadcaster.subscribe(updateCurrentSection);
+  const switchSection = (index: number, name: string) => {
+    if (name !== "Blog") {
+      scrollToSection(name);
+      setSelectedSection(index);
+    }
+  };
 
   const getHeaderOptions = () => {
     return HEADER_MENU.map((Menu, i) => (
@@ -44,34 +51,6 @@ export default function Header() {
       </div>
     ));
   };
-
-  const getHeaderOptionsClasses = (index: number) => {
-    let styles = `${classes["header-option"]} `;
-    if (index < HEADER_MENU.length - 1)
-      styles += `${classes["header-option-seperator"]} `;
-
-    if (selectedSection === index)
-      styles += `${classes["selected-header-option"]} `;
-
-    return styles;
-  };
-
-  const switchSection = (
-    index: number,
-    name: string
-  ) => {
-    let sectionComponent = document.getElementById(name);
-    if (!sectionComponent) return;
-
-    sectionComponent.scrollIntoView({ behavior: "smooth" });
-    setSelectedSection(index);
-  };
-
-  useEffect(() => {
-    return () => {
-      currentSectionSubscription.unsubscribe();
-    };
-  }, [currentSectionSubscription]);
 
   return (
     <div className={classes["header-container"]}>

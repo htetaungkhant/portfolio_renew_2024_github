@@ -14,24 +14,14 @@ import { ReactTyped } from "react-typed";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import ScrollService from "@/lib/ScrollService";
-import Animations from "@/lib/Animations";
-
+import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
 import weChatQR from "@/assets/ContactMe/WeChatID.png";
-
 import SectionHeading from "../../Common/SectionHeading/SectionHeading";
 import Footer from "../footer/Footer";
 
 import classes from "./ContactMe.module.scss";
 
 export default function ContactMe(props: { id: string; sectionName?: string }) {
-  let fadeInSectionHandler = (section: any) => {
-    if (section.fadeInSection !== props.id) return;
-    Animations.animations.fadeInSection(props.id);
-  };
-
-  ScrollService.currentSectionFadeIn.subscribe(fadeInSectionHandler);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -86,7 +76,7 @@ export default function ContactMe(props: { id: string; sectionName?: string }) {
   };
 
   return (
-    <section className={`${classes["main-container"]} fade-in`} id={props.id || ""}>
+    <AnimatedSection className={classes["main-container"]} id={props.id}>
       <SectionHeading subHeading={"Let's Keep In Touch"} title={"Contact Me"} />
       <div className={classes["central-form"]}>
         <div className={classes["row"]}>
@@ -215,6 +205,6 @@ export default function ContactMe(props: { id: string; sectionName?: string }) {
         </div>
       </div>
       <Footer />
-    </section>
+    </AnimatedSection>
   );
 }
