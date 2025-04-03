@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HEADER_MENU } from "@/lib/commonUtils";
 import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
+import { headerTitle } from "@/data/Home/constants";
+
 import classes from "./Header.module.scss";
 
 export default function Header() {
@@ -65,7 +67,7 @@ export default function Header() {
           />
         </div>
         <div className={classes["header-logo"]}>
-          <span>Htet Khant</span>
+          <span>{headerTitle}</span>
         </div>
         <div
           className={

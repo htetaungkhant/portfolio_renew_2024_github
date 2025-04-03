@@ -3,21 +3,19 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faWhatsappSquare,
-  faSkype,
-  faLine,
-} from "@fortawesome/free-brands-svg-icons";
 import { faSpinner, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { ReactTyped } from "react-typed";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+
 import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
-import weChatQR from "@/assets/ContactMe/WeChatID.png";
 import SectionHeading from "../../Common/SectionHeading/SectionHeading";
 import Footer from "../footer/Footer";
+
+import { socialLinks } from "@/data/Common/constants";
+import weChatQR from "@/data/ContactMe/images/WeChatID.png";
+import { contactLinks } from "@/data/ContactMe/constants";
 
 import classes from "./ContactMe.module.scss";
 
@@ -89,57 +87,34 @@ export default function ContactMe(props: { id: string; sectionName?: string }) {
             />
           </h2>
           <div className={classes["social-icons"]}>
-            <a href="https://www.facebook.com/htetaungkhant1997/" target="_blank" rel="noreferrer">
-              <i className="fa fa-facebook-square" />
-            </a>
-            <a href="https://www.linkedin.com/in/htet-khant-9003b6164/" target="_blank" rel="noreferrer">
-              <i className="fa fa-linkedin-square" />
-            </a>
-            <a href="https://www.instagram.com/nga_khant_18/" target="_blank" rel="noreferrer">
-              <i className="fa fa-instagram" />
-            </a>
-            <a href="https://www.youtube.com/channel/UCMilPRhUqbaiOj7ZBKs9Byw" target="_blank" rel="noreferrer">
-              <i className="fa fa-youtube-square" />
-            </a>
-            <a href="https://x.com/masterhacker97" target="_blank" rel="noreferrer">
-              <i className="fa fa-twitter" />
-            </a>
-            <a href="https://github.com/htetaungkhant" target="_blank" rel="noreferrer">
-              <i className="fa fa-github" />
-            </a>
+            {
+              socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i className={link.iconClassName} />
+                </a>
+              ))
+            }
           </div>
         </div>
 
         <div className={classes["back-form"]}>
           <div className={classes["col"]}>
-            <h4>Contact Links</h4>
-            <div>
-              <a href="mailto:job.htetaungkhant@gmail.com" aria-label="Email">
-                <FontAwesomeIcon icon={faEnvelope} className={classes["icon"]} />
-                <span>job.htetaungkhant@gmail.com</span>
-              </a>
-            </div>
-            
-            <div>
-              <a href="https://wa.me/959798922327" aria-label="WhatsApp">
-                <FontAwesomeIcon icon={faWhatsappSquare} className={classes["icon"]} />
-                <span>+959798922327</span>
-              </a>
-            </div>
-            
-            <div>
-              <a href="skype:live:chitkogyi19950?chat" aria-label="Skype">
-                <FontAwesomeIcon icon={faSkype} className={classes["icon"]} />
-                <span>live:chitkogyi19950</span>
-              </a>
-            </div>
-            
-            <div>
-              <a href="https://line.me/ti/p/~htetaungkhant97" target="_blank" rel="noopener noreferrer" aria-label="Line">
-                <FontAwesomeIcon icon={faLine} className={classes["icon"]} />
-                <span>htetaungkhant97</span>
-              </a>
-            </div>
+            <h4>{contactLinks.title}</h4>
+            {
+              contactLinks.links.map((link) => (
+                <div key={link.type}>
+                  <a href={link.link} target="_blank" rel="noopener noreferrer" aria-label={link.type}>
+                    <FontAwesomeIcon icon={link.icon} className={classes["icon"]} />
+                    <span>{link.description}</span>
+                  </a>
+                </div>
+              ))
+            }
 
             <div className={classes["qr-code-container"]}>
               <span className={classes["qr-label"]}>WeChat QR Code</span>
@@ -184,8 +159,8 @@ export default function ContactMe(props: { id: string; sectionName?: string }) {
               className={errors.message ? classes["error"] : ""}
             />
 
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className={`${classes["submit-btn"]} ${bool ? classes["loading"] : ""}`}
               disabled={bool}
             >

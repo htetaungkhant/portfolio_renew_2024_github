@@ -259,55 +259,6 @@ code {
   font-family: var(--font-poppins), source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.black-bullet {
-  padding: 3px 3px;
-  border-radius: 50%;
-  background-color: black;
-}
-
-.btn {
-  border-radius: 50px;
-  padding: 14px 0;
-  width: 160px;
-  cursor: pointer;
-  transition: 0.2s;
-  font-family: var(--font-poppins);
-  font-weight: 600;
-}
-
-.btn:active {
-  transform: translateY(2px);
-}
-
-.primary-btn {
-  color: var(--text-white);
-  border: 2px solid var(--btn-primary);
-  font-size: 12px;
-  background-color: var(--btn-primary);
-}
-
-.primary-btn:hover {
-  color: var(--text-aliceblue);
-  border: 2px solid var(--btn-highlighted);
-  background-color: var(--btn-primary);
-}
-
-.highlighted-btn {
-  color: var(--text-white);
-  font-size: 12px;
-  background-color: var(--btn-highlighted);
-}
-
-.red-border {
-  border: 1px solid var(--border-error) !important;
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(80px);
-  transition: all 0.8s ease;
-}
-
 ::-webkit-scrollbar {
   width: 6px !important;
   height: 6px !important;
@@ -323,10 +274,4 @@ body ::-webkit-scrollbar-thumb {
 
 ::-webkit-scrollbar-track {
   background: var(--bg-scrollbar-track);
-}
-
-@media only screen and (max-width: 568px) {
-  .highlighted-btn {
-    z-index: -900;
-  }
 }

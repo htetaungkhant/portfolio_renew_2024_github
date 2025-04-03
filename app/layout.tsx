@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 
-import { poppins } from "./fonts";
-import ScrollToTop from "@/components/Common/ScrollToTop/ScrollToTop";
+import { FontPoppins } from "../assets/fonts/fonts";
 
-import "./globals.css";
+import "@/assets/styles/globals.css";
+import "@/assets/styles/common.scss";
 import "react-toastify/dist/ReactToastify.css";
 
+import ScrollToTop from "@/components/Common/ScrollToTop/ScrollToTop";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -47,7 +48,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          poppins.variable
+          FontPoppins.variable
         )}
       >
         <ScrollToTop />

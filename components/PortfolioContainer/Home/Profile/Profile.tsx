@@ -4,6 +4,9 @@ import React from "react";
 import { ReactTyped } from "react-typed";
 import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
+import { RESUME_LINK, socialLinks } from "@/data/Common/constants";
+import { profileDetails } from "@/data/Home/constants";
+
 import classes from "./Profile.module.scss";
 
 export default function Profile() {
@@ -13,31 +16,25 @@ export default function Profile() {
         <div className={classes["profile-details"]}>
           <div className={classes["colz"]}>
             <div className={classes["colz-icon"]}>
-              <a href="https://www.facebook.com/htetaungkhant1997/" target="_blank" rel="noreferrer">
-                <i className="fa fa-facebook-square" />
-              </a>
-              <a href="https://www.linkedin.com/in/htet-khant-9003b6164/" target="_blank" rel="noreferrer">
-                <i className="fa fa-linkedin-square" />
-              </a>
-              <a href="https://www.instagram.com/nga_khant_18/" target="_blank" rel="noreferrer">
-                <i className="fa fa-instagram" />
-              </a>
-              <a href="https://www.youtube.com/channel/UCMilPRhUqbaiOj7ZBKs9Byw" target="_blank" rel="noreferrer">
-                <i className="fa fa-youtube-square" />
-              </a>
-              <a href="https://x.com/masterhacker97" target="_blank" rel="noreferrer">
-                <i className="fa fa-twitter" />
-              </a>
-              <a href="https://github.com/htetaungkhant" target="_blank" rel="noreferrer">
-                <i className="fa fa-github" />
-              </a>
+              {
+                socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className={social.iconClassName} />
+                  </a>
+                ))
+              }
             </div>
           </div>
           <div className={classes["profile-details-name"]}>
             <span className={classes["primary-text"]}>
               Hello, I&apos;M&nbsp;
               <span className={classes["highlighted-text"]}>
-                Htet Aung Khant
+                {profileDetails.name}
               </span>
               .
             </span>
@@ -46,22 +43,14 @@ export default function Profile() {
             <span className={classes["primary-text"]}>
               <h1>
                 <ReactTyped
-                  strings={[
-                    "Enthusiastic Dev",
-                    "Full stack Developer",
-                    "MERN stack Dev",
-                    "Cross Platform Dev",
-                    "React / Next.js / React Native",
-                  ]}
+                  strings={profileDetails.titles}
                   typeSpeed={40}
                   backSpeed={50}
                   loop
                 />
               </h1>
             </span>
-            <span className={classes["profile-role-tagline"]}>
-              Knack of building applications with front and back end operations.
-            </span>
+            <span className={classes["profile-role-tagline"]}>{profileDetails.description}</span>
           </div>
 
           <div className={classes["profile-options"]}>
@@ -71,7 +60,7 @@ export default function Profile() {
             >
               Hire Me
             </button>
-            <a href="htetaungkhant_28_03_2025.pdf" download="Htet Aung Khant CV.pdf">
+            <a href={RESUME_LINK} download="Htet Aung Khant CV.pdf">
               <button
                 className={`btn highlighted-btn ${classes["highlighted-btn"]}`}
               >
