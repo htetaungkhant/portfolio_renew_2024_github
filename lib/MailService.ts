@@ -1,8 +1,77 @@
-import nodemailer from "nodemailer";
+import React from "react";
+import nodemailer, { Transporter } from "nodemailer";
 import { render } from "@react-email/render";
+
+import { EmailData, EmailType } from "@/types/common";
 import ContactFormEmail from "@/components/Common/EmailTemplates/ContactFormEmail";
 import ThankYouEmail from "@/components/Common/EmailTemplates/ThankYouEmail";
 
+interface EmailTemplate {
+  component: (data: EmailData) => React.ReactElement;
+  subject: (data: EmailData) => string;
+  recipient: (data: EmailData) => string;
+}
+
+export class MailService {
+  private smtpTransporter: Transporter;
+  private emailTemplates: Record<EmailType, EmailTemplate>;
+
+  constructor() {
+    this.smtpTransporter = nodemailer.createTransport({
+      service: "Gmail",
+      auth: {
+        user: process.env.NODEMAILER_EMAIL,
+        pass: process.env.NODEMAILER_PW,
+      },
+    });
+
+    this.emailTemplates = {
+      [EmailType.NOTIFICATION]: {
+        component: ContactFormEmail,
+        subject: (data) => `Message from ${data.name}`,
+        recipient: () => process.env.NODEMAILER_RECEIVER_EMAIL || "htetaungkhant.job@gmail.com"
+      },
+      [EmailType.THANK_YOU]: {
+        component: ThankYouEmail,
+        subject: () => "Thank you for contacting me!",
+        recipient: (data) => data.email
+      }
+    };
+  }
+
+  private async renderEmailTemplate(type: EmailType, data: EmailData) {
+    const template = this.emailTemplates[type];
+    return await render(template.component(data));
+  }
+
+  private createMailOptions(type: EmailType, data: EmailData, html: string) {
+    const template = this.emailTemplates[type];
+    return {
+      to: template.recipient(data),
+      subject: template.subject(data),
+      html,
+    };
+  }
+
+  public async sendMail(data: EmailData, emailTypes: EmailType[]): Promise<void> {
+    try {
+      const emailPromises = emailTypes.map(async (type) => {
+        const html = await this.renderEmailTemplate(type, data);
+        const mailOptions = this.createMailOptions(type, data, html);
+        return this.smtpTransporter.sendMail(mailOptions);
+      });
+
+      await Promise.all(emailPromises);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      throw new Error("Sending email failed!");
+    }
+  }
+}
+
+
+// Maybe I will reuse this function later
+/*
 export async function sendMail({
   name,
   email,
@@ -64,3 +133,4 @@ export async function sendMail({
     throw new Error("Sending email failed!");
   }
 }
+*/
