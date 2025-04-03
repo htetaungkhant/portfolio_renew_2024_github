@@ -5,20 +5,20 @@ import Image from "next/image";
 
 import ScrollService from "@/lib/ScrollService";
 import Animations from "@/lib/Animations";
-import ScreenHeading from "../../Common/ScreenHeading/ScreenHeading";
+import SectionHeading from "../../Common/SectionHeading/SectionHeading";
 import meImage from "@/assets/AboutMe/me.jpg";
 
 import classes from "./AboutMe.module.scss";
 
-export default function AboutMe(props: { id: string; screenName?: string }) {
-  let fadeInScreenHandler = (screen: any) => {
-    if (screen.fadeInScreen !== props.id) return;
-    Animations.animations.fadeInScreen(props.id);
+export default function AboutMe(props: { id: string; sectionName?: string }) {
+  let fadeInSectionHandler = (section: any) => {
+    if (section.fadeInSection !== props.id) return;
+    Animations.animations.fadeInSection(props.id);
   };
 
-  ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  ScrollService.currentSectionFadeIn.subscribe(fadeInSectionHandler);
 
-  const SCREEN_CONSTSANTS = {
+  const CONSTSANTS = {
     description:
       "A Frontend-Focused Full-Stack Developer with solid experience in React.js, Next.js, React Native, and TypeScript. Passionate about building scalable and user-friendly applications while continuously improving performance and maintainability. I aim to contribute my skills to impactful projects, collaborate with teams effectively, and stay updated with modern web technologies to deliver high-quality solutions.",
     highlights: {
@@ -37,7 +37,7 @@ export default function AboutMe(props: { id: string; screenName?: string }) {
   };
 
   const renderHighlight = () => {
-    return SCREEN_CONSTSANTS.highlights.bullets.map((value, i) => (
+    return CONSTSANTS.highlights.bullets.map((value, i) => (
       <div className={classes["highlight"]} key={i}>
         <div className={classes["highlight-blob"]}></div>
         <span>{value}</span>
@@ -46,19 +46,19 @@ export default function AboutMe(props: { id: string; screenName?: string }) {
   };
 
   useEffect(() => {
-    let screen = document.getElementById(props.id);
-    if (!props.id || !screen) return;
+    let section = document.getElementById(props.id);
+    if (!props.id || !section) return;
 
-    if (ScrollService.scrollHandler.isElementInView(screen, "partial")) {
-      screen.style.opacity = "5";
-      screen.style.transform = "translateY(1px)";
+    if (ScrollService.scrollHandler.isElementInView(section, "partial")) {
+      section.style.opacity = "5";
+      section.style.transform = "translateY(1px)";
     }
   }, [props.id]);
 
   return (
     <section id={props.id || ""} className={`${classes["about-me-container"]} fade-in`}>
       <div className={classes["about-me-parent"]}>
-        <ScreenHeading title={"About Me"} subHeading={"Why Choose Me?"} />
+        <SectionHeading title={"About Me"} subHeading={"Why Choose Me?"} />
         
         <div className={classes["about-me-card"]}>
           <div className={classes["about-me-content"]}>
@@ -93,11 +93,11 @@ export default function AboutMe(props: { id: string; screenName?: string }) {
             <div className={classes["about-me-info"]}>
               <div className={classes["about-me-description"]}>
                 <h3>Who I Am</h3>
-                <p>{SCREEN_CONSTSANTS.description}</p>
+                <p>{CONSTSANTS.description}</p>
               </div>
               
               <div className={classes["about-me-highlights"]}>
-                <h3>{SCREEN_CONSTSANTS.highlights.heading}</h3>
+                <h3>{CONSTSANTS.highlights.heading}</h3>
                 <div className={classes["highlights-container"]}>
                   {renderHighlight()}
                 </div>

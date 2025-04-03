@@ -4,37 +4,43 @@ import Resume from "@/components/PortfolioContainer/Resume/Resume";
 import Projects from "@/components/PortfolioContainer/Projects/Projects";
 import ContactMe from "@/components/PortfolioContainer/ContactMe/ContactMe";
 
-export const TOTAL_SCREENS = [
+export const MAIN_SECTIONS = [
   {
-    screen_name: "Home",
+    name: "Home",
     component: Home,
   },
   {
-    screen_name: "AboutMe",
+    name: "AboutMe",
     component: AboutMe,
   },
   {
-    screen_name: "Resume",
+    name: "Resume",
     component: Resume,
   },
   {
-    screen_name: "Projects",
+    name: "Projects",
     component: Projects,
   },
   {
-    screen_name: "ContactMe",
+    name: "ContactMe",
     component: ContactMe,
-  },
-  {
-    screen_name: "Blog",
   },
 ];
 
-export const GET_SCREEN_INDEX = (screen_name: string) => {
-  if (!screen_name) return -1;
+export const HEADER_MENU = [
+  ...MAIN_SECTIONS.map((section) => ({
+    name: section.name,
+  })),
+  {
+    name: "Blog",
+  },
+];
 
-  for (let i = 0; i < TOTAL_SCREENS.length; i++) {
-    if (TOTAL_SCREENS[i].screen_name === screen_name) return i;
+export const GET_SECTION_INDEX = (name: string) => {
+  if (!name) return -1;
+
+  for (let i = 0; i < MAIN_SECTIONS.length; i++) {
+    if (MAIN_SECTIONS[i].name === name) return i;
   }
 
   return -1;

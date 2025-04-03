@@ -19,18 +19,18 @@ import Animations from "@/lib/Animations";
 
 import weChatQR from "@/assets/ContactMe/WeChatID.png";
 
-import ScreenHeading from "../../Common/ScreenHeading/ScreenHeading";
+import SectionHeading from "../../Common/SectionHeading/SectionHeading";
 import Footer from "../footer/Footer";
 
 import classes from "./ContactMe.module.scss";
 
-export default function ContactMe(props: { id: string; screenName?: string }) {
-  let fadeInScreenHandler = (screen: any) => {
-    if (screen.fadeInScreen !== props.id) return;
-    Animations.animations.fadeInScreen(props.id);
+export default function ContactMe(props: { id: string; sectionName?: string }) {
+  let fadeInSectionHandler = (section: any) => {
+    if (section.fadeInSection !== props.id) return;
+    Animations.animations.fadeInSection(props.id);
   };
 
-  ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  ScrollService.currentSectionFadeIn.subscribe(fadeInSectionHandler);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -87,7 +87,7 @@ export default function ContactMe(props: { id: string; screenName?: string }) {
 
   return (
     <section className={`${classes["main-container"]} fade-in`} id={props.id || ""}>
-      <ScreenHeading subHeading={"Let's Keep In Touch"} title={"Contact Me"} />
+      <SectionHeading subHeading={"Let's Keep In Touch"} title={"Contact Me"} />
       <div className={classes["central-form"]}>
         <div className={classes["row"]}>
           <h2 className={classes["title"]}>

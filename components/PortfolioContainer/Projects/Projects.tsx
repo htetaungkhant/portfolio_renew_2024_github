@@ -19,20 +19,20 @@ import YCC_Trading_Center from "@/assets/Projects/YCC_Trading_Center.jpeg";
 import Vending_Machine_with_QR_code from "@/assets/Projects/Vending_Machine_with_QR_code.jpeg";
 import Runnable_Project_Hub_using_container_technology from "@/assets/Projects/Runnable_Project_Hub_using_Container_Technology.jpeg";
 
-import ScreenHeading from "../../Common/ScreenHeading/ScreenHeading";
+import SectionHeading from "../../Common/SectionHeading/SectionHeading";
 import ProjectCard from "./ProjectCard/ProjectCard";
 
 import classes from "./Projects.module.scss";
 
-const Projects = (props: { id: string; screenName?: string }) => {
-  let fadeInScreenHandler = (screen: any) => {
-    if (screen.fadeInScreen !== props.id) return;
+const Projects = (props: { id: string; sectionName?: string }) => {
+  let fadeInSectionHandler = (section: any) => {
+    if (section.fadeInSection !== props.id) return;
 
-    Animations.animations.fadeInScreen(props.id);
+    Animations.animations.fadeInSection(props.id);
   };
 
   const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+    ScrollService.currentSectionFadeIn.subscribe(fadeInSectionHandler);
 
   const projectsDetails = [
     {
@@ -152,7 +152,7 @@ const Projects = (props: { id: string; screenName?: string }) => {
       className={`${classes["projects-container"]} fade-in`}
       id={props.id || ""}
     >
-      <ScreenHeading
+      <SectionHeading
         title={"Projects"}
         subHeading={"Projects that I experienced"}
       />

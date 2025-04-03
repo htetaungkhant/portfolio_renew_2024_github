@@ -12,7 +12,7 @@ import interests from "@/assets/Resume/interests.svg";
 import ScrollService from "@/lib/ScrollService";
 import Animations from "@/lib/Animations";
 
-import ScreenHeading from "../../Common/ScreenHeading/ScreenHeading";
+import SectionHeading from "../../Common/SectionHeading/SectionHeading";
 import ResumeHeading from "./ResumeHeading/ResumeHeading";
 
 import classes from "./Resume.module.scss";
@@ -25,21 +25,21 @@ const svgList: any = {
   "interests.svg": interests,
 };
 
-const Resume = (props: { id: string; screenName?: string }) => {
+const Resume = (props: { id: string; sectionName?: string }) => {
   /* STATES */
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
   const [carousalOffsetStyle, setCarousalOffsetStyle] = useState<{
     style?: React.CSSProperties;
   }>({});
 
-  let fadeInScreenHandler = (screen: any) => {
-    if (screen.fadeInScreen !== props.id) return;
+  let fadeInSectionHandler = (section: any) => {
+    if (section.fadeInSection !== props.id) return;
 
-    Animations.animations.fadeInScreen(props.id);
+    Animations.animations.fadeInSection(props.id);
   };
 
   const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+    ScrollService.currentSectionFadeIn.subscribe(fadeInSectionHandler);
 
   /* STATIC RESUME DATA FOR THE LABELS*/
   const resumeBullets = [
@@ -425,7 +425,7 @@ const Resume = (props: { id: string; screenName?: string }) => {
     ));
   };
 
-  const getResumeScreens = () => {
+  const getResumeDetails = () => {
     return (
       <div
         style={carousalOffsetStyle?.style}
@@ -449,7 +449,7 @@ const Resume = (props: { id: string; screenName?: string }) => {
       id={props.id || ""}
     >
       <div className={classes["resume-content"]}>
-        <ScreenHeading title={"Resume"} subHeading={"My formal Bio Details"} />
+        <SectionHeading title={"Resume"} subHeading={"My formal Bio Details"} />
         <div className={classes["resume-card"]}>
           <div className={classes["resume-bullets"]}>
             <div className={classes["bullet-container"]}>
@@ -459,7 +459,7 @@ const Resume = (props: { id: string; screenName?: string }) => {
           </div>
 
           <div className={classes["resume-bullet-details"]}>
-            {getResumeScreens()}
+            {getResumeDetails()}
           </div>
         </div>
       </div>

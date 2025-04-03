@@ -4,7 +4,7 @@ import Header from "./Header/Header";
 
 import classes from "./Home.module.scss";
 
-export default function Home(props: { id: string; screenName?: string }) {
+export default function Home(props: { id: string; sectionName?: string }) {
   return (
     <section className={classes["home-container"]} id={props.id || ""}>
       <Header />

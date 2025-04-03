@@ -4,42 +4,42 @@ import React, { useState, useEffect, type JSX } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { TOTAL_SCREENS, GET_SCREEN_INDEX } from "@/lib/commonUtils";
+import { HEADER_MENU, GET_SECTION_INDEX } from "@/lib/commonUtils";
 import ScrollService from "@/lib/ScrollService";
 
 import classes from "./Header.module.scss";
 
 export default function Header() {
-  const [selectedScreen, setSelectedScreen] = useState(0);
+  const [selectedSection, setSelectedSection] = useState(0);
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
 
-  const updateCurrentScreen = (currentScreen: any) => {
-    if (!currentScreen || !currentScreen.screenInView) return;
+  const updateCurrentSection = (currentSection: any) => {
+    if (!currentSection || !currentSection.sectionInView) return;
 
-    let screenIndex = GET_SCREEN_INDEX(currentScreen.screenInView);
-    if (screenIndex < 0) return;
+    let sectionIndex = GET_SECTION_INDEX(currentSection.sectionInView);
+    if (sectionIndex < 0) return;
   };
 
-  let currentScreenSubscription =
-    ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
+  let currentSectionSubscription =
+    ScrollService.currentSectionBroadcaster.subscribe(updateCurrentSection);
 
   const getHeaderOptions = () => {
-    return TOTAL_SCREENS.map((Screen, i) => (
+    return HEADER_MENU.map((Menu, i) => (
       <div
-        key={Screen.screen_name}
+        key={Menu.name}
         className={getHeaderOptionsClasses(i)}
-        onClick={() => switchScreen(i, Screen)}
+        onClick={() => switchSection(i, Menu.name)}
       >
-        {Screen.screen_name === "Blog" ? (
+        {Menu.name === "Blog" ? (
           <a
             href="https://medium.com/@chitkogyi19950"
             target="_blank"
             rel="noreferrer"
           >
-            {Screen.screen_name}
+            {Menu.name}
           </a>
         ) : (
-          <span>{Screen.screen_name}</span>
+          <span>{Menu.name}</span>
         )}
       </div>
     ));
@@ -47,31 +47,31 @@ export default function Header() {
 
   const getHeaderOptionsClasses = (index: number) => {
     let styles = `${classes["header-option"]} `;
-    if (index < TOTAL_SCREENS.length - 1)
+    if (index < HEADER_MENU.length - 1)
       styles += `${classes["header-option-seperator"]} `;
 
-    if (selectedScreen === index)
+    if (selectedSection === index)
       styles += `${classes["selected-header-option"]} `;
 
     return styles;
   };
 
-  const switchScreen = (
+  const switchSection = (
     index: number,
-    screen: { screen_name: string; component?: (props: any) => JSX.Element }
+    name: string
   ) => {
-    let screenComponent = document.getElementById(screen.screen_name);
-    if (!screenComponent) return;
+    let sectionComponent = document.getElementById(name);
+    if (!sectionComponent) return;
 
-    screenComponent.scrollIntoView({ behavior: "smooth" });
-    setSelectedScreen(index);
+    sectionComponent.scrollIntoView({ behavior: "smooth" });
+    setSelectedSection(index);
   };
 
   useEffect(() => {
     return () => {
-      currentScreenSubscription.unsubscribe();
+      currentSectionSubscription.unsubscribe();
     };
-  }, [currentScreenSubscription]);
+  }, [currentSectionSubscription]);
 
   return (
     <div className={classes["header-container"]}>

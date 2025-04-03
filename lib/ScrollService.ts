@@ -1,35 +1,35 @@
 import { Subject } from "rxjs";
 
-import { TOTAL_SCREENS } from "./commonUtils";
+import { MAIN_SECTIONS } from "./commonUtils";
 
 export default class ScrollService {
   /* SINGLETON CLASS INSTANCE */
   static scrollHandler = new ScrollService();
 
   /* Lets instantiate the subject BROADCASTERS */
-  static currentScreenBroadcaster = new Subject();
-  static currentScreenFadeIn = new Subject();
+  static currentSectionBroadcaster = new Subject();
+  static currentSectionFadeIn = new Subject();
 
   //lets have a constructor here and add the scroll event to window
   constructor() {
     /* ADD SCROLL EVENT TO WINDOW */
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", this.checkCurrentScreenUnderViewport);
+      window.addEventListener("scroll", this.checkCurrentSectionUnderViewport);
     }
   }
 
   /* SCROLL TO HIRE ME / CONTACT ME SCREEN */
   scrollToHireMe = () => {
-    let contactMeScreen = document.getElementById("ContactMe");
-    if (!contactMeScreen) return;
+    let contactMeSection = document.getElementById("ContactMe");
+    if (!contactMeSection) return;
 
-    contactMeScreen.scrollIntoView({ behavior: "smooth" });
+    contactMeSection.scrollIntoView({ behavior: "smooth" });
   };
   scrollToHome = () => {
-    let homeScreen = document.getElementById("Home");
-    if (!homeScreen) return;
+    let homeSection = document.getElementById("Home");
+    if (!homeSection) return;
 
-    homeScreen.scrollIntoView({ behavior: "smooth" });
+    homeSection.scrollIntoView({ behavior: "smooth" });
   };
 
   /* CHECK IF ELEMENT IS IN VIEW .this simply means if the document appears fully on the screen or not */
@@ -60,33 +60,33 @@ export default class ScrollService {
 
   /* CHECK THE SCREEN THATS CURRENTLY UNDER VIEWPORT */
   // which means the screen that is displayed fully
-  checkCurrentScreenUnderViewport = (event: Event) => {
+  checkCurrentSectionUnderViewport = (event: Event) => {
     if (!event || Object.keys(event).length < 1) return;
 
-    for (const screen of TOTAL_SCREENS) {
-      const screenFromDOM = document.getElementById(screen.screen_name);
-      if (!screenFromDOM) continue;
+    for (const section of MAIN_SECTIONS) {
+      const sectionFromDOM = document.getElementById(section.name);
+      if (!sectionFromDOM) continue;
 
-      const fullyVisible = this.isElementInView(screenFromDOM, "complete");
-      const partiallyVisible = this.isElementInView(screenFromDOM, "partial");
+      const fullyVisible = this.isElementInView(sectionFromDOM, "complete");
+      const partiallyVisible = this.isElementInView(sectionFromDOM, "partial");
 
       if (fullyVisible || partiallyVisible) {
         if (
           partiallyVisible &&
-          !(screen as { alreadyRendered?: boolean }).alreadyRendered
+          !(section as { alreadyRendered?: boolean }).alreadyRendered
         ) {
           // BROADCAST FADE IN EFFECT
-          ScrollService.currentScreenFadeIn.next({
-            fadeInScreen: screen.screen_name,
+          ScrollService.currentSectionFadeIn.next({
+            fadeInSection: section.name,
           });
-          (screen as { alreadyRendered?: boolean }).alreadyRendered = true;
+          (section as { alreadyRendered?: boolean }).alreadyRendered = true;
           break;
         }
 
         if (fullyVisible) {
           // BROADCAST SCREEN NAME
-          ScrollService.currentScreenBroadcaster.next({
-            screenInView: screen.screen_name,
+          ScrollService.currentSectionBroadcaster.next({
+            sectionInView: section.name,
           });
           break;
         }

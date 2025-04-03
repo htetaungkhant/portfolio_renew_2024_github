@@ -1,24 +1,24 @@
-import { TOTAL_SCREENS } from "@/lib/commonUtils";
+import { MAIN_SECTIONS } from "@/lib/commonUtils";
 
 import { PageFooter } from "../Common/PageFooter/PageFooter";
 
 export default function PortfolioContainer() {
-  const mapAllScreens = () => {
-    return TOTAL_SCREENS.map((screen) =>
-      screen.component ? (
-        <screen.component
-          screenName={screen.screen_name}
-          key={screen.screen_name}
-          id={screen.screen_name}
+  const mapAllSections = () => {
+    return MAIN_SECTIONS.map((section) =>
+      section.component ? (
+        <section.component
+          sectionName={section.name}
+          key={section.name}
+          id={section.name}
         />
       ) : null
     );
   };
 
   return (
-    <div>
-      {mapAllScreens()}
+    <>
+      {mapAllSections()}
       <PageFooter />
-    </div>
+    </>
   );
 }
