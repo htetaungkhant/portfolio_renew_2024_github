@@ -80,10 +80,20 @@
       text-decoration: none;
       transition: all 0.3s ease;
       font-family: var(--font-poppins);
+      overflow: hidden;
+      // word-break: break-word;
+      // word-wrap: break-word;
 
       &:hover {
         transform: translateX(5px);
         text-decoration: underline;
+      }
+
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
       }
     }
 
