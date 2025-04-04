@@ -2,7 +2,7 @@ import { MAIN_SECTIONS } from "@/lib/commonUtils";
 
 import { PageFooter } from "../Common/PageFooter/PageFooter";
 
-export default function PortfolioContainer() {
+export default function SectionsContainer() {
   const mapAllSections = () => {
     return MAIN_SECTIONS.map((section) =>
       section.component ? (

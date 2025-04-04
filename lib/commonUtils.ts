@@ -1,8 +1,8 @@
-import Home from "@/components/PortfolioContainer/Home/Home";
-import AboutMe from "@/components/PortfolioContainer/AboutMe/AboutMe";
-import Resume from "@/components/PortfolioContainer/Resume/Resume";
-import Projects from "@/components/PortfolioContainer/Projects/Projects";
-import ContactMe from "@/components/PortfolioContainer/ContactMe/ContactMe";
+import Home from "@/components/MainSections/Home/Home";
+import AboutMe from "@/components/MainSections/AboutMe/AboutMe";
+import Resume from "@/components/MainSections/Resume/Resume";
+import Projects from "@/components/MainSections/Projects/Projects";
+import ContactMe from "@/components/MainSections/ContactMe/ContactMe";
 
 export const MAIN_SECTIONS = [
   {

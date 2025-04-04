@@ -1,12 +1,12 @@
 import { ToastContainer } from "react-toastify";
 
-import PortfolioContainer from "@/components/PortfolioContainer/PortfolioContainer";
+import SectionsContainer from "@/components/MainSections/SectionsContainer";
 
 export default function Home() {
   return (
     <main>
       <ToastContainer />
-      <PortfolioContainer />
+      <SectionsContainer />
     </main>
   );
 }
