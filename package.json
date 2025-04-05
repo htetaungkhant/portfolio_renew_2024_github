@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "concurrently \"node watch-and-fix.js\" \"next dev --turbopack\"",
+    "onlydev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lintall": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "lintall:fix": "npx eslint . --fix --ext .js,.jsx,.ts,.tsx",
+    "lintfile:fix": "npx eslint --fix",
+    "watch:fix": "node watch-and-fix.js",
     "test": "echo \"Success running test job.\""
   },
   "dependencies": {
@@ -34,6 +39,8 @@
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.24.0",
     "@react-email/components": "0.0.34",
     "@react-email/render": "1.0.5",
     "@tailwindcss/postcss": "^4.0.17",
@@ -42,8 +49,12 @@
     "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4",
     "@types/react-typical": "^0.1.2",
+    "chokidar": "^4.0.3",
+    "concurrently": "^9.1.2",
     "eslint": "^9.23.0",
     "eslint-config-next": "^15.2.4",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-import-alias": "^1.2.0",
     "postcss": "^8",
     "react-email": "4.0.2",
     "sass": "^1.86.1",
