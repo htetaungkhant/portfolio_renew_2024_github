@@ -1,10 +1,10 @@
-import React from "react";
-import nodemailer, { Transporter } from "nodemailer";
 import { render } from "@react-email/render";
+import nodemailer, { Transporter } from "nodemailer";
+import React from "react";
 
-import { EmailData, EmailType } from "@/types/common";
 import ContactFormEmail from "@/components/Common/EmailTemplates/ContactFormEmail";
 import ThankYouEmail from "@/components/Common/EmailTemplates/ThankYouEmail";
+import { EmailData, EmailType } from "@/types/common";
 
 interface EmailTemplate {
   component: (data: EmailData) => React.ReactElement;
@@ -68,7 +68,6 @@ export class MailService {
     }
   }
 }
-
 
 // Maybe I will reuse this function later
 /*
