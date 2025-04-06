@@ -1,6 +1,7 @@
 "use client";
 
 import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
+
 import classes from "./Footer.module.scss";
 
 export default function Footer() {
