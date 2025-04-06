@@ -7,6 +7,7 @@ import stylisticJs from '@stylistic/eslint-plugin-js'
 import { globalIgnores } from "eslint/config";
 import importPlugin from "eslint-plugin-import";
 import importAlias from "eslint-plugin-import-alias";
+import unusedImports from "eslint-plugin-unused-imports";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -22,6 +23,7 @@ const eslintConfig = [
   globalIgnores(["node_modules/**", ".next/**", "**/*.d.ts", "watch-and-fix.js"]),
   {
     plugins: {
+        "unused-imports": unusedImports,
         import: importPlugin,
         "import-alias": importAlias,
         '@stylistic/js': stylisticJs
@@ -44,6 +46,17 @@ const eslintConfig = [
         // },
     },
     rules: {
+        "@typescript-eslint/no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "warn",
+            {
+                vars: "all",
+                varsIgnorePattern: "^_",
+                args: "after-used",
+                argsIgnorePattern: "^_",
+            },
+        ],
         "no-multiple-empty-lines": [
             "error",
             {
