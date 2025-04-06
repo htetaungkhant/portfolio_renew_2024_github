@@ -1,3 +1,4 @@
+import * as React from "react";
 import {
   Body,
   Container,
@@ -5,22 +6,19 @@ import {
   Heading,
   Hr,
   Html,
-  Link,
   Preview,
   Section,
   Text,
 } from "@react-email/components";
-import * as React from "react";
 
 interface ThankYouEmailProps {
   name: string;
-  email: string;
+  email?: string;
   message: string;
 }
 
 export const ThankYouEmail = ({
   name,
-  email,
   message,
 }: ThankYouEmailProps) => (
   <Html>
@@ -164,13 +162,6 @@ const signatureName = {
   fontSize: "16px",
   fontWeight: "500",
   margin: "0",
-};
-
-const contactInfo = {
-  color: "#334155",
-  fontSize: "14px",
-  margin: "8px 0 0",
-  lineHeight: "1.5",
 };
 
 const footer = {

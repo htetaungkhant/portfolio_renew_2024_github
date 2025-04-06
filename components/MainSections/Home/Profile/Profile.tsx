@@ -2,10 +2,10 @@
 
 import React from "react";
 import { ReactTyped } from "react-typed";
-import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
 import { RESUME_LINK, socialLinks } from "@/data/Common/constants";
 import { profileDetails } from "@/data/Home/constants";
+import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
 import classes from "./Profile.module.scss";
 

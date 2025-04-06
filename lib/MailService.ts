@@ -1,6 +1,6 @@
+import React from "react";
 import { render } from "@react-email/render";
 import nodemailer, { Transporter } from "nodemailer";
-import React from "react";
 
 import ContactFormEmail from "@/components/Common/EmailTemplates/ContactFormEmail";
 import ThankYouEmail from "@/components/Common/EmailTemplates/ThankYouEmail";

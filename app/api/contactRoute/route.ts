@@ -1,12 +1,12 @@
-import { EmailType, EmailData } from "@/types/common";
 import { MailService } from "@/lib/MailService";
+import { EmailData,EmailType } from "@/types/common";
 
 interface RequestBody extends EmailData {
   emailTypes?: EmailType[];
 }
 
 export async function POST(req: Request) {
-  let data = (await req.json()) as RequestBody;
+  const data = (await req.json()) as RequestBody;
 
   if (!data?.name || !data?.email || !data?.message) {
     return Response.json({ msg: "Please Fill All The Fields!" });

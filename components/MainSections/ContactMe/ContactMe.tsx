@@ -1,12 +1,12 @@
 "use client";
 
-import { faSpinner, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
-import Image from "next/image";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { ReactTyped } from "react-typed";
+import Image from "next/image";
+import { faPaperPlane,faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 
 import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
 import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";

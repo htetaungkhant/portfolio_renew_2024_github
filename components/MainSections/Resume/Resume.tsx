@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, {useState } from "react";
 import Image from "next/image";
 
 import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
-import SectionHeading from "../../Common/SectionHeading/SectionHeading";
+import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
+import { abilitiesDetails, educationDetails, interestsDetails,resumeBullets, skillsDetails, workHistoryDetails } from "@/data/Resume/constants";
+
 import ResumeHeading from "./ResumeHeading/ResumeHeading";
-
-import { resumeBullets, educationDetails, workHistoryDetails, skillsDetails, abilitiesDetails, interestsDetails } from "@/data/Resume/constants";
-
 import classes from "./Resume.module.scss";
 
 const Resume = (props: { id: string; sectionName?: string }) => {
@@ -18,9 +17,9 @@ const Resume = (props: { id: string; sectionName?: string }) => {
   }>({});
 
   const handleCarousal = (index: number) => {
-    let offsetHeight = 560;
+    const offsetHeight = 560;
 
-    let newCarousalOffset = {
+    const newCarousalOffset = {
       style: { transform: `translateY(${index * offsetHeight * -1}px)` },
     };
 

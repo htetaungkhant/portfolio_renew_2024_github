@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+
 import classes from "./ProjectCard.module.scss";
 
 const ProjectCard = (props: {
@@ -8,7 +9,7 @@ const ProjectCard = (props: {
   toDate?: string;
   description?: string;
   technologies?: string[];
-  image?: any;
+  image?: StaticImageData;
 }) => {
   return (
     <div className={`${classes["project-card"]} ${props.className}`}>

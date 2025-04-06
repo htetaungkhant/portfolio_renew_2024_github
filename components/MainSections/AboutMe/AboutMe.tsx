@@ -4,13 +4,11 @@ import React from "react";
 import Image from "next/image";
 
 import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
-import SectionHeading from "../../Common/SectionHeading/SectionHeading";
-
-import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
-
-import { RESUME_LINK } from "@/data/Common/constants";
-import meImage from "@/data/AboutMe/images/me.jpg";
+import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
 import { CONSTANTS } from "@/data/AboutMe/constants";
+import meImage from "@/data/AboutMe/images/me.jpg";
+import { RESUME_LINK } from "@/data/Common/constants";
+import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
 import classes from "./AboutMe.module.scss";
 

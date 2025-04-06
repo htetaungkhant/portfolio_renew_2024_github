@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { HEADER_MENU } from "@/lib/commonUtils";
-import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
 import { headerTitle } from "@/data/Home/constants";
+import { HEADER_MENU } from "@/lib/commonUtils";
+import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
 import classes from "./Header.module.scss";
 

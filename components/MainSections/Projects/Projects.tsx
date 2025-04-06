@@ -3,11 +3,10 @@
 import React from "react";
 
 import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
-import SectionHeading from "../../Common/SectionHeading/SectionHeading";
-import ProjectCard from "./ProjectCard/ProjectCard";
-
+import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
 import { projectsDetails } from "@/data/Projects/constants";
 
+import ProjectCard from "./ProjectCard/ProjectCard";
 import classes from "./Projects.module.scss";
 
 const Projects = (props: { id: string; sectionName?: string }) => {

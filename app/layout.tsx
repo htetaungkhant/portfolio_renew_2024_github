@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-
-import { FontPoppins } from "../assets/fonts/fonts";
-
 import "@/assets/styles/globals.css";
 import "@/assets/styles/common.scss";
 import "react-toastify/dist/ReactToastify.css";
 
+import { FontPoppins } from "@/assets/fonts/fonts";
 import ScrollToTop from "@/components/Common/ScrollToTop/ScrollToTop";
 import { cn } from "@/lib/utils";
 
