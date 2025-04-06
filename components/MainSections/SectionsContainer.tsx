@@ -1,6 +1,5 @@
+import { PageFooter } from "@/components/Common/PageFooter/PageFooter";
 import { MAIN_SECTIONS } from "@/lib/commonUtils";
-
-import { PageFooter } from "../Common/PageFooter/PageFooter";
 
 export default function SectionsContainer() {
   const mapAllSections = () => {
