@@ -1,8 +1,8 @@
-import Home from "@/components/MainSections/Home/Home";
 import AboutMe from "@/components/MainSections/AboutMe/AboutMe";
-import Resume from "@/components/MainSections/Resume/Resume";
-import Projects from "@/components/MainSections/Projects/Projects";
 import ContactMe from "@/components/MainSections/ContactMe/ContactMe";
+import Home from "@/components/MainSections/Home/Home";
+import Projects from "@/components/MainSections/Projects/Projects";
+import Resume from "@/components/MainSections/Resume/Resume";
 
 export const MAIN_SECTIONS = [
   {
