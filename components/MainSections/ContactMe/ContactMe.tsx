@@ -1,21 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { ReactTyped } from "react-typed";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import Image from "next/image";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
-
+import { ReactTyped } from "react-typed";
 
 import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
-import SectionHeading from "../../Common/SectionHeading/SectionHeading";
-import Footer from "../footer/Footer";
-
+import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
+import Footer from "@/components/MainSections/footer/Footer";
 import { socialLinks } from "@/data/Common/constants";
-import weChatQR from "@/data/ContactMe/images/WeChatID.png";
 import { contactLinks } from "@/data/ContactMe/constants";
+import weChatQR from "@/data/ContactMe/images/WeChatID.png";
 
 import classes from "./ContactMe.module.scss";
 
@@ -51,7 +49,7 @@ export default function ContactMe(props: { id: string; sectionName?: string }) {
     setErrors(newErrors);
 
     try {
-      let data = { name, email, message };
+      const data = { name, email, message };
       setBool(true);
       const res = await axios.post(`/api/contactRoute`, data);
       if (name.length === 0 || email.length === 0 || message.length === 0) {
@@ -65,9 +63,14 @@ export default function ContactMe(props: { id: string; sectionName?: string }) {
         setMessage("");
         setErrors({ name: false, email: false, message: false });
       }
-    } catch (error: any) {
-      setBanner(error.response.data.msg);
-      toast.error(error.response.data.msg);
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error) && error.response) {
+        setBanner(error.response.data.msg);
+        toast.error(error.response.data.msg);
+      } else {
+        setBanner("An unexpected error occurred.");
+        toast.error("An unexpected error occurred.");
+      }
     } finally {
       setBool(false);
     }
