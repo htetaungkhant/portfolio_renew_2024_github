@@ -1,8 +1,8 @@
-import education from "@/public/images/Resume/education.svg";
-import workHistory from "@/public/images/Resume/work-history.svg";
-import programmingSkills from "@/public/images/Resume/programming-skills.svg";
 import abilities from "@/public/images/Resume/abilities.svg";
+import education from "@/public/images/Resume/education.svg";
 import interests from "@/public/images/Resume/interests.svg";
+import programmingSkills from "@/public/images/Resume/programming-skills.svg";
+import workHistory from "@/public/images/Resume/work-history.svg";
 
 export const resumeBullets = [
     { label: "Education", image: education },
