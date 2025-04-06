@@ -5,6 +5,7 @@ import js from '@eslint/js';
 import { FlatCompat } from "@eslint/eslintrc";
 import importPlugin from "eslint-plugin-import";
 import importAlias from "eslint-plugin-import-alias";
+import stylisticJs from '@stylistic/eslint-plugin-js'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -22,6 +23,7 @@ const eslintConfig = [
     plugins: {
         import: importPlugin,
         "import-alias": importAlias,
+        '@stylistic/js': stylisticJs
     },
     settings: {
         "import/resolver": {
@@ -41,37 +43,46 @@ const eslintConfig = [
         // },
     },
     rules: {
-        'import-alias/import-alias': [
-        'error',
+        "no-multiple-empty-lines": [
+            "error",
             {
-                relativeDepth: 0,
-                // rootDir: __dirname,
-                aliases: [
-                    { "alias": "@/", "matcher": "^" }
-                    // { alias: '@/app', matcher: '^app' },
-                    // { alias: '@/assets', matcher: '^assets' },
-                    // { alias: '@/components', matcher: '^components' },
-                    // { alias: '@/data', matcher: '^data' },
-                    // { alias: '@/lib', matcher: '^lib' },
-                    // { alias: '@/public', matcher: '^public' },
-                    // { alias: '@/types', matcher: '^types' },
-                ]
+                "max": 1,
+                "maxBOF": 0,
+                "maxEOF": 0
             }
         ],
-        // "import/no-unresolved": "error",
-        // "import/order": [
-        //     "error",
-        //     {
-        //         "groups": ["builtin", "external", "internal"],
-        //         "pathGroups": [
-        //             {
-        //                 "pattern": "@/**",
-        //                 "group": "internal"
-        //             }
-        //         ],
-        //         "alphabetize": { "order": "asc" }
-        //     }
-        // ],
+        "import-alias/import-alias": [
+            "error",
+                {
+                    relativeDepth: 0,
+                    // rootDir: __dirname,
+                    aliases: [
+                        { "alias": "@/", "matcher": "^" }
+                        // { alias: '@/app', matcher: '^app' },
+                        // { alias: '@/assets', matcher: '^assets' },
+                        // { alias: '@/components', matcher: '^components' },
+                        // { alias: '@/data', matcher: '^data' },
+                        // { alias: '@/lib', matcher: '^lib' },
+                        // { alias: '@/public', matcher: '^public' },
+                        // { alias: '@/types', matcher: '^types' },
+                    ]
+                }
+        ],
+        "import/no-unresolved": "error",
+        "import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "internal"],
+                "pathGroups": [
+                    {
+                        "pattern": "@/**",
+                        "group": "internal"
+                    }
+                ],
+                "newlines-between": "always",
+                "alphabetize": { "order": "asc" }
+            }
+        ],
         // "no-restricted-imports": ["error", {
         //     "patterns": [
         //         {
