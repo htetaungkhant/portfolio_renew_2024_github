@@ -1,17 +1,16 @@
 import ADDAS_LINE_Enhance from "@/data/Projects/images/ADDAS_LINE_Enhance.webp";
-import Applicant_Tracking_System from "@/data/Projects/images/Applicant_Tracking_System.webp";
 import AI_Testing from "@/data/Projects/images/AI_Testing.webp";
 import Agent_Associate_Matching from "@/data/Projects/images/Agent_Associate_Matching.jpeg";
-import Enterprise_Insurance_Application_System_for_Bank from "@/data/Projects/images/Enterprise_Insurance_Application_System_for_Bank.jpeg";
-import ColorsRainbow from "@/data/Projects/images/ColorsRainbow.webp";
 import Ananda from "@/data/Projects/images/Ananda.webp";
+import Applicant_Tracking_System from "@/data/Projects/images/Applicant_Tracking_System.webp";
+import ColorsRainbow from "@/data/Projects/images/ColorsRainbow.webp";
+import Enterprise_Insurance_Application_System_for_Bank from "@/data/Projects/images/Enterprise_Insurance_Application_System_for_Bank.jpeg";
 import Myanma_Insurance from "@/data/Projects/images/Myanma_Insurance.webp";
-import Sai_Sai_Pay_and_Uab_Pay from "@/data/Projects/images/Sai_Sai_Pay_and_Uab_Pay.jpeg";
 import Personal_Portfolio_Websites from "@/data/Projects/images/Personal_Portfolio_Websites.jpeg";
-import YCC_Trading_Center from "@/data/Projects/images/YCC_Trading_Center.jpeg";
-import Vending_Machine_with_QR_code from "@/data/Projects/images/Vending_Machine_with_QR_code.jpeg";
 import Runnable_Project_Hub_using_container_technology from "@/data/Projects/images/Runnable_Project_Hub_using_Container_Technology.jpeg";
-
+import Sai_Sai_Pay_and_Uab_Pay from "@/data/Projects/images/Sai_Sai_Pay_and_Uab_Pay.jpeg";
+import Vending_Machine_with_QR_code from "@/data/Projects/images/Vending_Machine_with_QR_code.jpeg";
+import YCC_Trading_Center from "@/data/Projects/images/YCC_Trading_Center.jpeg";
 
 export const projectsDetails = [
     {
