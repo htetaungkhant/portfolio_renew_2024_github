@@ -1,11 +1,12 @@
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
-import { globalIgnores } from "eslint/config";
-import js from '@eslint/js';
+
 import { FlatCompat } from "@eslint/eslintrc";
+import js from '@eslint/js';
+import stylisticJs from '@stylistic/eslint-plugin-js'
+import { globalIgnores } from "eslint/config";
 import importPlugin from "eslint-plugin-import";
 import importAlias from "eslint-plugin-import-alias";
-import stylisticJs from '@stylistic/eslint-plugin-js'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
