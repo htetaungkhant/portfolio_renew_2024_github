@@ -1,3 +1,4 @@
+import { builtinModules } from 'module';
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -7,7 +8,10 @@ import stylisticJs from '@stylistic/eslint-plugin-js'
 import { globalIgnores } from "eslint/config";
 import importPlugin from "eslint-plugin-import";
 import importAlias from "eslint-plugin-import-alias";
+import simpleImportAlias from "eslint-plugin-simple-import-sort";
 import unusedImports from "eslint-plugin-unused-imports";
+
+const builtinsRegex = `^(${builtinModules.join('|')})(/|$)`;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,6 +30,7 @@ const eslintConfig = [
         "unused-imports": unusedImports,
         import: importPlugin,
         "import-alias": importAlias,
+        "simple-import-sort": simpleImportAlias,
         '@stylistic/js': stylisticJs
     },
     settings: {
@@ -46,6 +51,7 @@ const eslintConfig = [
         // },
     },
     rules: {
+        "import/no-unresolved": "error",
         "@typescript-eslint/no-unused-vars": "off",
         "unused-imports/no-unused-imports": "error",
         "unused-imports/no-unused-vars": [
@@ -57,20 +63,14 @@ const eslintConfig = [
                 argsIgnorePattern: "^_",
             },
         ],
-        "no-multiple-empty-lines": [
-            "error",
-            {
-                "max": 1,
-                "maxBOF": 0,
-                "maxEOF": 0
-            }
-        ],
         "import-alias/import-alias": [
             "error",
                 {
-                    relativeDepth: 0,
+                    relativeDepth: 0, // can use -1 for subdirectories
                     // rootDir: __dirname,
                     aliases: [
+                        // { "alias": "@/", "matcher": "^(?!.*\\.module\\.scss$)^" }
+
                         { "alias": "@/", "matcher": "^" }
                         // { alias: '@/app', matcher: '^app' },
                         // { alias: '@/assets', matcher: '^assets' },
@@ -82,21 +82,61 @@ const eslintConfig = [
                     ]
                 }
         ],
-        "import/no-unresolved": "error",
-        "import/order": [
-            "error",
+        'simple-import-sort/imports': [
+            'error',
             {
-                "groups": ["builtin", "external", "internal"],
-                "pathGroups": [
-                    {
-                        "pattern": "@/**",
-                        "group": "internal"
-                    }
-                ],
-                "newlines-between": "always",
-                "alphabetize": { "order": "asc" }
+                groups: [
+                    // Node.js builtins
+                    [builtinsRegex],
+
+                    // Packages. `react` related packages come first.
+                    ['^react', '^next', '^[^.]'],
+
+                    // Internal packages '@/'
+                    ['^@/'],
+                    // can also split into groups
+                    // ['^@/app'],
+                    // ['^@/assets'],
+                    // ['^@/components'],
+                    // ['^@/data'],
+                    // ['^@/lib'],
+                    // ['^@/public'],
+                    // ['^@/types'],
+
+                    // Local imports without space between them and .scss files, SCSS files always at the end
+                    ['^\\.\\/(?!.*\\.module\\.scss$)', '^\\.\\/.*\\.module\\.scss$']
+                ]
             }
         ],
+        // "no-multiple-empty-lines": [
+        //     "error",
+        //     {
+        //         "max": 1,
+        //         "maxBOF": 0,
+        //         "maxEOF": 0
+        //     }
+        // ],
+        // "import/order": [
+        //     "error",
+        //     {
+        //         "groups": [
+        //             "builtin",
+        //             "external",
+        //             "internal",
+        //         ],
+        //         "pathGroups": [
+        //             {
+        //                 "pattern": "@/**",
+        //                 "group": "internal"
+        //             }
+        //         ],
+        //         "newlines-between": "always",
+        //         "alphabetize": {
+        //           "order": 'asc',
+        //           "caseInsensitive": true
+        //         }
+        //     }
+        // ],
         // "no-restricted-imports": ["error", {
         //     "patterns": [
         //         {
