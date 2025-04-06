@@ -41,7 +41,7 @@ async function startWatcher() {
     
     try {
       // console.log(`📝 File changed: ${filepath} - calling ESLint fix...`);
-      console.log(`Check by ESLint fix to ${filepath}`);
+      console.log(`ESLint fix to ${filepath}`);
       execSync(`npx eslint --fix "${filepath}"`, { stdio: 'inherit' });
       // execSync(`npm run lintfile:fix "${filepath}"`, { stdio: 'inherit' });
       // console.log(`✅ ESLint fix applied to ${filepath}`);
