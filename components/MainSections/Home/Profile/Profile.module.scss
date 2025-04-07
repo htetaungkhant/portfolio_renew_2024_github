@@ -1,3 +1,14 @@
+.primary-btn {
+  border: 2px solid var(--border-white);
+}
+
+.highlighted-btn,
+.primary-btn {
+  &:hover {
+    border-color: var(--border-cornsilk);
+  }
+}
+
 .profile-container {
   display: flex;
   align-items: center;
@@ -20,7 +31,7 @@
 }
 
 .highlighted-text {
-  color: var(--text-dark);
+  color: var(--text-highlighted);
   font-family: var(--font-poppins);
 }
 
@@ -60,25 +71,9 @@
 }
 
 .profile-options {
-  button {
-    font-family: var(--font-poppins);
-  }
-
-  .primary-btn {
-    &:hover {
-        border: 2px solid white;
-    }
-  }
-
-  .highlighted-btn {
-    margin: 0 0 0 28px;
-    border: 2px solid var(--text-white);
-
-    &:hover {
-      background-color: cornsilk;
-      color: var(--text-black);
-    }
-  }
+  display: flex;
+  justify-content: center;
+  column-gap: 28px;
 }
 
 .profile-picture {
@@ -157,9 +152,10 @@
     font: 12px;
   }
 
-  .profile-options .btn {
+  .highlighted-btn,
+  .primary-btn {
     width: 120px;
-    padding: 11px 0;
+    padding: 10px 0;
     z-index: 700;
   }
 }
@@ -183,8 +179,8 @@
   }
 
   .profile-options {
-    display: flex;
     justify-content: space-evenly;
+    column-gap: 12px;
   }
 
   .profile-details {
@@ -201,7 +197,7 @@
     }
   }
 
-  .profile-options .highlighted-btn {
+  .highlighted-btn {
     margin: 0 !important;
   }
 }

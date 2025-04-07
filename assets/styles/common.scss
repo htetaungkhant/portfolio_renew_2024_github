@@ -24,21 +24,27 @@
     color: var(--text-white);
     border: 2px solid var(--btn-primary);
     font-size: 12px;
+    font-family: var(--font-poppins);
     background-color: var(--btn-primary);
-}
 
-.primary-btn:hover {
     &:hover {
-        color: var(--text-aliceblue);
+        color: var(--text-black);
         border: 2px solid var(--btn-highlighted);
-        background-color: var(--btn-primary);
+        background-color: var(--bg-cornsilk);
     }
 }
 
 .highlighted-btn {
-    color: var(--text-white);
     font-size: 12px;
+    font-family: var(--font-poppins);
+    color: var(--text-white);
+    border: 2px solid var(--border-highlighted);
     background-color: var(--btn-highlighted);
+
+    &:hover {
+        background-color: var(--bg-cornsilk);
+        color: var(--text-black);
+    }
 }
 
 @media only screen and (max-width: 568px) {

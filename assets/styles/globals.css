@@ -15,6 +15,7 @@
   --white: rgba(255, 255, 255, 1);
   --black: rgba(51, 51, 51, 1);
   --dark: rgba(31, 34, 53, 1);
+  --cornsilk: rgba(255, 248, 220, 1);
   --gray-100: rgba(248, 249, 250, 1);
   --gray-200: rgba(240, 241, 242, 1);
   --gray-300: rgba(85, 85, 85, 1);
@@ -47,7 +48,7 @@
   --bg-success-dark: var(--success-dark);
   --bg-error: var(--error);
   --bg-error-dark: var(--error-dark);
-  --bg-cornsilk: rgba(255, 248, 220, 1);
+  --bg-cornsilk: var(--cornsilk);
   --bg-input: rgba(230, 230, 230, 0.4);
 
   /* Text Variants */
@@ -93,6 +94,7 @@
   --border-error: rgba(228, 79, 79, 0.82);
   --border-highlighted: var(--highlighted);
   --border-primary: var(--primary);
+  --border-cornsilk: var(--cornsilk);
 
   /* Button Colors */
   --btn-primary: var(--primary);
