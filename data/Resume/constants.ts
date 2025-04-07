@@ -38,22 +38,24 @@ export const educationDetails = [
 export const workHistoryDetails = [
     {
         heading: "Partners Home Co., Ltd",
-        subHeading: "Frontend Team Leader",
+        subHeading: "Software Engineer",
         fromDate: "2022",
         toDate: "2024",
         details: [
             "- Developed the full-stack web applications",
             "- Used most of JavaScript frameworks such as React.js, Next.js, Vue.js, Express.js, etc.",
+            "- Sometimes played a role as a Frontend Lead Developer.",
         ],
     },
     {
         heading: "Aceplus Co., Ltd",
-        subHeading: "JavaScript Full-stack Developer",
+        subHeading: "Junior Software Engineer",
         fromDate: "2020",
         toDate: "2022",
         details: [
             "- Developed Mobile Applications using React Native and front-end web applications using React.js",
             "- Maintained front-end web applications using Angular.js and mobile applications using React Native.",
+            "- Sometimes played a role as a JavaScript full-stack Developer (Frontend heavy).",
         ],
     },
     {
