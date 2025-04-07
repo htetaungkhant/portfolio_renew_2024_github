@@ -1,4 +1,4 @@
-export const RESUME_LINK = "htetaungkhant_28_03_2025.pdf";
+export const RESUME_LINK = "htetaungkhant_CV.pdf";
 
 export const socialLinks = [
     {

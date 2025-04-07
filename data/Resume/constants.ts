@@ -38,13 +38,13 @@ export const educationDetails = [
 export const workHistoryDetails = [
     {
         heading: "Partners Home Co., Ltd",
-        subHeading: "Software Engineer",
+        subHeading: "Senior Software Engineer",
         fromDate: "2022",
         toDate: "2024",
         details: [
             "- Developed the full-stack web applications",
             "- Used most of JavaScript frameworks such as React.js, Next.js, Vue.js, Express.js, etc.",
-            "- Sometimes played a role as a Frontend Lead Developer.",
+            "- Played a role as a Frontend Lead Developer.",
         ],
     },
     {
@@ -55,7 +55,7 @@ export const workHistoryDetails = [
         details: [
             "- Developed Mobile Applications using React Native and front-end web applications using React.js",
             "- Maintained front-end web applications using Angular.js and mobile applications using React Native.",
-            "- Sometimes played a role as a JavaScript full-stack Developer (Frontend heavy).",
+            "- Played a role as a JavaScript full-stack Developer (Frontend heavy).",
         ],
     },
     {
@@ -64,6 +64,7 @@ export const workHistoryDetails = [
         fromDate: "2018",
         toDate: "2019",
         details: [
+            "- Played as a MERN stack developer",
             "- Developed e-commerce(trading) web apps",
             "- Used React, Expressjs, MySQL and MongoDB",
         ],
@@ -74,7 +75,7 @@ export const workHistoryDetails = [
         fromDate: "2016",
         toDate: "2016",
         details: [
-            "- Served as a Software Tester",
+            "- Played as a Software Tester",
             "- Pair programming as java developer",
         ],
     },
