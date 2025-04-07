@@ -15,8 +15,13 @@
 }
 
 .btn {
-    &:active {
+    &:active:not(:disabled) {
         transform: translateY(2px);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
     }
 }
 
