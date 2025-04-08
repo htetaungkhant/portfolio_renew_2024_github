@@ -139,7 +139,7 @@ export const interestsDetails = [
     },
     {
         heading: "Music",
-        description: "I played guitar about 9 years ago. Especially, I like modern rock music and acoustic music type. And I play guitar and sing as the best stress reliever.",
+        description: "I played guitar about many years ago since I was 13 years old. Especially, I like modern rock music and acoustic music type. And I play guitar and sing as the best stress reliever.",
     },
     {
         heading: "Competitive Gaming",

@@ -123,9 +123,9 @@
   /* Gradient Colors */
   --gradient-dark: linear-gradient(45deg, rgba(31, 34, 53, 1) 0%, rgba(45, 49, 79, 1) 100%);
   --gradient-white: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  --gradient-highlighted: linear-gradient(90deg, rgba(255, 88, 35, 1), rgba(0, 0, 0, 0));
-  --gradient-text-light: linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(255, 88, 35, 1));
-  --gradient-text-dark: linear-gradient(45deg, rgba(255, 88, 35, 1), rgba(255, 255, 255, 1));
+  --gradient-highlighted: linear-gradient(90deg, var(--highlighted), rgba(0, 0, 0, 0));
+  --gradient-text-light: linear-gradient(45deg, var(--light-blue), rgba(255, 255, 255, 1), var(--highlighted));
+  --gradient-text-dark: linear-gradient(45deg, var(--highlighted), rgba(255, 255, 255, 1), var(--light-blue));
 
   /* Shadcn UI variables */
   --radius: 0.625rem;
