@@ -25,7 +25,7 @@ export const projectsDetails = [
         title: "Applicant Tracking System",
         duration: { fromDate: "", toDate: "" },
         description:
-            "It’s a web app to track the applications (resumes) of the applicants by using AI. It includes two systems. One is for the consumers to submit their resumes and another one is the administration dashboard to manage the users and send the emails.",
+            "It’s a web app to track the applications (resumes) of the applicants by using AI. It includes two systems. One is for the consumers to submit their resumes and another one is the administration dashboard to manage the candidates and send the emails.",
         technologies: ["Next.js", "Shadcn UI"],
         image: Applicant_Tracking_System,
     },
@@ -89,7 +89,7 @@ export const projectsDetails = [
         title: "Personal Portfolio Websites",
         duration: { fromDate: "", toDate: "" },
         description:
-            "I have personal portfolio websites with two versions. One is developed in 2020 and another one is developed in 2023. And currently, I’m developing another customizable version for 2025. So, I temporarily deployed old portfolio website at Vercel.",
+            "I developed personal portfolio websites with two versions. One is developed in 2020 and another one is developed in 2023. And currently, I’m developing another customizable version for 2025. So, I temporarily deployed old portfolio website at Vercel.",
         technologies: ["React", "Next.js", "Strapi CMS", "Sanity CMS"],
         image: Personal_Portfolio_Websites,
     },

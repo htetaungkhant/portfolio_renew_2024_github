@@ -42,9 +42,8 @@ export const workHistoryDetails = [
         fromDate: "2022",
         toDate: "2024",
         details: [
-            "- Developed the full-stack web applications",
-            "- Used most of JavaScript frameworks such as React.js, Next.js, Vue.js, Express.js, etc.",
-            "- Played a role as a Frontend Lead Developer.",
+            "- Played a role as a Frontend Lead Developer",
+            "- Developed full-stack web applications by using JavaScript frameworks such as React.js, Next.js, Vue.js, Express.js, etc",
         ],
     },
     {
@@ -53,9 +52,8 @@ export const workHistoryDetails = [
         fromDate: "2020",
         toDate: "2022",
         details: [
-            "- Developed Mobile Applications using React Native and front-end web applications using React.js",
-            "- Maintained front-end web applications using Angular.js and mobile applications using React Native.",
-            "- Played a role as a JavaScript full-stack Developer (Frontend heavy).",
+            "- Played a role as a JavaScript full-stack Developer (Frontend heavy)",
+            "- Developed and maintained mobile applications and front-end web applications by using React.js, Angular.js, and React Native",
         ],
     },
     {
@@ -65,8 +63,7 @@ export const workHistoryDetails = [
         toDate: "2019",
         details: [
             "- Played as a MERN stack developer",
-            "- Developed e-commerce(trading) web apps",
-            "- Used React, Expressjs, MySQL and MongoDB",
+            "- Developed e-commerce(trading) web apps by using React.js, Expressjs, MySQL and MongoDB",
         ],
     },
     {
