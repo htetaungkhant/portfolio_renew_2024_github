@@ -18,7 +18,7 @@ export default function PageHeader() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setHasScrolled(scrollPosition > 500);
+      setHasScrolled(scrollPosition > 400);
     };
 
     handleScroll();

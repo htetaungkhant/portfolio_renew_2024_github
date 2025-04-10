@@ -16,10 +16,12 @@
   height: calc(var(--header-height) - 60px);
 
   .header-parent {
+    margin-top: 6px;
     width: fit-content;
     backdrop-filter: blur(8px);
     background-color: rgba(var(--dark-value), 0.8);
-    box-shadow: 0 6px 20px rgba(var(--dark-value), 0.2);
+    box-shadow: 0 6px 12px 12px rgba(var(--dark-value), 0.2);
+    border: 1px solid var(--border-highlighted);
     border-radius: 20px 20px 20px 20px;
 
     .header-logo {
