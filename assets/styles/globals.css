@@ -11,6 +11,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --header-height: 120px;
+
   /* Base Colors */
   --white: rgba(255, 255, 255, 1);
   --black: rgba(51, 51, 51, 1);
@@ -26,6 +28,7 @@
   /* Brand Colors */
   --primary: var(--dark);
   --highlighted: rgba(255, 88, 35, 1);
+  --highlighted-value: 255, 88, 35;
   --light-blue: rgba(4, 195, 255, 1);
   --sea-green: rgba(10, 190, 173, 1);
   --sea-green-dark: rgba(12, 191, 174, 1);

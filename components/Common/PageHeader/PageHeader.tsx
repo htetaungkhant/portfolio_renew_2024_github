@@ -18,9 +18,10 @@ export default function PageHeader() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setHasScrolled(scrollPosition > 0);
+      setHasScrolled(scrollPosition > 500);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -65,12 +66,19 @@ export default function PageHeader() {
     ));
   };
 
+  const handleHamburgerClick = () => {
+    const newShowHeaderOptions = !showHeaderOptions;
+    setShowHeaderOptions(newShowHeaderOptions);
+    // disable scroll when menu is open, enable when closed
+    document.body.style.overflow = newShowHeaderOptions ? "hidden" : "unset";
+  }
+
   return (
     <section className={`${classes["header-container"]} ${hasScrolled ? classes["header-scrolled"] : ""}`}>
       <div className={classes["header-parent"]}>
         <div
           className={classes["header-hamburger"]}
-          onClick={() => setShowHeaderOptions(!showHeaderOptions)}
+          onClick={handleHamburgerClick}
         >
           <FontAwesomeIcon
             className={classes["header-hamburger-bars"]}
@@ -86,7 +94,7 @@ export default function PageHeader() {
               ? `${classes["header-options"]} ${classes["show-hamburger-options"]}`
               : classes["header-options"]
           }
-          onClick={() => setShowHeaderOptions(false)}
+          onClick={handleHamburgerClick}
         >
           {getHeaderOptions()}
         </div>

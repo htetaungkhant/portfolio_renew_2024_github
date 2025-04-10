@@ -4,8 +4,6 @@ import "@/assets/styles/globals.css";
 import "@/assets/styles/common.scss";
 
 import { FontPoppins } from "@/assets/fonts/fonts";
-import PageHeader from "@/components/Common/PageHeader/PageHeader";
-import ReloadScrollToTop from "@/components/Common/ReloadScrollToTop/ReloadScrollToTop";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -50,8 +48,6 @@ export default function RootLayout({
           FontPoppins.variable
         )}
       >
-        <ReloadScrollToTop />
-        <PageHeader />
         {children}
       </body>
     </html>
