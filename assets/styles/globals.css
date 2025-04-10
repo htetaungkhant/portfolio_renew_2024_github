@@ -14,7 +14,7 @@
   /* Base Colors */
   --white: rgba(255, 255, 255, 1);
   --black: rgba(51, 51, 51, 1);
-  --dark: rgba(31, 34, 53, 1);
+  --dark: rgb(36, 38, 59, 1);
   --cornsilk: rgba(255, 248, 220, 1);
   --gray-100: rgba(248, 249, 250, 1);
   --gray-200: rgba(240, 241, 242, 1);
