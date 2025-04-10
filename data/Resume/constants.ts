@@ -116,6 +116,7 @@ export const abilitiesDetails = {
         "Intermediate level in English speaking, listening, reading and writing.",
         "Knowledge on both Functional Programming and Object-Oriented Programming.",
         "Experience on project management tools such as <strong>Jira, Confluence</strong> and <strong>Teamspirit</strong>.",
+        "Experience on <strong>scss/sass</strong> and various design systems such as <strong>Shadcn UI, Material UI, Chakra UI, and Ant Design</strong>.",
         "Experience on modern technologies related to React.js such as <strong>Vite, NextAuth, Clerk, Stripe, Storybook, zod, react-hook-form, Zustand, Tanstack, React Router, Supabase</strong> and <strong>Prisma</strong>.",
         "Familiarity with build tools such as Webpack, Babel, and Vite.",
         "Familiarity with various JavaScript runtime environments such as Node.js, Bun, etc.",
