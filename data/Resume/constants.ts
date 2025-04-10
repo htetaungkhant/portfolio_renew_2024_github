@@ -82,7 +82,7 @@ export const skillsDetails = {
     proficientSkills: {
         title: "Proficient in",
         skills: [
-            { skill: "HTML, CSS", ratingPercentage: 90 },
+            { skill: "HTML, CSS, sass/scss", ratingPercentage: 90 },
             { skill: "JavaScript", ratingPercentage: 90 },
             { skill: "React.js", ratingPercentage: 90 },
             { skill: "Next.js", ratingPercentage: 85 },
