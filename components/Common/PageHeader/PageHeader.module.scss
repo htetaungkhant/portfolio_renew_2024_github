@@ -1,8 +1,21 @@
 .header-container {
   display: flex;
   justify-content: center;
-  height: 149px;
+  height: 100px;
   color: var(--text-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--bg-dark);
+  transition: all 0.3s ease-in-out;
+}
+
+.header-scrolled {
+  backdrop-filter: blur(8px);
+  background-color: rgba(var(--dark-value), 0.85);
+  box-shadow: 0 6px 12px rgba(var(--black-value), 0.1);
 }
 
 .header-parent {
@@ -50,7 +63,7 @@
 }
 
 .selected-header-option {
-  color: var(--text-dark);
+  color: var(--text-highlighted);
   font-family: var(--font-poppins);
   font-weight: 700;
 }

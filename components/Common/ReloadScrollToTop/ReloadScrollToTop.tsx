@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export default function ScrollToTop() {
+export default function ReloadScrollToTop() {
   useEffect(() => {
     // Scroll to top on mount
     window.scrollTo(0, 0);

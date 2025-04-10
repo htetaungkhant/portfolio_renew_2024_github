@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 670px;
+  min-height: 550px;
   background-image: url("/images/Home/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

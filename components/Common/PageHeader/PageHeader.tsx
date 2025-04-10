@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -8,11 +8,22 @@ import { headerTitle } from "@/data/Home/constants";
 import { HEADER_MENU } from "@/lib/commonUtils";
 import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
-import classes from "./Header.module.scss";
+import classes from "./PageHeader.module.scss";
 
-export default function Header() {
+export default function PageHeader() {
   const [selectedSection, setSelectedSection] = useState(0);
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setHasScrolled(scrollPosition > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const getHeaderOptionsClasses = (index: number) => {
     let styles = `${classes["header-option"]} `;
@@ -55,7 +66,7 @@ export default function Header() {
   };
 
   return (
-    <div className={classes["header-container"]}>
+    <section className={`${classes["header-container"]} ${hasScrolled ? classes["header-scrolled"] : ""}`}>
       <div className={classes["header-parent"]}>
         <div
           className={classes["header-hamburger"]}
@@ -80,6 +91,6 @@ export default function Header() {
           {getHeaderOptions()}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

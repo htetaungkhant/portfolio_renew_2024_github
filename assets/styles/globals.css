@@ -14,7 +14,9 @@
   /* Base Colors */
   --white: rgba(255, 255, 255, 1);
   --black: rgba(51, 51, 51, 1);
+  --black-value: 51, 51, 51;
   --dark: rgb(36, 38, 59, 1);
+  --dark-value: 36, 38, 59;
   --cornsilk: rgba(255, 248, 220, 1);
   --gray-100: rgba(248, 249, 250, 1);
   --gray-200: rgba(240, 241, 242, 1);
@@ -256,6 +258,7 @@ html {
 body {
   margin: 0;
   overflow-y: overlay;
+  background-color: var(--bg-gray);
 }
 
 code {

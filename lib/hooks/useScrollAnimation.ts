@@ -17,3 +17,7 @@ export const scrollToSection = (sectionId: string) => {
   
   section.scrollIntoView({ behavior: "smooth" });
 };
+
+export const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};

@@ -9,8 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 
 import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
+import ScrollToTopButton from "@/components/Common/ScrollToTopButton/ScrollToTopButton";
 import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
-import Footer from "@/components/MainSections/footer/Footer";
 import { socialLinks } from "@/data/Common/constants";
 import { contactLinks } from "@/data/ContactMe/constants";
 import weChatQR from "@/data/ContactMe/images/WeChatID.png";
@@ -182,7 +182,7 @@ export default function ContactMe(props: { id: string; sectionName?: string }) {
           </form>
         </div>
       </div>
-      <Footer />
+      <ScrollToTopButton />
     </AnimatedSection>
   );
 }
