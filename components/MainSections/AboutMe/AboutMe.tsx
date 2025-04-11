@@ -8,7 +8,7 @@ import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
 import { CONSTANTS } from "@/data/AboutMe/constants";
 import meImage from "@/data/AboutMe/images/me.jpg";
 import { RESUME_LINK } from "@/data/Common/constants";
-import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
+import { scrollToSection } from "@/lib/utils";
 
 import classes from "./AboutMe.module.scss";
 
@@ -42,7 +42,7 @@ export default function AboutMe(props: { id: string; sectionName?: string }) {
               <div className={classes["about-me-options"]}>
                 <button
                   className={`btn primary-btn ${classes["primary-btn"]}`}
-                  onClick={() => scrollToSection("ContactMe")}
+                  onClick={() => scrollToSection("contact-me")}
                 >
                   Hire Me
                 </button>

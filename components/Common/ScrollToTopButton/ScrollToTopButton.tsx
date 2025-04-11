@@ -1,6 +1,6 @@
 "use client";
 
-import { scrollToTop } from "@/lib/hooks/useScrollAnimation";
+import { scrollToTop } from "@/lib/utils";
 
 import classes from "./ScrollToTopButton.module.scss";
 

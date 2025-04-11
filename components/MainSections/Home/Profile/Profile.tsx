@@ -5,7 +5,7 @@ import { ReactTyped } from "react-typed";
 
 import { RESUME_LINK, socialLinks } from "@/data/Common/constants";
 import { profileDetails } from "@/data/Home/constants";
-import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
+import { scrollToSection } from "@/lib/utils";
 
 import classes from "./Profile.module.scss";
 
@@ -56,7 +56,7 @@ export default function Profile() {
           <div className={classes["profile-options"]}>
             <button
               className={`btn primary-btn ${classes["primary-btn"]}`}
-              onClick={() => scrollToSection("ContactMe")}
+              onClick={() => scrollToSection("contact-me")}
             >
               Hire Me
             </button>
