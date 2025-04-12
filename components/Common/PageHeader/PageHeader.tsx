@@ -62,26 +62,6 @@ export default function PageHeader() {
           </ScrollLink>
       </div>
     ));
-
-    // return HEADER_MENU.map((Menu, i) => (
-    //   <div
-    //     key={Menu.name}
-    //     className={getHeaderOptionsClasses(i)}
-    //     onClick={() => switchSection(i, Menu.name)}
-    //   >
-    //     {Menu.name === "Blog" ? (
-    //       <a
-    //         href="https://medium.com/@chitkogyi19950"
-    //         target="_blank"
-    //         rel="noreferrer"
-    //       >
-    //         {Menu.name}
-    //       </a>
-    //     ) : (
-    //       <span>{Menu.name}</span>
-    //     )}
-    //   </div>
-    // ));
   };
 
   const toggleHamburger = () => {
