@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: center;
   min-height: fit-content;
-  padding: 0 0 80px 0;
+  padding: 80px 0 0 0;
 }
 
 .resume-content {
@@ -318,9 +318,6 @@
 
 /* IPAD PRO RESPONSIVENESS */
 @media only screen and (max-width: 1110px) {
-  .resume-container {
-    margin: 70px 0px;
-  }
   .resume-card {
     width: 100%;
   }

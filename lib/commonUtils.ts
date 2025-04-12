@@ -6,22 +6,27 @@ import Resume from "@/components/MainSections/Resume/Resume";
 
 export const MAIN_SECTIONS = [
   {
+    id: "home",
     name: "Home",
     component: Home,
   },
   {
+    id: "about-me",
     name: "AboutMe",
     component: AboutMe,
   },
   {
+    id: "resume",
     name: "Resume",
     component: Resume,
   },
   {
+    id: "projects",
     name: "Projects",
     component: Projects,
   },
   {
+    id: "contact-me",
     name: "ContactMe",
     component: ContactMe,
   },
@@ -30,9 +35,11 @@ export const MAIN_SECTIONS = [
 export const HEADER_MENU = [
   ...MAIN_SECTIONS.map((section) => ({
     name: section.name,
+    link: `#${section.id}`,
   })),
   {
     name: "Blog",
+    link: "https://medium.com/@chitkogyi19950",
   },
 ];
 

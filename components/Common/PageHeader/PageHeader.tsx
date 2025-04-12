@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useEffect,useState } from "react";
+import Link from "next/link";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import ScrollLink from "@/components/Common/ScrollLink/ScrollLink";
 import { headerTitle } from "@/data/Home/constants";
 import { HEADER_MENU } from "@/lib/commonUtils";
-import { scrollToSection } from "@/lib/hooks/useScrollAnimation";
 
 import classes from "./PageHeader.module.scss";
 
@@ -18,7 +19,8 @@ export default function PageHeader() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setHasScrolled(scrollPosition > 400);
+      const windowWidth = window.innerWidth;
+      setHasScrolled(windowWidth > 1023.95 ? scrollPosition > 6 : scrollPosition > 60);
     };
 
     handleScroll();
@@ -39,7 +41,7 @@ export default function PageHeader() {
 
   const switchSection = (index: number, name: string) => {
     if (name !== "Blog") {
-      scrollToSection(name);
+      document.body.style.overflow = "unset";
       setSelectedSection(index);
     }
   };
@@ -49,28 +51,48 @@ export default function PageHeader() {
       <div
         key={Menu.name}
         className={getHeaderOptionsClasses(i)}
-        onClick={() => switchSection(i, Menu.name)}
       >
-        {Menu.name === "Blog" ? (
-          <a
-            href="https://medium.com/@chitkogyi19950"
-            target="_blank"
+          <ScrollLink
+            href={Menu.link}
+            onClick={() => switchSection(i, Menu.name)}
+            target={Menu.name === "Blog" ? "_blank" : "_self"}
             rel="noreferrer"
           >
             {Menu.name}
-          </a>
-        ) : (
-          <span>{Menu.name}</span>
-        )}
+          </ScrollLink>
       </div>
     ));
+
+    // return HEADER_MENU.map((Menu, i) => (
+    //   <div
+    //     key={Menu.name}
+    //     className={getHeaderOptionsClasses(i)}
+    //     onClick={() => switchSection(i, Menu.name)}
+    //   >
+    //     {Menu.name === "Blog" ? (
+    //       <a
+    //         href="https://medium.com/@chitkogyi19950"
+    //         target="_blank"
+    //         rel="noreferrer"
+    //       >
+    //         {Menu.name}
+    //       </a>
+    //     ) : (
+    //       <span>{Menu.name}</span>
+    //     )}
+    //   </div>
+    // ));
   };
 
-  const handleHamburgerClick = () => {
+  const toggleHamburger = () => {
     const newShowHeaderOptions = !showHeaderOptions;
     setShowHeaderOptions(newShowHeaderOptions);
-    // disable scroll when menu is open, enable when closed
     document.body.style.overflow = newShowHeaderOptions ? "hidden" : "unset";
+  }
+
+  const closeHamburger = () => {
+    setShowHeaderOptions(false);
+    document.body.style.overflow = "unset";
   }
 
   return (
@@ -78,7 +100,7 @@ export default function PageHeader() {
       <div className={classes["header-parent"]}>
         <div
           className={classes["header-hamburger"]}
-          onClick={handleHamburgerClick}
+          onClick={toggleHamburger}
         >
           <FontAwesomeIcon
             className={classes["header-hamburger-bars"]}
@@ -86,7 +108,7 @@ export default function PageHeader() {
           />
         </div>
         <div className={classes["header-logo"]}>
-          <span>{headerTitle}</span>
+          <Link href="/">{headerTitle}</Link>
         </div>
         <div
           className={
@@ -94,7 +116,7 @@ export default function PageHeader() {
               ? `${classes["header-options"]} ${classes["show-hamburger-options"]}`
               : classes["header-options"]
           }
-          onClick={handleHamburgerClick}
+          onClick={closeHamburger}
         >
           {getHeaderOptions()}
         </div>

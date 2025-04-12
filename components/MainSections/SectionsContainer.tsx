@@ -8,7 +8,7 @@ export default function SectionsContainer() {
         <section.component
           sectionName={section.name}
           key={section.name}
-          id={section.name}
+          id={section.id}
         />
       ) : null
     );
