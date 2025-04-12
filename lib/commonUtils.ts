@@ -42,13 +42,3 @@ export const HEADER_MENU = [
     link: "https://medium.com/@chitkogyi19950",
   },
 ];
-
-export const GET_SECTION_INDEX = (name: string) => {
-  if (!name) return -1;
-
-  for (let i = 0; i < MAIN_SECTIONS.length; i++) {
-    if (MAIN_SECTIONS[i].name === name) return i;
-  }
-
-  return -1;
-};
