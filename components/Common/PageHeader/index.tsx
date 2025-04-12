@@ -21,6 +21,28 @@ export default function PageHeader() {
       const scrollPosition = window.scrollY;
       const windowWidth = window.innerWidth;
       setHasScrolled(windowWidth > 1023.95 ? scrollPosition > 6 : scrollPosition > 60);
+
+      // Find which section is currently in view
+      const sections = HEADER_MENU.map(menu => document.getElementById(menu.link.replace('#', '')));
+      const viewportHeight = window.innerHeight;
+      const buffer = viewportHeight * 0.3; // 30% of viewport height as buffer
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          // Check if section is in view (with buffer)
+          if (rect.top <= buffer && rect.bottom >= buffer) {
+            setSelectedSection(i);
+            break;
+          }
+        }
+      }
+
+      // Handle top of page
+      if (scrollPosition < viewportHeight * 0.5) {
+        setSelectedSection(0);
+      }
     };
 
     handleScroll();
