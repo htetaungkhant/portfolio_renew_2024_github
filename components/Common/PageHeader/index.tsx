@@ -77,6 +77,7 @@ export default function PageHeader() {
         <ScrollLink
           href={Menu.link}
           onClick={() => onHeaderMenuClick(i, Menu.name)}
+          offset={-80}
           target={Menu.name === "Blog" ? "_blank" : "_self"}
           rel="noreferrer"
         >
