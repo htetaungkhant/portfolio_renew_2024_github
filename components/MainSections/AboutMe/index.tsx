@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 
@@ -7,10 +5,9 @@ import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection
 import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
 import { CONSTANTS } from "@/data/AboutMe/constants";
 import meImage from "@/data/AboutMe/images/me.jpg";
-import { RESUME_LINK } from "@/data/Common/constants";
-import { scrollToSection } from "@/lib/utils";
 
-import classes from "./AboutMe.module.scss";
+import AboutMeActions from "./AboutMeActions";
+import classes from "./index.module.scss";
 
 export default function AboutMe(props: { id: string; sectionName?: string }) {
   const renderHighlight = () => {
@@ -39,20 +36,7 @@ export default function AboutMe(props: { id: string; sectionName?: string }) {
                   priority
                 />
               </div>
-              <div className={classes["about-me-options"]}>
-                <button
-                  className={`btn primary-btn ${classes["primary-btn"]}`}
-                  onClick={() => scrollToSection("contact-me")}
-                >
-                  Hire Me
-                </button>
-                <button
-                  onClick={() => window.open(RESUME_LINK, "_blank")}
-                  className={`btn highlighted-btn ${classes["highlighted-btn"]}`}
-                >
-                  Get Resume
-                </button>
-              </div>
+              <AboutMeActions />
             </div>
 
             <div className={classes["about-me-info"]}>

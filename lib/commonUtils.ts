@@ -1,4 +1,4 @@
-import AboutMe from "@/components/MainSections/AboutMe/AboutMe";
+import AboutMe from "@/components/MainSections/AboutMe";
 import ContactMe from "@/components/MainSections/ContactMe/ContactMe";
 import Home from "@/components/MainSections/Home/Home";
 import Projects from "@/components/MainSections/Projects/Projects";
