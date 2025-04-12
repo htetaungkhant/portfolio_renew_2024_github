@@ -25,7 +25,7 @@ export const projectsDetails = [
         title: "Applicant Tracking System",
         duration: { fromDate: "", toDate: "" },
         description:
-            "It’s a web app to track the applications (resumes) of the applicants by using AI. It includes two systems. One is for the consumers to submit their resumes and another one is the administration dashboard to manage the candidates and send the emails.",
+            "It’s a web app to track the applications (resumes) of the applicants by using Next.js and API endpoints from AI backend. It includes two systems. One is for the consumers to submit their resumes and another one is the administration dashboard to manage the candidates and send the emails.",
         technologies: ["Next.js", "Shadcn UI"],
         image: Applicant_Tracking_System,
     },
