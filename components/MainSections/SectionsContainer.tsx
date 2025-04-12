@@ -1,4 +1,4 @@
-import { PageFooter } from "@/components/Common/PageFooter/PageFooter";
+import { PageFooter } from "@/components/Common/PageFooter";
 import { MAIN_SECTIONS } from "@/lib/commonUtils";
 
 export default function SectionsContainer() {

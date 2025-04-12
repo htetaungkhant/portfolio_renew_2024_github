@@ -3,12 +3,12 @@
 import React, {useState } from "react";
 import Image from "next/image";
 
-import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
-import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
+import AnimatedSection from "@/components/Common/AnimatedSection";
+import SectionHeading from "@/components/Common/SectionHeading";
 import { abilitiesDetails, educationDetails, interestsDetails,resumeBullets, skillsDetails, workHistoryDetails } from "@/data/Resume/constants";
 
-import ResumeHeading from "./ResumeHeading/ResumeHeading";
-import classes from "./Resume.module.scss";
+import ResumeHeading from "./ResumeHeading";
+import classes from "./index.module.scss";
 
 const Resume = (props: { id: string; sectionName?: string }) => {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);

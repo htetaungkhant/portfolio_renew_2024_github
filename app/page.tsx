@@ -1,6 +1,6 @@
 import { ToastContainer } from "react-toastify";
 
-import PageHeader from "@/components/Common/PageHeader/PageHeader";
+import PageHeader from "@/components/Common/PageHeader";
 import SectionsContainer from "@/components/MainSections/SectionsContainer";
 
 export default function Home() {

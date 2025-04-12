@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import ShapeBg from "@/public/images/Home/shape-bg.svg";
 
-import classes from "./Footer.module.scss";
+import classes from "./index.module.scss";
 
 export default function Footer() {
   return (

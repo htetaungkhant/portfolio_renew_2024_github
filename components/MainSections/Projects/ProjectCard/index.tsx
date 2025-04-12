@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 
-import classes from "./ProjectCard.module.scss";
+import classes from "./index.module.scss";
 
 const ProjectCard = (props: {
   className?: string;

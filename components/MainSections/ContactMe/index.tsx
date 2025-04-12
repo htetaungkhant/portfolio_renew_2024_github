@@ -8,14 +8,14 @@ import { faPaperPlane,faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 
-import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
-import ScrollToTopButton from "@/components/Common/ScrollToTopButton/ScrollToTopButton";
-import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
+import AnimatedSection from "@/components/Common/AnimatedSection";
+import ScrollToTopButton from "@/components/Common/ScrollToTopButton";
+import SectionHeading from "@/components/Common/SectionHeading";
 import { socialLinks } from "@/data/Common/constants";
 import { contactLinks } from "@/data/ContactMe/constants";
 import weChatQR from "@/data/ContactMe/images/WeChatID.png";
 
-import classes from "./ContactMe.module.scss";
+import classes from "./index.module.scss";
 
 export default function ContactMe(props: { id: string; sectionName?: string }) {
   const [name, setName] = useState("");

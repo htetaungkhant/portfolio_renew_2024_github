@@ -7,7 +7,7 @@ import { RESUME_LINK, socialLinks } from "@/data/Common/constants";
 import { profileDetails } from "@/data/Home/constants";
 import { scrollToSection } from "@/lib/utils";
 
-import classes from "./Profile.module.scss";
+import classes from "./index.module.scss";
 
 export default function Profile() {
   return (

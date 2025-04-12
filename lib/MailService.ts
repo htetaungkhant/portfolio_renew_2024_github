@@ -2,8 +2,8 @@ import React from "react";
 import { render } from "@react-email/render";
 import nodemailer, { Transporter } from "nodemailer";
 
-import ContactFormEmail from "@/components/Common/EmailTemplates/ContactFormEmail";
-import ThankYouEmail from "@/components/Common/EmailTemplates/ThankYouEmail";
+import ContactFormEmail from "@/components/Common/ContactFormEmail";
+import ThankYouEmail from "@/components/Common/ThankYouEmail";
 import { EmailData, EmailType } from "@/types/common";
 
 interface EmailTemplate {

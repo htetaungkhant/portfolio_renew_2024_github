@@ -2,7 +2,7 @@
 
 import { scrollToTop } from "@/lib/utils";
 
-import classes from "./ScrollToTopButton.module.scss";
+import classes from "./index.module.scss";
 
 export default function ScrollToTopButton() {
   return (

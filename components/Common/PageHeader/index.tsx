@@ -5,11 +5,11 @@ import Link from "next/link";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import ScrollLink from "@/components/Common/ScrollLink/ScrollLink";
+import ScrollLink from "@/components/Common/ScrollLink";
 import { headerTitle } from "@/data/Home/constants";
 import { HEADER_MENU } from "@/lib/commonUtils";
 
-import classes from "./PageHeader.module.scss";
+import classes from "./index.module.scss";
 
 export default function PageHeader() {
   const [selectedSection, setSelectedSection] = useState(0);

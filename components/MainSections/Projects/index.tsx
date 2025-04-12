@@ -1,11 +1,11 @@
 import React from "react";
 
-import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
-import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
+import AnimatedSection from "@/components/Common/AnimatedSection";
+import SectionHeading from "@/components/Common/SectionHeading";
 import { projectsDetails } from "@/data/Projects/constants";
 
-import ProjectCard from "./ProjectCard/ProjectCard";
-import classes from "./Projects.module.scss";
+import ProjectCard from "./ProjectCard";
+import classes from "./index.module.scss";
 
 const Projects = (props: { id: string; sectionName?: string }) => {
 

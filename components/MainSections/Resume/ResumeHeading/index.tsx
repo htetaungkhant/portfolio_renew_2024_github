@@ -1,4 +1,4 @@
-import classes from "./ResumeHeading.module.scss";
+import classes from "./index.module.scss";
 
 /* REUSABLE MINOR COMPONENTS */
 const ResumeHeading = (props: {

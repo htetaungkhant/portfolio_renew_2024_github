@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
-import AnimatedSection from "@/components/Common/AnimatedSection/AnimatedSection";
-import SectionHeading from "@/components/Common/SectionHeading/SectionHeading";
+import AnimatedSection from "@/components/Common/AnimatedSection";
+import SectionHeading from "@/components/Common/SectionHeading";
 import { CONSTANTS } from "@/data/AboutMe/constants";
 import meImage from "@/data/AboutMe/images/me.jpg";
 

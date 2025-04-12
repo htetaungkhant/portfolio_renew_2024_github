@@ -1,4 +1,4 @@
-import classes from "./PageFooter.module.scss";
+import classes from "./index.module.scss";
 
 export const PageFooter = ({
   className,
