@@ -1,116 +1,65 @@
-"use client";
-
-import React, {useState } from "react";
-import Image from "next/image";
+import React from "react";
 
 import AnimatedSection from "@/components/Common/AnimatedSection";
 import SectionHeading from "@/components/Common/SectionHeading";
-import { abilitiesDetails, educationDetails, interestsDetails,resumeBullets, skillsDetails, workHistoryDetails } from "@/data/Resume/constants";
+import { abilitiesDetails, educationDetails, interestsDetails, skillsDetails, workHistoryDetails } from "@/data/Resume/constants";
 
+import ResumeActions from "./ResumeActions";
 import ResumeHeading from "./ResumeHeading";
 import classes from "./index.module.scss";
 
 const Resume = (props: { id: string; sectionName?: string }) => {
-  const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
-  const [carousalOffsetStyle, setCarousalOffsetStyle] = useState<{
-    style?: React.CSSProperties;
-  }>({});
-
-  const handleCarousal = (index: number) => {
-    const offsetHeight = 560;
-
-    const newCarousalOffset = {
-      style: { transform: `translateY(${index * offsetHeight * -1}px)` },
-    };
-
-    setCarousalOffsetStyle(newCarousalOffset);
-    setSelectedBulletIndex(index);
-  };
-
-  const getBullets = () => {
-    return resumeBullets.map((bullet, index) => (
-      <div
-        key={index}
-        onClick={() => handleCarousal(index)}
-        className={classes["bullet-row-container"]}
-      >
-        <div
-          className={
-            index === selectedBulletIndex
-              ? `${classes["bullet"]} ${classes["selected-bullet"]}`
-              : classes["bullet"]
-          }
-        >
-          <Image
-            className={classes["bullet-logo"]}
-            src={bullet.image}
-            alt="bullet-logo"
-          />
-          <span className={classes["bullet-label"]}>{bullet.label}</span>
-        </div>
-      </div>
-    ));
-  };
-
   const educationDetailsComponent = (
     <div className={classes["resume-screen-container"]}>
-      {
-        educationDetails.map((details, index) => (
-          <div key={`education-${index}`}>
+      {educationDetails.map((details, index) => (
+        <div key={`education-${index}`}>
+          <ResumeHeading
+            heading={details.heading}
+            subHeading={details.subHeading}
+            fromDate={details.fromDate}
+            toDate={details.toDate}
+          />
+          <div className={classes["course-highlight-container"]}>
+            <span className={classes["course-highlight-title"]}>
+              {details.courseHighlights.title}
+            </span>
+            <div className={classes["course-highlights"]}>
+              {details.courseHighlights.highlights.map((highlight, index) => (
+                <div className={classes["course-highlight"]} key={index}>
+                  <span className="black-bullet"></span>
+                  <span className={classes["course-highlight-text"]}>
+                    {highlight}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  const workHistoryDetailsComponent = (
+    <div className={classes["resume-screen-container"]}>
+      {workHistoryDetails.map((details, index) => (
+        <React.Fragment key={`work-experience-${index}`}>
+          <div className={classes["experience-container"]}>
             <ResumeHeading
               heading={details.heading}
               subHeading={details.subHeading}
               fromDate={details.fromDate}
               toDate={details.toDate}
             />
-            <div className={classes["course-highlight-container"]}>
-              <span className={classes["course-highlight-title"]}>
-                {details.courseHighlights.title}
-              </span>
-              <div className={classes["course-highlights"]}>
-                {
-                  details.courseHighlights.highlights.map((highlight, index) => (
-                    <div className={classes["course-highlight"]} key={index}>
-                      <span className="black-bullet"></span>
-                      <span className={classes["course-highlight-text"]}>
-                        {highlight}
-                      </span>
-                    </div>
-                  ))
-                }
-              </div>
+            <div className={classes["experience-description"]}>
+              {details.details.map((detail, index) => (
+                <span className={classes["resume-description-text"]} key={index}>
+                  {detail}
+                </span>
+              ))}
             </div>
           </div>
-        ))
-      }
-    </div>
-  );
-
-  const workHistoryDetailsComponent = (
-    <div className={classes["resume-screen-container"]}>
-      {
-        workHistoryDetails.map((details, index) => (
-          <React.Fragment key={`work-experience-${index}`}>
-            <div className={classes["experience-container"]}>
-              <ResumeHeading
-                heading={details.heading}
-                subHeading={details.subHeading}
-                fromDate={details.fromDate}
-                toDate={details.toDate}
-              />
-              <div className={classes["experience-description"]}>
-                {
-                  details.details.map((detail, index) => (
-                    <span className={classes["resume-description-text"]} key={index}>
-                      {detail}
-                    </span>
-                  ))
-                }
-              </div>
-            </div>
-          </React.Fragment>
-        ))
-      }
+        </React.Fragment>
+      ))}
     </div>
   );
 
@@ -160,30 +109,26 @@ const Resume = (props: { id: string; sectionName?: string }) => {
   const abilitiesDetailsComponent = (
     <div className={classes["resume-screen-container"]}>
       <ResumeHeading heading={abilitiesDetails.title} />
-      {
-        abilitiesDetails.abilities.map((ability, index) => (
-          <div className={classes["ability-description"]} key={`ability-${index}`}>
-            <span className="black-bullet"></span>
-            <span className={classes["ability-description-text"]}>
-              <span dangerouslySetInnerHTML={{ __html: ability }}></span>
-            </span>
-          </div>
-        ))
-      }
+      {abilitiesDetails.abilities.map((ability, index) => (
+        <div className={classes["ability-description"]} key={`ability-${index}`}>
+          <span className="black-bullet"></span>
+          <span className={classes["ability-description-text"]}>
+            <span dangerouslySetInnerHTML={{ __html: ability }}></span>
+          </span>
+        </div>
+      ))}
     </div>
   );
 
   const interestsDetailsComponent = (
     <div className={classes["resume-screen-container"]} key="interests">
-      {
-        interestsDetails.map((interest, index) => (
-          <ResumeHeading
-            key={`interest-${index}`}
-            heading={interest.heading}
-            description={interest.description}
-          />
-        ))
-      }
+      {interestsDetails.map((interest, index) => (
+        <ResumeHeading
+          key={`interest-${index}`}
+          heading={interest.heading}
+          description={interest.description}
+        />
+      ))}
     </div>
   );
 
@@ -194,27 +139,13 @@ const Resume = (props: { id: string; sectionName?: string }) => {
     >
       <div className={classes["resume-content"]}>
         <SectionHeading title={"Resume"} subHeading={"My formal Bio Details"} />
-        <div className={classes["resume-card"]}>
-          <div className={classes["resume-bullets"]}>
-            <div className={classes["bullet-container"]}>
-              <div className={classes["bullet-icons"]}></div>
-              <div className={classes["bullets"]}>{getBullets()}</div>
-            </div>
-          </div>
-
-          <div className={classes["resume-bullet-details"]}>
-            <div
-              style={carousalOffsetStyle?.style}
-              className={classes["resume-details-carousal"]}
-            >
-              {educationDetailsComponent}
-              {workHistoryDetailsComponent}
-              {skillsDetailsComponent}
-              {abilitiesDetailsComponent}
-              {interestsDetailsComponent}
-            </div>
-          </div>
-        </div>
+        <ResumeActions>
+          {educationDetailsComponent}
+          {workHistoryDetailsComponent}
+          {skillsDetailsComponent}
+          {abilitiesDetailsComponent}
+          {interestsDetailsComponent}
+        </ResumeActions>
       </div>
     </AnimatedSection>
   );
