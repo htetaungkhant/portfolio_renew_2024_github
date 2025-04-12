@@ -10,7 +10,12 @@ const ScrollLink = ({ offset = 0, ...rest }: ScrollLinkProps) => {
   const router = useRouter();
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    if (typeof rest.href === 'string' && rest.href.startsWith('#')) {
+    if (rest.href === "/") {
+      e.preventDefault();
+      router.push(rest.href, { scroll: false }); // Prevent double scroll
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    else if (typeof rest.href === 'string' && rest.href.startsWith('#')) {
       e.preventDefault();
       router.push(rest.href, { scroll: false }); // Prevent double scroll
       const id = rest.href.replace('#', '');
