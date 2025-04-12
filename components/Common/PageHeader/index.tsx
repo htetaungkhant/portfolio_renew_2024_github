@@ -2,7 +2,7 @@
 
 import React, { useEffect,useState } from "react";
 import Link from "next/link";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faHouseUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import ScrollLink from "@/components/Common/ScrollLink";
@@ -61,10 +61,10 @@ export default function PageHeader() {
     return styles;
   };
 
-  const switchSection = (index: number, name: string) => {
+  const onHeaderMenuClick = (index: number, name: string) => {
     if (name !== "Blog") {
       document.body.style.overflow = "unset";
-      setSelectedSection(index);
+      // setSelectedSection(index);
     }
   };
 
@@ -74,14 +74,14 @@ export default function PageHeader() {
         key={Menu.name}
         className={getHeaderOptionsClasses(i)}
       >
-          <ScrollLink
-            href={Menu.link}
-            onClick={() => switchSection(i, Menu.name)}
-            target={Menu.name === "Blog" ? "_blank" : "_self"}
-            rel="noreferrer"
-          >
-            {Menu.name}
-          </ScrollLink>
+        <ScrollLink
+          href={Menu.link}
+          onClick={() => onHeaderMenuClick(i, Menu.name)}
+          target={Menu.name === "Blog" ? "_blank" : "_self"}
+          rel="noreferrer"
+        >
+          {Menu.name}
+        </ScrollLink>
       </div>
     ));
   };
@@ -120,6 +120,11 @@ export default function PageHeader() {
           }
           onClick={closeHamburger}
         >
+          {hasScrolled && (
+            <ScrollLink href="/" className={classes["header-home"]}>
+              <FontAwesomeIcon icon={faHouseUser} size='xl' />
+            </ScrollLink>
+          )}
           {getHeaderOptions()}
         </div>
       </div>
