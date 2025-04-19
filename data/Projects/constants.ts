@@ -89,7 +89,7 @@ export const projectsDetails = [
         title: "Personal Portfolio Websites",
         duration: { fromDate: "", toDate: "" },
         description:
-            "I developed personal portfolio websites with two versions. One is developed in 2020 and another one is developed in 2023. And currently, I’m developing another customizable version for 2025. So, I temporarily deployed old portfolio website at Vercel.",
+            "I developed personal portfolio websites with two versions. One is developed in 2020 and another one is developed in 2023. And currently, I’m developing another customizable version with headless CMS for 2025. So, I temporarily deployed old portfolio website at Vercel since the domain name deployed with CI/CD on AWS has expired.",
         technologies: ["React", "Next.js", "Strapi CMS", "Sanity CMS"],
         image: Personal_Portfolio_Websites,
     },
